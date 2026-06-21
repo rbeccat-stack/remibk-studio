@@ -1,65 +1,110 @@
-import Image from "next/image";
+import Header from '@/components/Header'
+import Hero from '@/components/Hero'
+import Marquee from '@/components/Marquee'
+import SectionTitle from '@/components/SectionTitle'
+import PillBadge from '@/components/PillBadge'
+import FeatureCard from '@/components/FeatureCard'
+import ProjectCard from '@/components/ProjectCard'
+import ProcessCard from '@/components/ProcessCard'
+import StackStrip from '@/components/StackStrip'
+import FAQAccordion from '@/components/FAQAccordion'
+import About from '@/components/About'
+import ContactForm from '@/components/ContactForm'
+import Footer from '@/components/Footer'
+import { features, experiences, process } from '@/lib/content'
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <>
+      <Header />
+
+      <main>
+        {/* Hero */}
+        <Hero />
+
+        {/* Bandeau défilant */}
+        <Marquee />
+
+        {/* Ce que j'apporte */}
+        <section id="apports" className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24">
+          <SectionTitle
+            title="Ce que j'apporte à une équipe growth"
+            underlineWord="growth"
+            subtitle="Un profil junior mais déjà opérationnel, capable de passer d'un besoin business à un système concret : données, automatisation, IA, dashboard ou workflow d'acquisition."
+            accent="terracotta"
+          />
+          <div className="mt-10 grid md:grid-cols-3 gap-5">
+            {features.map((f) => (
+              <FeatureCard key={f.title} {...f} />
+            ))}
+          </div>
+        </section>
+
+        {/* Expériences & cas concrets */}
+        <section id="experiences" className="bg-bg-soft">
+          <div className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24">
+            <SectionTitle
+              title="Expériences & cas concrets"
+              underlineWord="concrets"
+              subtitle="Des expériences concrètes où j'ai relié data, automatisation, IA et exécution growth."
+              accent="sage"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className="mt-10 grid md:grid-cols-2 gap-5">
+              {experiences.map((p) => (
+                <ProjectCard key={p.title} {...p} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Ma méthode de travail */}
+        <section id="methode" className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24">
+          <div className="flex flex-col gap-3 mb-10">
+            <PillBadge accent="terracotta">Comment je travaille</PillBadge>
+            <SectionTitle
+              title="Une approche test & learn, concrète et orientée exécution."
+              underlineWord="exécution"
+              subtitle="Je pars du besoin terrain, je structure les données, j'automatise ce qui peut l'être, puis je mesure ce qui fonctionne."
+              accent="terracotta"
+            />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {process.map((step) => (
+              <ProcessCard key={step.num} {...step} />
+            ))}
+          </div>
+        </section>
+
+        {/* Stack */}
+        <div className="bg-bg-soft">
+          <StackStrip />
         </div>
+
+        {/* FAQ */}
+        <section id="faq" className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24">
+          <div className="flex flex-col gap-3 mb-8">
+            <PillBadge accent="sage">FAQ recruteur</PillBadge>
+            <SectionTitle
+              title="Les questions utiles avant un échange."
+              underlineWord="utiles"
+              accent="sage"
+            />
+          </div>
+          <div className="max-w-2xl">
+            <FAQAccordion />
+          </div>
+        </section>
+
+        {/* À propos */}
+        <div className="bg-bg-soft">
+          <About />
+        </div>
+
+        {/* Contact */}
+        <ContactForm />
       </main>
-    </div>
-  );
+
+      <Footer />
+    </>
+  )
 }
