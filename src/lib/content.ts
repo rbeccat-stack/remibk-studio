@@ -1,6 +1,6 @@
 export const nav = {
   name: "Rémi BECCAT",
-  tagline: "Growth Engineer Junior",
+  tagline: "Growth Ops",
   links: [
     { label: "Apports", href: "#apports" },
     { label: "Expériences", href: "#experiences" },
@@ -14,67 +14,67 @@ export const nav = {
 }
 
 export const hero = {
-  badge: "Recherche CDI Growth Engineer Junior",
+  badge: "Recherche CDI Growth Ops",
   badgeSecondary: "Disponible à partir de septembre 2026 · Lyon uniquement",
-  titleLine1: "Je construis des systèmes",
-  titleLine2: "d'automatisation pour",
-  titleAccent: "accélérer l'acquisition.",
+  titleLine1: "Growth Ops —",
+  titleLine2: "je construis des systèmes d'acquisition",
+  titleAccent: "utilisables par votre équipe.",
   subtitle:
-    "Growth Engineer Junior à Lyon, je combine data, automatisation no-code, IA et scraping B2B pour aider les équipes growth à identifier les bons prospects, structurer leurs données et exécuter plus vite.",
+    "Je construis des infrastructures growth opérationnelles dès le premier mois : scraping B2B, automatisations Make, agents IA orchestrés. Des systèmes que vos équipes peuvent utiliser sans dépendre d'un profil technique.",
   ctaPrimary: { label: "Me contacter par email", href: "mailto:remibekka@gmail.com" },
   ctaSecondary: { label: "Voir mon LinkedIn", href: "https://linkedin.com/in/remibeccat" },
   ctaTertiary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
   card: {
-    title: "Ce que je peux apporter",
+    title: "Ce que j'apporte",
     checklist: [
-      "Automatisation no-code & IA opérationnelle",
-      "Scraping B2B et enrichissement de contacts",
-      "Workflows marketing ops et CRM",
-      "Dashboards et reporting d'acquisition",
-      "Création produit, copywriting et lancement",
+      "Scraping B2B et enrichissement de contacts (10k+ livrés)",
+      "Automatisations Make accessibles à toute l'équipe",
+      "Agents IA orchestrés sur VPS, 7 APIs connectées",
+      "Connexions API publiques (INSEE SIRENE, Pappers, Apollo)",
+      "Intégration et préparation CRM HubSpot",
     ],
     stats: [
       { value: "10k+", label: "contacts B2B enrichis" },
-      { value: "5", label: "dashboards marketing créés" },
-      { value: "83", label: "cartes Guitar Flow lancées" },
+      { value: "3-4h", label: "→ 20 min avec agent Hermes" },
+      { value: "7", label: "APIs orchestrées en production" },
     ],
   },
 }
 
 export const marqueeText =
-  "GROWTH ENGINEERING — AUTOMATISATION IA — SCRAPING B2B — DATA ENRICHMENT — MARKETING OPS — NO-CODE — HUBSPOT — SALES NAVIGATOR — PHAROW — EVABOOT — QLIK SENSE — MAKE — N8N — AIRTABLE — DASHBOARDS — ACQUISITION — LYON — CDI —"
+  "GROWTH OPS — SCRAPING B2B — AUTOMATISATION MAKE — AGENTS IA — ENRICHISSEMENT CONTACTS — WORKFLOWS MULTI-ÉTAPES — API INSEE SIRENE — PAPPERS — APOLLO — HUBSPOT — SALES NAVIGATOR — PHAROW — EVABOOT — VPS 24/7 — ORCHESTRATION MULTI-APIS — LYON — CDI —"
 
 export const features = [
-  {
-    icon: "⚡",
-    title: "Automatisation & IA opérationnelle",
-    bullets: [
-      "Workflows Make, n8n, Airtable, Twilio et Brevo",
-      "Automatisation de newsletters, suivis et bases de données",
-      "Agents IA pour recherche, audit et synthèse",
-      "Connexions API et structuration de données",
-    ],
-    accent: "terracotta" as const,
-  },
   {
     icon: "🔍",
     title: "Scraping B2B & enrichissement",
     bullets: [
-      "Ciblage de décideurs B2B",
-      "Scraping via Sales Navigator, Pharow, Evaboot et sources web",
-      "Enrichissement avec Societeinfo et API INSEE SIRENE",
-      "Nettoyage, déduplication et préparation CRM HubSpot",
+      "10 000 contacts ciblés par reverse engineering de la BDD clients",
+      "Sales Navigator, Pharow, Evaboot, Societeinfo",
+      "Déduplication SIRET et enrichissement API INSEE SIRENE",
+      "Préparation et import HubSpot prêt à l'emploi",
     ],
     accent: "sage" as const,
   },
   {
-    icon: "📊",
-    title: "Dashboards & pilotage growth",
+    icon: "⚡",
+    title: "Automatisation & workflows Make",
     bullets: [
-      "Dashboards Qlik Sense",
-      "Reporting marketing multi-sources",
-      "Suivi SEA, Salesforce, Google Analytics et ATI",
-      "Vision unifiée du parcours client",
+      "30 à 60 min économisées par recherche — accessible à l'équipe",
+      "Workflows multi-étapes avec connexions API",
+      "Interfaces pensées pour les non-techniciens",
+      "Systèmes livrés et utilisés en production",
+    ],
+    accent: "terracotta" as const,
+  },
+  {
+    icon: "🤖",
+    title: "Agents IA & orchestration",
+    bullets: [
+      "Agent Hermes : 3-4h de recherche → 20-30 min automatisées",
+      "VPS 24/7, 7 APIs orchestrées (Pappers, Apollo, Notion, RocketReach…)",
+      "Skill system versionné, architecture multi-APIs",
+      "Scripting via LLM, déploiement autonome",
     ],
     accent: "purple" as const,
   },
@@ -83,17 +83,16 @@ export const features = [
 export const experiences = [
   {
     icon: "🏭",
-    title: "Locabri — Growth Engineer en alternance",
+    title: "Locabri — Growth Ops en alternance",
     badge: "2025 - 2026",
     description:
-      "Chez Locabri, je travaille sur des sujets de scraping B2B industriel, d'enrichissement de bases contacts et d'automatisation de workflows data pour les équipes commerciales et marketing.",
+      "Scraping B2B industriel, enrichissement de bases contacts et automatisation de workflows pour les équipes commerciales et marketing.",
     points: [
-      "Scraping et enrichissement de 10 000 contacts B2B",
-      "Ciblage de décideurs industriels sur 8 catégories métiers",
-      "Utilisation de Sales Navigator, Pharow, Evaboot et Societeinfo",
-      "Nettoyage Excel avant import HubSpot",
-      "Déduplication sur SIRET",
-      "Enrichissement via API INSEE SIRENE",
+      "10 000 contacts B2B ciblés par reverse engineering de la BDD clients existante",
+      "Ciblage de 8 catégories de décideurs industriels via Sales Navigator, Pharow, Evaboot",
+      "Déduplication SIRET et enrichissement API INSEE SIRENE et Societeinfo",
+      "Automatisation Make accessible à l'équipe : 30 à 60 min économisées par recherche",
+      "Outil de tri emails RGPD en cours de déploiement équipe",
     ],
     accent: "terracotta" as const,
     link: { label: "Voir l'expérience →", href: "#" },
@@ -103,13 +102,12 @@ export const experiences = [
     title: "Aésio Mutuelle — Data Analyste",
     badge: "2023",
     description:
-      "Expérience data marketing orientée dashboards, reporting multi-sources et pilotage de campagnes.",
+      "Expérience data marketing orientée reporting multi-sources et pilotage de campagnes.",
     points: [
       "Centralisation ATI et Salesforce dans Qlik Sense",
-      "Création d'une vision unifiée du parcours client",
       "Conception de 5 dashboards de suivi SEA",
       "Reporting consolidé Salesforce, Google Analytics et ATI",
-      "Transformation de données brutes en décisions d'optimisation",
+      "Transformation de données brutes en décisions d'optimisation campagnes",
     ],
     accent: "sage" as const,
     link: { label: "Voir l'expérience →", href: "#" },
@@ -119,13 +117,12 @@ export const experiences = [
     title: "Guitar Flow — Produit lancé de A à Z",
     badge: "Side-project",
     description:
-      "Création et lancement d'un produit personnel pour guitaristes, mêlant recherche d'insights, design, copywriting, vibe-coding et stratégie de lancement.",
+      "Création et lancement d'un produit physique pour guitaristes, piloté par la recherche d'insights utilisateurs.",
     points: [
-      "Recherche d'insights via scraping Reddit et YouTube",
-      "Design Figma",
-      "Vibe-coding avec Claude et Cursor",
-      "Copywriting et stratégie de lancement",
-      "Création de 83 cartes de créativité pour guitaristes",
+      "500 verbatims Reddit et YouTube analysés pour identifier les JTBD des guitaristes",
+      "Construction de personas et framework JTBD avant toute ligne de design",
+      "Itération produit basée sur les insights : 83 cartes de créativité lancées",
+      "Vibe-coding avec Claude et Cursor, copywriting et stratégie de lancement",
     ],
     accent: "terracotta" as const,
     link: { label: "Voir Guitar Flow →", href: "https://guitarflow.fr" },
@@ -135,13 +132,12 @@ export const experiences = [
     title: "Workflows no-code & agents IA",
     badge: "Automatisation",
     description:
-      "Conception de systèmes automatisés pour réduire les tâches manuelles et structurer des opérations marketing, pédagogiques ou growth.",
+      "Systèmes automatisés livrés et utilisés en production — conçus pour être utilisables sans profil technique.",
     points: [
-      "Gestion complète d'élèves pour professeur de guitare",
-      "Formulaire d'inscription, stockage Airtable et trombinoscope",
-      "Envoi automatique de SMS via Twilio",
+      "Système de gestion d'élèves livré et en production depuis plusieurs mois",
+      "Formulaire d'inscription, stockage Airtable, trombinoscope et SMS Twilio automatisés",
+      "Agent Hermes : 7 APIs orchestrées, VPS 24/7, 3-4h de recherche → 20-30 min",
       "Pipeline newsletter : rédaction IA, segmentation, envoi conditionnel",
-      "Agent autonome de recherche d'entreprise, audit et scraping de contacts",
     ],
     accent: "sage" as const,
     link: { label: "Voir les systèmes →", href: "#" },
@@ -153,25 +149,25 @@ export const process = [
     num: "01",
     title: "Comprendre",
     description:
-      "Identifier l'objectif business, le public cible, les sources de données et les contraintes opérationnelles.",
+      "Identifier l'objectif business, qui dans l'équipe va utiliser le système, et quels outils ils ont déjà.",
   },
   {
     num: "02",
-    title: "Structurer",
+    title: "Construire",
     description:
-      "Transformer un besoin flou en workflow, base de données, dashboard, script ou plan d'expérimentation.",
+      "Transformer un besoin flou en workflow, agent ou pipeline de données — documenté et utilisable sans moi.",
   },
   {
     num: "03",
-    title: "Automatiser",
+    title: "Livrer",
     description:
-      "Utiliser les bons outils no-code, IA ou data pour supprimer les tâches répétitives et fiabiliser les process.",
+      "Déployer un outil que l'équipe peut utiliser dès le premier mois, sans dépendre d'un profil technique.",
   },
   {
     num: "04",
-    title: "Mesurer",
+    title: "Itérer",
     description:
-      "Suivre les résultats, documenter les apprentissages et améliorer le système à partir des données.",
+      "Suivre les résultats réels, corriger, améliorer — pas un POC qui dort, un système qui évolue.",
   },
 ]
 
@@ -180,77 +176,77 @@ export const stack = [
   "Pharow",
   "Evaboot",
   "Societeinfo",
+  "API INSEE SIRENE",
+  "Pappers",
+  "Apollo",
+  "RocketReach",
   "HubSpot",
-  "Qlik Sense",
-  "Google Analytics",
-  "Salesforce",
   "Make",
   "n8n",
   "Airtable",
   "Twilio",
   "Brevo",
-  "ChatGPT",
+  "Notion",
   "Claude",
   "Claude Code",
   "Cursor",
   "Figma",
-  "API INSEE SIRENE",
   "Excel",
 ]
 
 export const faqs = [
   {
     q: "Quel type de poste recherches-tu ?",
-    a: "Je recherche uniquement un CDI en Growth Engineer Junior, idéalement à Lyon. Je suis disponible à partir de septembre 2026 et je souhaite rejoindre une équipe où je peux contribuer sur l'acquisition, l'automatisation, la data et les opérations growth.",
+    a: "Un CDI Growth Ops à Lyon, disponible en septembre 2026. Je cherche une équipe qui a des besoins concrets en scraping B2B, automatisation ou agents IA — pas un poste où je vais faire du reporting Looker Studio.",
   },
   {
     q: "Quelle est ta zone de recherche ?",
-    a: "Je cherche un poste basé à Lyon. Je suis ouvert sur le type d'entreprise : startup, scale-up, PME, SaaS, industrie B2B, agence ou équipe marketing/growth interne.",
+    a: "Lyon uniquement. Startup, scale-up, SaaS, industrie B2B — peu importe le secteur, ce qui compte c'est que l'équipe ait un vrai enjeu d'acquisition à résoudre.",
   },
   {
-    q: "Sur quels sujets peux-tu être rapidement opérationnel ?",
-    a: "Je peux être rapidement opérationnel sur l'automatisation no-code, les workflows IA, le scraping B2B, l'enrichissement de bases contacts, le nettoyage de fichiers, la préparation CRM, la création de dashboards et le reporting marketing.",
+    q: "Sur quels sujets peux-tu être opérationnel dès le premier mois ?",
+    a: "Scraping B2B et enrichissement de contacts (j'ai livré 10 000 contacts chez Locabri), automatisations Make accessibles à l'équipe, et construction d'agents IA sur VPS. Sur HubSpot : import, gestion contacts, pipelines.",
   },
   {
-    q: "Quels outils maîtrises-tu ?",
-    a: "J'ai travaillé avec Sales Navigator, Pharow, Evaboot, Societeinfo, HubSpot, Qlik Sense, Salesforce, Google Analytics, Make, n8n, Airtable, Twilio, Brevo, ChatGPT, Claude, Claude Code, Cursor, Figma, Excel et l'API INSEE SIRENE.",
+    q: "Quels outils maîtrises-tu vraiment ?",
+    a: "Autonome sur : Sales Navigator, Pharow, Evaboot, Societeinfo, API INSEE SIRENE, Make, agents IA (Pappers, Apollo, RocketReach, Notion orchestrés). Opérationnel sur : HubSpot, n8n, Airtable, Brevo, Twilio. Python si besoin via LLM, déploiement autonome.",
   },
   {
-    q: "Qu'est-ce qui te différencie d'un profil marketing classique ?",
-    a: "Je ne me limite pas à la stratégie ou aux idées. Je peux chercher les données, les nettoyer, créer un workflow, automatiser une tâche, construire un dashboard, rédiger un message et aller jusqu'au déploiement. Mon angle principal est l'automatisation et l'IA appliquées à des problèmes growth concrets.",
+    q: "Qu'est-ce qui te différencie d'un growth classique ?",
+    a: "La plupart des growth exécutent des tactiques. Moi je construis les systèmes qui permettent à l'équipe d'exécuter plus vite et sans dépendre d'un profil technique. Mes outils sont documentés, déployés, et utilisés par d'autres — pas des scripts qui dorment sur mon ordi.",
   },
 ]
 
 export const about = {
   title: "À propos de moi",
   subtitle:
-    "Je suis un Growth Engineer Junior basé à Lyon, à la croisée de la data, de l'automatisation, de l'IA et de la créativité.",
+    "Je construis des systèmes growth utilisables par des non-techniciens — scraping B2B, automatisation Make, agents IA orchestrés.",
   paragraphs: [
-    "Je m'appelle Rémi BECCAT et je recherche un CDI en Growth Engineer Junior à Lyon, à partir de septembre 2026.",
-    "Mon parcours combine marketing digital, data analytics, automatisation et growth hacking. J'aime passer d'un problème concret à un système déployé : trouver les bonnes données, les structurer, automatiser les tâches répétitives, créer des dashboards et transformer les apprentissages en actions.",
-    "Chez Locabri, je travaille sur le scraping et l'enrichissement de contacts B2B industriels, avec une logique très opérationnelle : ciblage, extraction, nettoyage, déduplication, enrichissement et préparation pour les équipes commerciales et marketing.",
-    "Avec Guitar Flow, j'ai mené un produit de A à Z : recherche d'insights, design Figma, copywriting, vibe-coding et stratégie de lancement. Ce que je cherche aujourd'hui : rejoindre une équipe growth ambitieuse à Lyon, apprendre vite, contribuer concrètement et construire des systèmes d'acquisition plus efficaces grâce à l'automatisation, l'IA et la data.",
+    "Je m'appelle Rémi BECCAT, 28 ans, basé à Lyon. Je recherche un CDI Growth Ops à partir de septembre 2026.",
+    "Ce qui me différencie d'un growth classique : je ne fais pas qu'exécuter des tactiques, je construis l'infrastructure. Mes outils sont pensés pour être utilisés par l'équipe, pas juste par moi. Je connecte des briques que personne n'a pensé à connecter.",
+    "Chez Locabri, j'ai livré 10 000 contacts B2B ciblés par reverse engineering de la base clients, automatisé des workflows Make accessibles aux non-techniciens et construit un agent IA qui réduit 3-4h de recherche manuelle à 20-30 minutes.",
+    "18 mois en environnement anglophone. Anglais professionnel. Ce que je cherche : une équipe avec un vrai enjeu d'acquisition à résoudre — pas un poste où je vais refaire ce qui existe déjà.",
   ],
   ctaPrimary: { label: "Me contacter par email", href: "mailto:remibekka@gmail.com" },
   ctaSecondary: { label: "Voir mon LinkedIn", href: "https://linkedin.com/in/remibeccat" },
   ctaTertiary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
   stats: [
     { value: "10k+", label: "contacts B2B enrichis", accent: "terracotta" as const },
-    { value: "5", label: "dashboards marketing créés", accent: "sage" as const },
-    { value: "83", label: "cartes créatives lancées", accent: "purple" as const },
-    { value: "2026", label: "disponible en septembre", accent: "terracotta" as const },
+    { value: "7", label: "APIs orchestrées en production", accent: "sage" as const },
+    { value: "20 min", label: "vs 3-4h avec agent Hermes", accent: "purple" as const },
+    { value: "sept. 2026", label: "disponible en CDI", accent: "terracotta" as const },
   ],
 }
 
 export const contact = {
   title: "Échangeons sur une opportunité CDI.",
   subtitle:
-    "Je recherche un CDI Growth Engineer Junior à Lyon à partir de septembre 2026. Vous pouvez me contacter par email, consulter mon LinkedIn ou télécharger mon CV.",
+    "Je recherche un CDI Growth Ops à Lyon à partir de septembre 2026. Si vous avez un enjeu concret en scraping B2B, automatisation ou agents IA — parlons-en.",
   email: "remibekka@gmail.com",
   phone: "06 01 72 83 47",
   location: "Lyon uniquement",
   availability: "À partir de septembre 2026",
-  recherche: "CDI Growth Engineer Junior",
+  recherche: "CDI Growth Ops",
   project: "guitarflow.fr",
   ctas: [
     { label: "Me contacter par email", href: "mailto:remibekka@gmail.com", style: "primary" as const },
@@ -260,7 +256,7 @@ export const contact = {
 }
 
 export const footer = {
-  copy: "© 2026 Rémi BECCAT — Growth Engineer Junior basé à Lyon.",
+  copy: "© 2026 Rémi BECCAT — Growth Ops basé à Lyon.",
   links: [
     { label: "Email", href: "mailto:remibekka@gmail.com" },
     { label: "LinkedIn", href: "https://linkedin.com/in/remibeccat" },
