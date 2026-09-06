@@ -1,5 +1,4 @@
 import { hero } from '@/lib/content'
-import PillBadge from './PillBadge'
 
 export default function Hero() {
   return (
@@ -7,11 +6,6 @@ export default function Hero() {
       <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         {/* Left column */}
         <div className="flex flex-col gap-6">
-          <div className="flex flex-wrap gap-2">
-            <PillBadge accent="terracotta">{hero.badge}</PillBadge>
-            <PillBadge accent="sage">{hero.badgeSecondary}</PillBadge>
-          </div>
-
           <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-text-main leading-[1.1] tracking-tight">
             {hero.titleLine1}<br />
             {hero.titleLine2}{' '}

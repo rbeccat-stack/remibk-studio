@@ -4,14 +4,14 @@ import Marquee from '@/components/Marquee'
 import SectionTitle from '@/components/SectionTitle'
 import PillBadge from '@/components/PillBadge'
 import FeatureCard from '@/components/FeatureCard'
-import ProjectCard from '@/components/ProjectCard'
+import RealisationCard from '@/components/RealisationCard'
 import ProcessCard from '@/components/ProcessCard'
 import StackStrip from '@/components/StackStrip'
 import FAQAccordion from '@/components/FAQAccordion'
 import About from '@/components/About'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
-import { features, experiences, process } from '@/lib/content'
+import { features, realisations, process } from '@/lib/content'
 
 export default function Home() {
   return (
@@ -40,18 +40,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Expériences & cas concrets */}
-        <section id="experiences" className="bg-bg-soft">
+        {/* Réalisations */}
+        <section id="realisations" className="bg-bg-soft">
           <div className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24">
             <SectionTitle
-              title="Expériences & cas concrets"
-              underlineWord="concrets"
-              subtitle="Des expériences concrètes où j'ai relié data, automatisation, IA et exécution growth."
+              title="Réalisations concrètes"
+              underlineWord="concrètes"
+              subtitle="Des systèmes livrés et utilisés — workflows, interfaces, agents, dashboards."
               accent="sage"
             />
             <div className="mt-10 grid md:grid-cols-2 gap-5">
-              {experiences.map((p) => (
-                <ProjectCard key={p.title} {...p} />
+              {realisations.map((r) => (
+                <RealisationCard key={r.title} {...r} />
               ))}
             </div>
           </div>

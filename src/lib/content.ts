@@ -3,7 +3,7 @@ export const nav = {
   tagline: "Growth Marketer",
   links: [
     { label: "Apports", href: "#apports" },
-    { label: "Expériences", href: "#experiences" },
+    { label: "Réalisations", href: "#realisations" },
     { label: "Méthode", href: "#methode" },
     { label: "Stack", href: "#stack" },
     { label: "À propos", href: "#apropos" },
@@ -14,8 +14,6 @@ export const nav = {
 }
 
 export const hero = {
-  badge: "Recherche CDI Growth Ops",
-  badgeSecondary: "Disponible à partir de septembre 2026 · Lyon uniquement",
   titleLine1: "Growth Ops —",
   titleLine2: "je construis des systèmes d'acquisition",
   titleAccent: "utilisables par votre équipe.",
@@ -80,67 +78,109 @@ export const features = [
   },
 ]
 
-export const experiences = [
+// ─────────────────────────────────────────────────────────────────────────
+// SECTION FICTIVE — livrables extrapolés pour caler la structure et le design.
+// À remplacer par les vraies réalisations. Les valeurs `result` (et les [X])
+// sont des placeholders à confirmer avant mise en ligne.
+// Gabarit : problem + result = lecture rapide / how = niveau technique.
+// ─────────────────────────────────────────────────────────────────────────
+export const realisations = [
   {
-    icon: "🏭",
-    title: "Locabri — Growth Ops en alternance",
-    badge: "2025 - 2026",
-    description:
-      "Scraping B2B industriel, enrichissement de bases contacts et automatisation de workflows pour les équipes commerciales et marketing.",
-    points: [
-      "10 000 contacts B2B ciblés par reverse engineering de la BDD clients existante",
-      "Ciblage de 8 catégories de décideurs industriels via Sales Navigator, Pharow, Evaboot",
-      "Déduplication SIRET et enrichissement API INSEE SIRENE et Societeinfo",
-      "Automatisation Make accessible à l'équipe : 30 à 60 min économisées par recherche",
-      "Outil de tri emails RGPD en cours de déploiement équipe",
+    title: "Scraping B2B automatisé de bout en bout",
+    type: "Workflow",
+    context: "Réalisé chez Locabri",
+    problem:
+      "L'équipe commerciale montait ses listes de prospection à la main, cible par cible, plusieurs heures par semaine.",
+    result:
+      "≈ 10 000 contacts collectés en autonomie, sans saisie manuelle — [X] h/semaine rendues à l'équipe.",
+    how: [
+      "Scénario Make déclenché sur une liste de critères (secteur, taille, zone)",
+      "Chaînage Sales Navigator → Pharow → Evaboot pour l'extraction",
+      "Nettoyage et normalisation des champs avant sortie",
+      "Export CSV au format figé, prêt à importer dans le CRM",
     ],
     accent: "terracotta" as const,
-    link: { label: "Voir l'expérience →", href: "#" },
   },
   {
-    icon: "📊",
-    title: "Aésio Mutuelle — Data Analyste",
-    badge: "2023",
-    description:
-      "Expérience data marketing orientée reporting multi-sources et pilotage de campagnes.",
-    points: [
-      "Centralisation ATI et Salesforce dans Qlik Sense",
-      "Conception de 5 dashboards de suivi SEA",
-      "Reporting consolidé Salesforce, Google Analytics et ATI",
-      "Transformation de données brutes en décisions d'optimisation campagnes",
+    title: "Enrichissement et dédoublonnage de contacts",
+    type: "Workflow",
+    context: "Réalisé chez Locabri",
+    problem:
+      "Les fichiers prospects arrivaient incomplets et en double, avec des SIRET manquants ou erronés.",
+    result:
+      "Base fiabilisée à [X] %, doublons éliminés, chaque contact rattaché à une entreprise vérifiée.",
+    how: [
+      "Rapprochement SIRET via l'API INSEE SIRENE",
+      "Complétion des données société (effectif, code NAF, adresse)",
+      "Règle de dédoublonnage sur SIRET + email normalisé",
+      "Rapport d'anomalies généré à chaque passage",
     ],
     accent: "sage" as const,
-    link: { label: "Voir l'expérience →", href: "#" },
   },
   {
-    icon: "🎸",
-    title: "Guitar Flow — Produit lancé de A à Z",
-    badge: "Side-project",
-    description:
-      "Création et lancement d'un produit physique pour guitaristes, piloté par la recherche d'insights utilisateurs.",
-    points: [
-      "500 verbatims Reddit et YouTube analysés pour identifier les JTBD des guitaristes",
-      "Construction de personas et framework JTBD avant toute ligne de design",
-      "Itération produit basée sur les insights : 83 cartes de créativité lancées",
-      "Vibe-coding avec Claude et Cursor, copywriting et stratégie de lancement",
+    title: "Vérification d'emails conforme RGPD",
+    type: "Workflow + interface",
+    context: "Réalisé chez Locabri",
+    problem:
+      "Aucun moyen simple de contrôler la validité des adresses et la base légale d'un fichier avant une campagne.",
+    result:
+      "Contrôle ramené à quelques minutes, [X] fichiers assainis avant envoi — outil déployé pour l'équipe.",
+    how: [
+      "Interface de dépôt de fichier utilisable sans compétence technique",
+      "Vérification syntaxe, domaine et délivrabilité de chaque adresse",
+      "Contrôle de la source et du consentement associé (RGPD)",
+      "Export d'une liste nettoyée + journal des contrôles conservé",
     ],
     accent: "terracotta" as const,
-    link: { label: "Voir Guitar Flow →", href: "https://guitarflow.fr" },
   },
   {
-    icon: "🤖",
-    title: "Workflows no-code & agents IA",
-    badge: "Automatisation",
-    description:
-      "Systèmes automatisés livrés et utilisés en production — conçus pour être utilisables sans profil technique.",
-    points: [
-      "Système de gestion d'élèves livré et en production depuis plusieurs mois",
-      "Formulaire d'inscription, stockage Airtable, trombinoscope et SMS Twilio automatisés",
-      "Agent Hermes : 7 APIs orchestrées, VPS 24/7, 3-4h de recherche → 20-30 min",
-      "Pipeline newsletter : rédaction IA, segmentation, envoi conditionnel",
+    title: "Dashboard Excel de pilotage de la prospection",
+    type: "Dashboard",
+    context: "Réalisé chez Locabri",
+    problem:
+      "Le suivi des volumes contactés et des retours se faisait dans des fichiers éparpillés, sans vue d'ensemble.",
+    result:
+      "Une vue unique et actualisée : volumes, taux de réponse et pipeline par catégorie de cible.",
+    how: [
+      "Consolidation des exports CRM et des fichiers de campagne",
+      "Tableaux croisés dynamiques et indicateurs de suivi hebdomadaire",
+      "Mise en forme conditionnelle pour repérer les signaux faibles",
+      "Procédure de mise à jour documentée, tenue par l'équipe",
     ],
     accent: "sage" as const,
-    link: { label: "Voir les systèmes →", href: "#" },
+  },
+  {
+    title: "Agent IA d'enrichissement multi-sources (Hermes)",
+    type: "Agent IA",
+    context: "Projet personnel / R&D",
+    problem:
+      "Qualifier un prospect demandait 3-4 h de recherche manuelle répartie sur une dizaine d'outils.",
+    result:
+      "Même travail livré en 20-30 min, l'agent tournant seul 24/7 sur un serveur dédié.",
+    how: [
+      "7 APIs orchestrées (Pappers, Apollo, RocketReach, Notion…)",
+      "Découpage en compétences réutilisables et versionnées",
+      "Déploiement autonome sur VPS, exécution planifiée",
+      "Sorties normalisées, prêtes à verser dans un CRM",
+    ],
+    accent: "terracotta" as const,
+  },
+  {
+    title: "Guitar Flow — de la recherche utilisateur au produit lancé",
+    type: "Projet complet",
+    context: "Projet personnel",
+    problem:
+      "Vérifier qu'un besoin réel existait chez les guitaristes avant d'investir dans un produit physique.",
+    result:
+      "500 verbatims analysés, un cadre de besoins structuré, puis un produit réellement mis en vente.",
+    how: [
+      "Collecte et codage de 500 verbatims Reddit et YouTube",
+      "Construction de personas et d'un cadre Jobs-to-be-Done",
+      "83 cartes de créativité conçues à partir des insights",
+      "Prototypage, copywriting et stratégie de lancement",
+    ],
+    accent: "sage" as const,
+    link: { label: "Voir Guitar Flow", href: "https://guitarflow.fr" },
   },
 ]
 
