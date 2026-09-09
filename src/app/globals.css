@@ -122,9 +122,14 @@ body {
 
 .typewriter-caret {
   display: inline-block;
-  margin-left: 0.05em;
-  font-weight: 400;
-  animation: caret-blink 1s step-end infinite;
+  width: 0.07em;
+  min-width: 2px;
+  height: 0.78em;
+  margin-left: 0.09em;
+  vertical-align: -0.04em;
+  border-radius: 999px;
+  background-color: currentColor;
+  animation: caret-blink 1.05s step-end infinite;
 }
 
 .card-hover {

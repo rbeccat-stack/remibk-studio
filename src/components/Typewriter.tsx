@@ -56,7 +56,7 @@ export default function Typewriter({ words, className }: TypewriterProps) {
     <span className={className}>
       <span aria-hidden="true">
         {text}
-        <span className="typewriter-caret">|</span>
+        <span className="typewriter-caret" />
       </span>
       <span className="sr-only">{words.join(', ')}</span>
     </span>
