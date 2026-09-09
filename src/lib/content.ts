@@ -282,11 +282,5 @@ export const contact = {
 }
 
 export const footer = {
-  copy: "© 2026 Rémi BECCAT — Growth Ops basé à Lyon.",
-  links: [
-    { label: "Email", href: "mailto:remibekka@gmail.com" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/remibeccat" },
-    { label: "Guitar Flow", href: "https://guitarflow.fr" },
-    { label: "CV", href: "/cv-remi-beccat.pdf" },
-  ],
+  copy: "© 2026 Rémi BECCAT — Growth Marketer basé à Lyon.",
 }
