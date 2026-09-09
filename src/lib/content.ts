@@ -236,7 +236,10 @@ export const faqs = [
 ]
 
 export const about = {
-  title: "À propos de moi",
+  title: "Enchanté",
+  emoji: "👋",
+  initials: "RB",
+  photoCaption: "Lyon · Growth Ops",
   paragraphs: [
     "Je m'appelle Rémi BECCAT, 28 ans, basé à Lyon. Je recherche un CDI Growth Ops à partir de septembre 2026.",
     "Ce qui me différencie d'un growth classique : je ne fais pas qu'exécuter des tactiques, je construis l'infrastructure. Mes outils sont pensés pour être utilisés par l'équipe, pas juste par moi. Je connecte des briques que personne n'a pensé à connecter.",

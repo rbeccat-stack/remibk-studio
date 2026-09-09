@@ -19,68 +19,74 @@ export default function RealisationCard({
   accent,
   link,
 }: RealisationCardProps) {
-  const borderColor = accent === 'terracotta' ? 'border-terracotta/40' : 'border-sage/40'
-  const accentText = accent === 'terracotta' ? 'text-terracotta' : 'text-sage'
-  const dotColor = accent === 'terracotta' ? 'bg-terracotta' : 'bg-sage'
-  const tagBg = accent === 'terracotta' ? 'bg-terracotta/10 text-terracotta' : 'bg-sage/10 text-sage'
+  const isTerracotta = accent === 'terracotta'
+  const accentText = isTerracotta ? 'text-terracotta' : 'text-sage'
+  const tagBg = isTerracotta ? 'bg-terracotta/10 text-terracotta' : 'bg-sage/10 text-sage'
+  const panel = isTerracotta
+    ? 'border-terracotta/20 bg-terracotta/5'
+    : 'border-sage/20 bg-sage/5'
+  const numStyle = isTerracotta
+    ? 'border-terracotta/30 text-terracotta'
+    : 'border-sage/30 text-sage'
 
   return (
-    <div
-      className={`card-hover border ${borderColor} rounded-2xl p-5 sm:p-6 bg-card-light flex flex-col gap-4 h-full`}
-    >
-      {/* Meta */}
-      <div className="flex items-center gap-2 flex-wrap">
-        <span
-          className={`text-[10px] font-sans font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${tagBg}`}
-        >
-          {type}
-        </span>
-        <span className="text-[11px] font-sans text-muted">{context}</span>
-      </div>
+    <article className="rounded-2xl border border-border-dark/12 bg-card-light p-5 transition-colors hover:border-border-dark/25 sm:p-7 md:p-8">
+      {/* Ligne 1 — identité à gauche, résultat en encart à droite */}
+      <div className="grid gap-5 md:grid-cols-[1.15fr_0.85fr] md:gap-10">
+        <div>
+          <div className="flex flex-wrap items-center gap-2">
+            <span
+              className={`rounded-full px-2.5 py-0.5 font-sans text-[10px] font-semibold uppercase tracking-wider ${tagBg}`}
+            >
+              {type}
+            </span>
+            <span className="font-sans text-[11px] text-muted">{context}</span>
+          </div>
 
-      <h3 className={`font-serif font-bold text-base sm:text-lg ${accentText} leading-snug`}>
-        {title}
-      </h3>
+          <h3 className="mt-3 font-serif text-xl font-bold leading-snug text-text-main sm:text-2xl">
+            {title}
+          </h3>
 
-      {/* Lecture rapide */}
-      <div className="flex flex-col gap-3">
-        <div className="flex flex-col gap-1">
-          <span className="text-[10px] font-sans font-semibold uppercase tracking-wider text-muted">
-            Le problème
-          </span>
-          <p className="text-sm font-sans text-text-main leading-relaxed">{problem}</p>
+          <p className="mt-3 font-sans text-sm leading-relaxed text-muted">{problem}</p>
         </div>
-        <div className="flex flex-col gap-1">
-          <span className="text-[10px] font-sans font-semibold uppercase tracking-wider text-muted">
+
+        <div className={`self-start rounded-xl border ${panel} p-4 sm:p-5`}>
+          <span className="font-sans text-[10px] font-semibold uppercase tracking-wider text-muted">
             Le résultat
           </span>
-          <p className={`text-sm font-sans font-semibold ${accentText} leading-relaxed`}>{result}</p>
+          <p className={`mt-1.5 font-sans text-sm font-semibold leading-relaxed ${accentText}`}>
+            {result}
+          </p>
         </div>
       </div>
 
-      {/* Niveau technique */}
-      <div className="border-t border-border-dark/10 pt-3 mt-auto">
-        <span className="text-[10px] font-sans font-semibold uppercase tracking-wider text-muted">
+      {/* Ligne 2 — le « comment » déroulé horizontalement */}
+      <div className="mt-7 border-t border-border-dark/10 pt-6">
+        <span className="font-sans text-[10px] font-semibold uppercase tracking-wider text-muted">
           Comment
         </span>
-        <ul className="flex flex-col gap-2 mt-2">
-          {how.map((item) => (
-            <li key={item} className="flex items-start gap-2">
-              <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${dotColor} shrink-0`} />
-              <span className="text-sm font-sans text-text-main leading-snug">{item}</span>
+        <ol className="mt-4 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+          {how.map((item, i) => (
+            <li key={item} className="flex items-start gap-3">
+              <span
+                className={`shrink-0 rounded-md border px-1.5 py-0.5 font-sans text-[10px] font-semibold tabular-nums tracking-wider ${numStyle}`}
+              >
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span className="font-sans text-sm leading-snug text-text-main">{item}</span>
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
 
       {link && (
         <a
           href={link.href}
-          className={`text-sm font-sans font-semibold ${accentText} hover:underline underline-offset-4 self-start`}
+          className={`mt-6 inline-flex items-center gap-1.5 font-sans text-sm font-semibold ${accentText} underline-offset-4 hover:underline`}
         >
-          {link.label} →
+          {link.label} <span aria-hidden>→</span>
         </a>
       )}
-    </div>
+    </article>
   )
 }

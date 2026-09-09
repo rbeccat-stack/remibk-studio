@@ -26,7 +26,7 @@ export default function Home() {
               subtitle="Des systèmes livrés et utilisés — workflows, interfaces, agents, dashboards."
               accent="sage"
             />
-            <div className="mt-10 grid md:grid-cols-2 gap-5">
+            <div className="mt-10 flex flex-col gap-5">
               {realisations.map((r) => (
                 <RealisationCard key={r.title} {...r} />
               ))}
