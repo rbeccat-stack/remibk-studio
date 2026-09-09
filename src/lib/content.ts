@@ -15,7 +15,12 @@ export const nav = {
 
 export const hero = {
   title: "Growth Marketer",
+  leadStart: "Je construis des systèmes de",
   keywords: ["Scraping", "Automatisation", "Data", "IA"],
+  leadEnd: "utilisables par toute l'équipe.",
+  meta: "Freelance ou intégré à votre équipe · Lyon",
+  ctaPrimary: { label: "Me contacter", href: "mailto:remibekka@gmail.com" },
+  ctaSecondary: { label: "Voir mes réalisations", href: "#realisations" },
   card: {
     title: "Ce que j'apporte",
     checklist: [

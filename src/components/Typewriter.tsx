@@ -8,11 +8,21 @@ type TypewriterProps = {
 }
 
 export default function Typewriter({ words, className }: TypewriterProps) {
+  const [reduced, setReduced] = useState(false)
   const [wordIndex, setWordIndex] = useState(0)
-  const [text, setText] = useState('')
+  const [text, setText] = useState(words[0] ?? '')
   const [deleting, setDeleting] = useState(false)
 
   useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setReduced(mq.matches)
+    const onChange = () => setReduced(mq.matches)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
+
+  useEffect(() => {
+    if (reduced) return
     const current = words[wordIndex]
 
     if (!deleting && text === current) {
@@ -36,14 +46,19 @@ export default function Typewriter({ words, className }: TypewriterProps) {
     )
 
     return () => clearTimeout(timeout)
-  }, [text, deleting, wordIndex, words])
+  }, [text, deleting, wordIndex, words, reduced])
+
+  if (reduced) {
+    return <span className={className}>{words.join(' · ')}</span>
+  }
 
   return (
-    <span className={className} aria-live="polite">
-      {text}
-      <span className="typewriter-caret" aria-hidden>
-        |
+    <span className={className}>
+      <span aria-hidden="true">
+        {text}
+        <span className="typewriter-caret">|</span>
       </span>
+      <span className="sr-only">{words.join(', ')}</span>
     </span>
   )
 }
