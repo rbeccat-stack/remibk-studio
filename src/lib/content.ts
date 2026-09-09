@@ -241,10 +241,11 @@ export const about = {
   initials: "RB",
   photoCaption: "Lyon · Growth Ops",
   paragraphs: [
-    "Je m'appelle Rémi BECCAT, 28 ans, basé à Lyon. Je recherche un CDI Growth Ops à partir de septembre 2026.",
-    "Ce qui me différencie d'un growth classique : je ne fais pas qu'exécuter des tactiques, je construis l'infrastructure. Mes outils sont pensés pour être utilisés par l'équipe, pas juste par moi. Je connecte des briques que personne n'a pensé à connecter.",
-    "Chez Locabri, j'ai livré 10 000 contacts B2B ciblés par reverse engineering de la base clients, automatisé des workflows Make accessibles aux non-techniciens et construit un agent IA qui réduit 3-4h de recherche manuelle à 20-30 minutes.",
-    "18 mois en environnement anglophone. Anglais professionnel. Ce que je cherche : une équipe avec un vrai enjeu d'acquisition à résoudre — pas un poste où je vais refaire ce qui existe déjà.",
+    "Je viens du marketing, je suis passé par l'analyse de données, et j'ai atterri dans le growth. C'est le seul métier où mes deux réflexes servent en même temps : l'envie de tester des idées et d'imaginer ce qu'on pourrait faire, et le besoin de mesurer, de comprendre pourquoi ça a marché, et de pouvoir le refaire.",
+    "En pratique, ça donne des choses qui n'ont pas l'air d'avoir de rapport entre elles. Un dashboard pour qu'une équipe arrête de piloter à l'aveugle. Une automatisation qui fait disparaître un process que tout le monde subissait. Une base de contacts allée chercher là où personne ne regardait. C'est pourtant le même geste à chaque fois : comprendre le problème avant de choisir l'outil.",
+    "Chez Locabri, l'équipe montait ses listes de prospection à la main. Plutôt que d'en monter une de plus, je suis allé regarder les clients déjà signés pour voir ce qu'ils avaient en commun. J'ai reconstruit tout le ciblage à partir de là, ce qui a donné environ 10 000 contacts qualifiés, sans saisie manuelle.",
+    "L'IA fait partie de mon quotidien de travail, pas comme sujet de veille mais comme outil que j'utilise tous les jours. C'est aussi une compétence que j'aime transmettre. Montrer à une équipe ce qu'elle peut réellement déléguer à une machine fait souvent gagner plus de temps que le dernier outil à la mode.",
+    "Je cherche aujourd'hui une équipe qui a un vrai enjeu d'acquisition. En CDI si vous recrutez, en freelance si vous avez un chantier précis à débloquer. Je suis à Lyon, et j'ai passé 18 mois en environnement anglophone, donc travailler en anglais ne me pose pas de problème. Ce qui m'intéresse le moins, en revanche, c'est de refaire ce qui existe déjà.",
   ],
 }
 
