@@ -237,17 +237,12 @@ export const faqs = [
 
 export const about = {
   title: "À propos de moi",
-  subtitle:
-    "Je construis des systèmes growth utilisables par des non-techniciens — scraping B2B, automatisation Make, agents IA orchestrés.",
   paragraphs: [
     "Je m'appelle Rémi BECCAT, 28 ans, basé à Lyon. Je recherche un CDI Growth Ops à partir de septembre 2026.",
     "Ce qui me différencie d'un growth classique : je ne fais pas qu'exécuter des tactiques, je construis l'infrastructure. Mes outils sont pensés pour être utilisés par l'équipe, pas juste par moi. Je connecte des briques que personne n'a pensé à connecter.",
     "Chez Locabri, j'ai livré 10 000 contacts B2B ciblés par reverse engineering de la base clients, automatisé des workflows Make accessibles aux non-techniciens et construit un agent IA qui réduit 3-4h de recherche manuelle à 20-30 minutes.",
     "18 mois en environnement anglophone. Anglais professionnel. Ce que je cherche : une équipe avec un vrai enjeu d'acquisition à résoudre — pas un poste où je vais refaire ce qui existe déjà.",
   ],
-  ctaPrimary: { label: "Me contacter par email", href: "mailto:remibekka@gmail.com" },
-  ctaSecondary: { label: "Voir mon LinkedIn", href: "https://linkedin.com/in/remibeccat" },
-  ctaTertiary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
 }
 
 export const contact = {
