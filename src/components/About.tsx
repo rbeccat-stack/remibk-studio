@@ -15,9 +15,6 @@ export default function About() {
             >
               {about.initials}
             </span>
-            <span className="absolute bottom-3 left-3 rounded-full border border-border-dark/10 bg-bg-soft/85 px-3 py-1 font-sans text-[11px] font-semibold tracking-wide text-muted backdrop-blur-sm">
-              {about.photoCaption}
-            </span>
           </div>
 
           {/* Texte */}

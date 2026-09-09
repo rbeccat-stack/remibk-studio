@@ -239,7 +239,6 @@ export const about = {
   title: "Enchanté",
   emoji: "👋",
   initials: "RB",
-  photoCaption: "Lyon · Growth Ops",
   paragraphs: [
     "Je viens du marketing, je suis passé par l'analyse de données, et j'ai atterri dans le growth. C'est le seul métier où mes deux réflexes servent en même temps : l'envie de tester des idées et d'imaginer ce qu'on pourrait faire, et le besoin de mesurer, de comprendre pourquoi ça a marché, et de pouvoir le refaire.",
     "En pratique, ça donne des choses qui n'ont pas l'air d'avoir de rapport entre elles. Un dashboard pour qu'une équipe arrête de piloter à l'aveugle. Une automatisation qui fait disparaître un process que tout le monde subissait. Une base de contacts allée chercher là où personne ne regardait. C'est pourtant le même geste à chaque fois : comprendre le problème avant de choisir l'outil.",
