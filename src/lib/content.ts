@@ -14,9 +14,7 @@ export const nav = {
 }
 
 export const hero = {
-  titleLine1: "Growth Ops —",
-  titleLine2: "je construis des systèmes d'acquisition",
-  titleAccent: "utilisables par votre équipe.",
+  title: "Growth Marketer",
   subtitle:
     "Je construis des infrastructures growth opérationnelles dès le premier mois : scraping B2B, automatisations Make, agents IA orchestrés. Des systèmes que vos équipes peuvent utiliser sans dépendre d'un profil technique.",
   ctaPrimary: { label: "Me contacter par email", href: "mailto:remibekka@gmail.com" },

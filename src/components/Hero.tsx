@@ -7,9 +7,7 @@ export default function Hero() {
         {/* Left column */}
         <div className="flex flex-col gap-6">
           <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-text-main leading-[1.1] tracking-tight">
-            {hero.titleLine1}<br />
-            {hero.titleLine2}{' '}
-            <span className="text-terracotta">{hero.titleAccent}</span>
+            {hero.title}
           </h1>
 
           <p className="text-muted text-base md:text-lg leading-relaxed max-w-lg">
