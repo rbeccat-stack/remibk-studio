@@ -262,12 +262,6 @@ export const about = {
   ctaPrimary: { label: "Me contacter par email", href: "mailto:remibekka@gmail.com" },
   ctaSecondary: { label: "Voir mon LinkedIn", href: "https://linkedin.com/in/remibeccat" },
   ctaTertiary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
-  stats: [
-    { value: "10k+", label: "contacts B2B enrichis", accent: "terracotta" as const },
-    { value: "7", label: "APIs orchestrées en production", accent: "sage" as const },
-    { value: "20 min", label: "vs 3-4h avec agent Hermes", accent: "purple" as const },
-    { value: "sept. 2026", label: "disponible en CDI", accent: "terracotta" as const },
-  ],
 }
 
 export const contact = {

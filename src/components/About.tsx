@@ -1,17 +1,6 @@
 import { about } from '@/lib/content'
 
 export default function About() {
-  const accentBorder = {
-    terracotta: 'border-terracotta/40',
-    sage: 'border-sage/40',
-    purple: 'border-purple-soft/40',
-  }
-  const accentText = {
-    terracotta: 'text-terracotta',
-    sage: 'text-sage',
-    purple: 'text-purple-soft',
-  }
-
   return (
     <section id="apropos" className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24">
       <div className="flex items-center gap-2 mb-2">
@@ -47,24 +36,6 @@ export default function About() {
             {about.ctaTertiary.label}
           </a>
         </div>
-      </div>
-
-      {/* Stats grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {about.stats.map((s) => (
-          <div
-            key={s.label}
-            className={`card-hover border ${accentBorder[s.accent]} rounded-xl p-5 bg-card-light text-center`}
-          >
-            <div
-              className={`font-serif font-bold text-4xl mb-1 ${accentText[s.accent]}`}
-              style={{ WebkitTextStroke: '1.5px currentColor', color: 'transparent' }}
-            >
-              {s.value}
-            </div>
-            <div className="text-xs font-sans text-muted leading-snug">{s.label}</div>
-          </div>
-        ))}
       </div>
     </section>
   )
