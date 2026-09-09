@@ -59,6 +59,57 @@ body {
   animation-play-state: paused;
 }
 
+@keyframes gh-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes gh-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes gh-float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+.gh-curve {
+  stroke-dasharray: 480;
+  stroke-dashoffset: 480;
+  animation: gh-draw 2.4s ease-out 0.2s forwards;
+}
+
+.gh-rocket,
+.gh-float,
+.gh-float-slow {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.gh-rocket {
+  animation: gh-float 3.6s ease-in-out infinite;
+}
+
+.gh-float {
+  animation: gh-float 4.5s ease-in-out infinite;
+}
+
+.gh-float-slow {
+  animation: gh-float-slow 6s ease-in-out infinite;
+}
+
 @keyframes caret-blink {
   0%,
   100% {

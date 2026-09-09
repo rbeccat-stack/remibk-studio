@@ -1,5 +1,6 @@
 import { hero } from '@/lib/content'
 import Typewriter from '@/components/Typewriter'
+import GrowthIllustration from '@/components/GrowthIllustration'
 
 export default function Hero() {
   return (
@@ -38,32 +39,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right column — hero card */}
-        <div className="border border-terracotta/40 rounded-2xl p-6 bg-card-light card-hover">
-          <p className="text-xs font-sans font-semibold uppercase tracking-widest text-muted mb-4">
-            {hero.card.title}
-          </p>
-
-          <ul className="flex flex-col gap-3 mb-6">
-            {hero.card.checklist.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="mt-1 w-4 h-4 rounded-full border-2 border-sage flex items-center justify-center shrink-0">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sage" />
-                </span>
-                <span className="text-sm font-sans text-text-main">{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="border-t border-border-dark/10 pt-4 grid grid-cols-3 gap-2 text-center">
-            {hero.card.stats.map((s) => (
-              <div key={s.label}>
-                <div className="font-serif font-bold text-2xl text-terracotta">{s.value}</div>
-                <div className="text-[10px] font-sans text-muted leading-tight">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Right column — growth hacking illustration */}
+        <GrowthIllustration />
       </div>
     </section>
   )

@@ -21,21 +21,6 @@ export const hero = {
   meta: "Freelance ou intégré à votre équipe · Lyon",
   ctaPrimary: { label: "Me contacter", href: "mailto:remibekka@gmail.com" },
   ctaSecondary: { label: "Voir mes réalisations", href: "#realisations" },
-  card: {
-    title: "Ce que j'apporte",
-    checklist: [
-      "Scraping B2B et enrichissement de contacts (10k+ livrés)",
-      "Automatisations Make accessibles à toute l'équipe",
-      "Agents IA orchestrés sur VPS, 7 APIs connectées",
-      "Connexions API publiques (INSEE SIRENE, Pappers, Apollo)",
-      "Intégration et préparation CRM HubSpot",
-    ],
-    stats: [
-      { value: "10k+", label: "contacts B2B enrichis" },
-      { value: "3-4h", label: "→ 20 min avec agent Hermes" },
-      { value: "7", label: "APIs orchestrées en production" },
-    ],
-  },
 }
 
 export const marqueeText =
