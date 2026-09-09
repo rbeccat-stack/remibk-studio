@@ -283,4 +283,5 @@ export const contact = {
 
 export const footer = {
   copy: "© 2026 Rémi BECCAT — Growth Marketer basé à Lyon.",
+  linkedin: "https://www.linkedin.com/in/remibeccat/",
 }
