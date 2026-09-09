@@ -15,11 +15,7 @@ export const nav = {
 
 export const hero = {
   title: "Growth Marketer",
-  subtitle:
-    "Je construis des infrastructures growth opérationnelles dès le premier mois : scraping B2B, automatisations Make, agents IA orchestrés. Des systèmes que vos équipes peuvent utiliser sans dépendre d'un profil technique.",
-  ctaPrimary: { label: "Me contacter par email", href: "mailto:remibekka@gmail.com" },
-  ctaSecondary: { label: "Voir mon LinkedIn", href: "https://linkedin.com/in/remibeccat" },
-  ctaTertiary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
+  keywords: ["Scraping", "Automatisation", "Data", "IA"],
   card: {
     title: "Ce que j'apporte",
     checklist: [

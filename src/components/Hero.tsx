@@ -1,4 +1,5 @@
 import { hero } from '@/lib/content'
+import Typewriter from '@/components/Typewriter'
 
 export default function Hero() {
   return (
@@ -10,30 +11,10 @@ export default function Hero() {
             {hero.title}
           </h1>
 
-          <p className="text-muted text-base md:text-lg leading-relaxed max-w-lg">
-            {hero.subtitle}
-          </p>
-
-          <div className="flex flex-col sm:flex-row flex-wrap gap-3 pt-2">
-            <a
-              href={hero.ctaPrimary.href}
-              className="inline-flex items-center px-6 py-3 rounded-full bg-terracotta text-white font-sans font-semibold text-sm hover:bg-terracotta-dark transition-colors"
-            >
-              {hero.ctaPrimary.label}
-            </a>
-            <a
-              href={hero.ctaSecondary.href}
-              className="inline-flex items-center px-6 py-3 rounded-full border border-border-dark/25 text-text-main font-sans font-semibold text-sm hover:bg-card-light transition-colors"
-            >
-              {hero.ctaSecondary.label}
-            </a>
-            <a
-              href={hero.ctaTertiary.href}
-              className="inline-flex items-center px-6 py-3 rounded-full border border-sage/40 text-sage font-sans font-semibold text-sm hover:bg-card-light transition-colors"
-            >
-              {hero.ctaTertiary.label}
-            </a>
-          </div>
+          <Typewriter
+            words={hero.keywords}
+            className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-terracotta leading-tight"
+          />
         </div>
 
         {/* Right column — hero card */}
