@@ -70,9 +70,11 @@ export const features = [
 // ─────────────────────────────────────────────────────────────────────────
 export const realisations = [
   {
-    title: "Scraping B2B automatisé de bout en bout",
+    title: "Trouver des prospects automatiquement",
     type: "Workflow",
     context: "Réalisé chez Locabri",
+    summary:
+      "Un système qui va chercher les bons contacts B2B à la place de l'équipe commerciale.",
     problem:
       "L'équipe commerciale montait ses listes de prospection à la main, cible par cible, plusieurs heures par semaine.",
     result:
@@ -86,9 +88,11 @@ export const realisations = [
     accent: "terracotta" as const,
   },
   {
-    title: "Enrichissement et dédoublonnage de contacts",
+    title: "Nettoyer et fiabiliser une base de contacts",
     type: "Workflow",
     context: "Réalisé chez Locabri",
+    summary:
+      "Les fichiers de prospects arrivaient incomplets et en double — ce système les corrige tout seul.",
     problem:
       "Les fichiers prospects arrivaient incomplets et en double, avec des SIRET manquants ou erronés.",
     result:
@@ -102,9 +106,11 @@ export const realisations = [
     accent: "sage" as const,
   },
   {
-    title: "Vérification d'emails conforme RGPD",
+    title: "Vérifier des emails avant une campagne",
     type: "Workflow + interface",
     context: "Réalisé chez Locabri",
+    summary:
+      "Un outil simple pour contrôler en quelques minutes que les adresses d'un fichier sont valides et exploitables.",
     problem:
       "Aucun moyen simple de contrôler la validité des adresses et la base légale d'un fichier avant une campagne.",
     result:
@@ -118,9 +124,11 @@ export const realisations = [
     accent: "terracotta" as const,
   },
   {
-    title: "Dashboard Excel de pilotage de la prospection",
+    title: "Piloter la prospection en un coup d'œil",
     type: "Dashboard",
     context: "Réalisé chez Locabri",
+    summary:
+      "Un tableau de bord qui rassemble tous les chiffres de prospection au même endroit, à jour automatiquement.",
     problem:
       "Le suivi des volumes contactés et des retours se faisait dans des fichiers éparpillés, sans vue d'ensemble.",
     result:
@@ -134,9 +142,11 @@ export const realisations = [
     accent: "sage" as const,
   },
   {
-    title: "Agent IA d'enrichissement multi-sources (Hermes)",
+    title: "Un agent IA qui qualifie les prospects",
     type: "Agent IA",
     context: "Projet personnel / R&D",
+    summary:
+      "Ce qui prenait 3 à 4 heures de recherche manuelle se fait maintenant tout seul, 24 heures sur 24.",
     problem:
       "Qualifier un prospect demandait 3-4 h de recherche manuelle répartie sur une dizaine d'outils.",
     result:
@@ -150,9 +160,11 @@ export const realisations = [
     accent: "terracotta" as const,
   },
   {
-    title: "Guitar Flow — de la recherche utilisateur au produit lancé",
+    title: "Guitar Flow — d'une idée à un produit vendu",
     type: "Projet complet",
     context: "Projet personnel",
+    summary:
+      "Un produit physique pensé, testé puis lancé à partir des vrais besoins des guitaristes.",
     problem:
       "Vérifier qu'un besoin réel existait chez les guitaristes avant d'investir dans un produit physique.",
     result:
@@ -240,7 +252,7 @@ export const about = {
   emoji: "👋",
   initials: "RB",
   paragraphs: [
-    "Créatif dans l'âme, jamais à court d'idées, pour autant analytique et orienté data, j'ai naturellement atterri dans le growth marketing. Ce métier offre la jonction parfaite entre l'envie de tester des idées et le besoin de mesurer, comprendre ce qui a fonctionné, avant de le reproduire.",
+    "Créatif dans l'âme, jamais à court d'idées, pour autant analytique et orienté data, j'ai naturellement atterri dans le growth marketing. Ce métier est la jonction parfaite entre l'envie de tester des idées et le besoin de mesurer, comprendre ce qui a fonctionné pour le reproduire.",
     "En pratique, ça donne des choses qui n'ont pas l'air d'avoir de rapport entre elles. Un dashboard pour qu'une équipe arrête de piloter à l'aveugle. Une automatisation qui fait disparaître un process que tout le monde subissait. Une base de contacts allée chercher là où personne ne regardait. C'est pourtant le même geste à chaque fois : comprendre le problème avant de choisir l'outil.",
     "Chez Locabri, l'équipe montait ses listes de prospection à la main. Plutôt que d'en monter une de plus, je suis allé regarder les clients déjà signés pour voir ce qu'ils avaient en commun. J'ai reconstruit tout le ciblage à partir de là, ce qui a donné environ 10 000 contacts qualifiés, sans saisie manuelle.",
     "L'IA fait partie de mon quotidien de travail, pas comme sujet de veille mais comme outil que j'utilise tous les jours. C'est aussi une compétence que j'aime transmettre. Montrer à une équipe ce qu'elle peut réellement déléguer à une machine fait souvent gagner plus de temps que le dernier outil à la mode.",
