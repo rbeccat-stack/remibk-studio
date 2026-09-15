@@ -240,7 +240,7 @@ export const about = {
   emoji: "👋",
   initials: "RB",
   paragraphs: [
-    "Je viens du marketing, je suis passé par l'analyse de données, et j'ai atterri dans le growth. C'est le seul métier où mes deux réflexes servent en même temps : l'envie de tester des idées et d'imaginer ce qu'on pourrait faire, et le besoin de mesurer, de comprendre pourquoi ça a marché, et de pouvoir le refaire.",
+    "Créatif dans l'âme, jamais à court d'idées, et pour autant analytique et orienté data, j'ai naturellement atterri dans le growth marketing. Ce métier offre la jonction parfaite entre l'envie de tester des idées et le besoin de mesurer, comprendre ce qui a fonctionné, avant de le reproduire.",
     "En pratique, ça donne des choses qui n'ont pas l'air d'avoir de rapport entre elles. Un dashboard pour qu'une équipe arrête de piloter à l'aveugle. Une automatisation qui fait disparaître un process que tout le monde subissait. Une base de contacts allée chercher là où personne ne regardait. C'est pourtant le même geste à chaque fois : comprendre le problème avant de choisir l'outil.",
     "Chez Locabri, l'équipe montait ses listes de prospection à la main. Plutôt que d'en monter une de plus, je suis allé regarder les clients déjà signés pour voir ce qu'ils avaient en commun. J'ai reconstruit tout le ciblage à partir de là, ce qui a donné environ 10 000 contacts qualifiés, sans saisie manuelle.",
     "L'IA fait partie de mon quotidien de travail, pas comme sujet de veille mais comme outil que j'utilise tous les jours. C'est aussi une compétence que j'aime transmettre. Montrer à une équipe ce qu'elle peut réellement déléguer à une machine fait souvent gagner plus de temps que le dernier outil à la mode.",
