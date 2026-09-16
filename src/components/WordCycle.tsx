@@ -7,11 +7,14 @@ type WordCycleProps = {
   className?: string
   /** Temps d'affichage d'un mot, en ms. */
   interval?: number
+  /** Suffixe collé à chaque mot (ex. un point final). */
+  suffix?: string
 }
 
-// Le mot courant reste affiché jusqu'à ce que le suivant le remplace :
-// la ligne n'est jamais vide, contrairement à un effet machine à écrire.
-export default function WordCycle({ words, className, interval = 2400 }: WordCycleProps) {
+// Tous les mots sont empilés dans une même cellule de grille : le bloc garde
+// la largeur du mot le plus long, rien ne bouge autour, et le mot courant
+// reste affiché jusqu'à ce que le suivant le remplace.
+export default function WordCycle({ words, className, interval = 2400, suffix = '' }: WordCycleProps) {
   const [reduced, setReduced] = useState(false)
   const [index, setIndex] = useState(0)
 
@@ -30,15 +33,30 @@ export default function WordCycle({ words, className, interval = 2400 }: WordCyc
   }, [reduced, words.length, interval])
 
   if (reduced) {
-    return <span className={className}>{words.join(' · ')}</span>
+    return (
+      <span className={className}>
+        {words.join(', ')}
+        {suffix}
+      </span>
+    )
   }
 
   return (
-    <span className={className}>
-      <span key={index} aria-hidden="true" className="word-cycle-in inline-block">
-        {words[index]}
+    <span className={`inline-grid ${className ?? ''}`}>
+      {words.map((word, i) => (
+        <span
+          key={word}
+          aria-hidden="true"
+          className={`[grid-area:1/1] whitespace-nowrap ${i === index ? 'word-cycle-in' : 'invisible'}`}
+        >
+          {word}
+          {suffix}
+        </span>
+      ))}
+      <span className="sr-only">
+        {words.join(', ')}
+        {suffix}
       </span>
-      <span className="sr-only">{words.join(', ')}</span>
     </span>
   )
 }

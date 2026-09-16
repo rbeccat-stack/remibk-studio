@@ -16,9 +16,8 @@ export const nav = {
 
 export const hero = {
   title: "Growth Marketer",
-  leadStart: "Je construis des systèmes de",
-  keywords: ["Scraping", "Automatisation", "Data", "IA"],
-  leadEnd: "utilisables par toute l'équipe.",
+  lead: "Un savant mélange de",
+  keywords: ["Scraping", "Data", "Automatisation", "IA"],
   meta: "Disponible immédiatement · Lyon",
   ctaPrimary: { label: "Réserver un call · 30 min", href: "https://cal.com/remi-beccat-32m3gf/30min" },
   ctaSecondary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
@@ -293,8 +292,8 @@ export const toolsIntro =
 // Réponses : un tableau de paragraphes. Une ligne qui commence par "• "
 // s'affiche comme puce.
 export const faqSection = {
-  title: "Avant que vous ne les posiez.",
-  underlineWord: "posiez",
+  title: "Avant que tu me les poses.",
+  underlineWord: "les poses",
   subtitle: "7 réponses pour gagner 5 minutes au premier échange.",
 }
 
@@ -330,14 +329,14 @@ export const faqs: { q: string; a: string[] }[] = [
     ],
   },
   {
-    q: "Vous codez en quoi, exactement ?",
+    q: "Tu codes en quoi, exactement ?",
     a: [
       "À l'aise avec HTML/CSS et le scripting Python via LLM : je lis, j'adapte et je déploie, sans prétendre être développeur. Pas de JavaScript en production.",
       "Ce que je sais faire sans dev : API REST, webhooks, Make, n8n, Airtable, déploiement sur VPS. L'agent Hermes — 7 APIs orchestrées, exécution planifiée 24/7 — a été construit et mis en production sans développeur.",
     ],
   },
   {
-    q: "Vous démarrez quand ?",
+    q: "Tu démarres quand ?",
     a: ["Immédiatement. Pas de préavis."],
   },
   {
@@ -361,7 +360,7 @@ export const about = {
 export const contact = {
   title: "On en parle 30 minutes ?",
   subtitle:
-    "Pas de pitch commercial. Trente minutes pour se jauger mutuellement : vous, moi, le poste. Si ça matche, on enchaîne. Sinon, au moins on aura été clairs.",
+    "Pas de pitch commercial. Trente minutes pour se jauger mutuellement : toi, moi, le poste. Si ça matche, on enchaîne. Sinon, au moins on aura été clairs.",
   availability: {
     lead: "Je suis",
     highlight: "dispo ASAP.",

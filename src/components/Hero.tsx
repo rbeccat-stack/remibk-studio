@@ -13,14 +13,14 @@ export default function Hero() {
             {hero.title}
           </h1>
 
-          <div className="mt-5 flex flex-col gap-0.5">
-            <p className="text-muted text-base md:text-lg leading-snug">{hero.leadStart}</p>
-            <WordCycle
-              words={hero.keywords}
-              className="block font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-terracotta leading-[1.2]"
-            />
-            <p className="text-muted text-base md:text-lg leading-snug">{hero.leadEnd}</p>
-          </div>
+          <p className="mt-5 font-sans text-xl md:text-2xl text-text-main leading-snug">
+            {hero.lead}
+          </p>
+          <WordCycle
+            words={hero.keywords}
+            suffix="."
+            className="mt-1 max-w-full font-serif font-black text-[clamp(2rem,9vw,3.5rem)] text-terracotta leading-[1.05] tracking-tight"
+          />
 
           <div className="mt-8">
             <PillBadge accent="sage">{hero.meta}</PillBadge>
