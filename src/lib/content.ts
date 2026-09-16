@@ -142,6 +142,24 @@ export const realisations = [
     accent: "sage" as const,
   },
   {
+    title: "Cartographier les prospects B2B à 15 minutes à pied",
+    type: "Carte interactive",
+    context: "Réalisé pour Company_Name",
+    summary:
+      "Une carte qui transforme une adresse en liste priorisée d'entreprises à démarcher autour d'elle.",
+    problem:
+      "Company_Name changeait de locaux et voulait savoir quelles entreprises cibler autour de sa nouvelle adresse, sans aucune base de prospection existante sur cette zone.",
+    result:
+      "99 comptes qualifiés sur 466 identifiés dans le périmètre, priorisés par effectif et type d'interlocuteur — prêts à démarcher.",
+    how: [
+      "Extraction du périmètre via l'API Recherche d'entreprises (Sirene/DINUM)",
+      "Filtrage sur l'effectif réel du site et calcul de la distance à pied",
+      "Qualification manuelle du type d'interlocuteur et de la présence d'un CSE",
+      "Carte SVG interactive : filtres croisés, fiches détaillées, fond de plan dessiné à la main",
+    ],
+    accent: "terracotta" as const,
+  },
+  {
     title: "Un agent IA qui qualifie les prospects",
     type: "Agent IA",
     context: "Projet personnel / R&D",
