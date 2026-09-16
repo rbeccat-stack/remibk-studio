@@ -1,10 +1,10 @@
 import SectionTitle from '@/components/SectionTitle'
-import { contact } from '@/lib/content'
+import { contact, footer } from '@/lib/content'
 
 const channels = [
-  { label: 'Email', value: contact.email, href: `mailto:${contact.email}` },
-  { label: 'LinkedIn', value: contact.linkedinLabel, href: contact.linkedin, external: true },
-  { label: 'Téléphone', value: contact.phone, href: contact.phoneHref },
+  { icon: '✉', label: 'Email', value: contact.email, href: `mailto:${contact.email}` },
+  { icon: 'in', label: 'LinkedIn', value: contact.linkedinLabel, href: footer.linkedin, external: true },
+  { icon: '📞', label: 'Téléphone', value: contact.phone, href: contact.phoneHref },
 ]
 
 export default function Contact() {
@@ -36,12 +36,14 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="inline-flex justify-center items-center px-6 py-3 rounded-full bg-terracotta text-white font-sans font-semibold text-sm hover:bg-terracotta-dark transition-colors"
             >
+              <span aria-hidden="true" className="mr-2">{contact.ctaPrimary.emoji}</span>
               {contact.ctaPrimary.label}
             </a>
             <a
               href={contact.ctaSecondary.href}
               className="inline-flex justify-center items-center px-6 py-3 rounded-full border border-border-dark/25 text-text-main font-sans font-semibold text-sm hover:bg-bg transition-colors"
             >
+              <span aria-hidden="true" className="mr-2">{contact.ctaSecondary.emoji}</span>
               {contact.ctaSecondary.label}
             </a>
           </div>
@@ -52,19 +54,27 @@ export default function Contact() {
           {channels.map((c) => (
             <div
               key={c.label}
-              className="border border-border-dark/12 rounded-2xl bg-card-light px-5 py-4 flex items-baseline justify-between gap-6"
+              className="border border-border-dark/12 rounded-2xl bg-card-light px-5 py-4 flex items-center gap-4"
             >
-              <dt className="text-[11px] font-sans font-semibold uppercase tracking-widest text-muted">{c.label}</dt>
-              <dd className="min-w-0">
-                <a
-                  href={c.href}
-                  target={c.external ? '_blank' : undefined}
-                  rel={c.external ? 'noopener noreferrer' : undefined}
-                  className="text-sm font-sans font-medium text-text-main hover:text-terracotta transition-colors break-all"
-                >
-                  {c.value}
-                </a>
-              </dd>
+              <span
+                aria-hidden="true"
+                className="shrink-0 w-9 h-9 rounded-full bg-bg border border-border-dark/12 flex items-center justify-center text-sm font-sans font-bold text-text-main"
+              >
+                {c.icon}
+              </span>
+              <div className="min-w-0 flex flex-col gap-0.5">
+                <dt className="text-[11px] font-sans font-semibold uppercase tracking-widest text-muted">{c.label}</dt>
+                <dd>
+                  <a
+                    href={c.href}
+                    target={c.external ? '_blank' : undefined}
+                    rel={c.external ? 'noopener noreferrer' : undefined}
+                    className="text-sm font-sans font-medium text-text-main hover:text-terracotta transition-colors break-words"
+                  >
+                    {c.value}
+                  </a>
+                </dd>
+              </div>
             </div>
           ))}
         </dl>

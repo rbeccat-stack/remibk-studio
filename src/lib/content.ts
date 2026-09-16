@@ -363,17 +363,16 @@ export const contact = {
   subtitle:
     "Pas de pitch commercial. Trente minutes pour se jauger mutuellement : vous, moi, le poste. Si ça matche, on enchaîne. Sinon, au moins on aura été clairs.",
   availability: {
-    lead: "Je suis disponible",
-    highlight: "immédiatement.",
-    text: "Le créneau le plus rapide pour un call : 24 h. Si vous préférez l'écrit, écrivez-moi, je réponds dans la journée. Le CV est en téléchargement direct.",
+    lead: "Je suis",
+    highlight: "dispo ASAP.",
+    text: "Le créneau le plus rapide pour un call : 24h. Si tu préfères l'écrit, écris-moi, je réponds dans la journée. Le CV est en téléchargement direct.",
   },
-  ctaPrimary: { label: "Réserver un call · 30 min", href: "https://cal.com/remi-beccat-32m3gf/30min" },
-  ctaSecondary: { label: "Télécharger le CV · 1 page", href: "/cv-remi-beccat.pdf" },
+  ctaPrimary: { emoji: "📞", label: "Réserver un call · 30 min", href: "https://cal.com/remi-beccat-32m3gf/30min" },
+  ctaSecondary: { emoji: "↓", label: "Télécharger CV · 1 page", href: "/cv-remi-beccat.pdf" },
   email: "remibekka@gmail.com",
   phone: "06 01 72 83 47",
   phoneHref: "tel:+33601728347",
-  linkedin: "https://www.linkedin.com/in/remibeccat/",
-  linkedinLabel: "/in/remibeccat",
+  linkedinLabel: "linkedin.com/in/remibeccat",
 }
 
 export const footer = {
