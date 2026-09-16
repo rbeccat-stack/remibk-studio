@@ -10,8 +10,8 @@ export const nav = {
     { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
   ],
-  cta: "Me contacter",
-  ctaHref: "mailto:remibekka@gmail.com",
+  cta: "Réserver un call",
+  ctaHref: "https://cal.com/remi-beccat-32m3gf/30min",
 }
 
 export const hero = {
@@ -20,8 +20,8 @@ export const hero = {
   keywords: ["Scraping", "Automatisation", "Data", "IA"],
   leadEnd: "utilisables par toute l'équipe.",
   meta: "Disponible immédiatement · Lyon",
-  ctaPrimary: { label: "Me contacter", href: "mailto:remibekka@gmail.com" },
-  ctaSecondary: { label: "Voir mes réalisations", href: "#realisations" },
+  ctaPrimary: { label: "Réserver un call · 30 min", href: "https://cal.com/remi-beccat-32m3gf/30min" },
+  ctaSecondary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
 }
 
 export const features = [
@@ -361,14 +361,19 @@ export const about = {
 export const contact = {
   title: "On en parle 30 minutes ?",
   subtitle:
-    "Pas de pitch. Trente minutes pour voir si votre enjeu d'acquisition et mon profil collent — scraping B2B, automatisation, agents IA. Disponible immédiatement à Lyon, en CDI ou en freelance. Je réponds dans la journée.",
+    "Pas de pitch commercial. Trente minutes pour se jauger mutuellement : vous, moi, le poste. Si ça matche, on enchaîne. Sinon, au moins on aura été clairs.",
+  availability: {
+    lead: "Je suis disponible",
+    highlight: "immédiatement.",
+    text: "Le créneau le plus rapide pour un call : 24 h. Si vous préférez l'écrit, écrivez-moi, je réponds dans la journée. Le CV est en téléchargement direct.",
+  },
+  ctaPrimary: { label: "Réserver un call · 30 min", href: "https://cal.com/remi-beccat-32m3gf/30min" },
+  ctaSecondary: { label: "Télécharger le CV · 1 page", href: "/cv-remi-beccat.pdf" },
   email: "remibekka@gmail.com",
   phone: "06 01 72 83 47",
   phoneHref: "tel:+33601728347",
   linkedin: "https://www.linkedin.com/in/remibeccat/",
   linkedinLabel: "/in/remibeccat",
-  ctaPrimary: { label: "M'écrire un email", href: "mailto:remibekka@gmail.com?subject=Opportunit%C3%A9%20Growth%20%C3%A0%20Lyon" },
-  ctaSecondary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
 }
 
 export const footer = {

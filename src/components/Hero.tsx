@@ -29,18 +29,17 @@ export default function Hero() {
           <div className="mt-6 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-5">
             <a
               href={hero.ctaPrimary.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 rounded-full bg-terracotta text-white font-sans font-semibold text-sm hover:bg-terracotta-dark transition-colors"
             >
               {hero.ctaPrimary.label}
             </a>
             <a
               href={hero.ctaSecondary.href}
-              className="group inline-flex items-center gap-1.5 font-sans font-semibold text-sm text-text-main hover:text-terracotta transition-colors"
+              className="inline-flex items-center px-6 py-3 rounded-full border border-border-dark/25 text-text-main font-sans font-semibold text-sm hover:bg-card-light transition-colors"
             >
               {hero.ctaSecondary.label}
-              <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-0.5">
-                →
-              </span>
             </a>
           </div>
         </div>
