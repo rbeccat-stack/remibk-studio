@@ -4,11 +4,12 @@ import SectionTitle from '@/components/SectionTitle'
 import FeatureCard from '@/components/FeatureCard'
 import ProcessCard from '@/components/ProcessCard'
 import RealisationCard from '@/components/RealisationCard'
-import StackStrip from '@/components/StackStrip'
+import Toolbox from '@/components/Toolbox'
 import About from '@/components/About'
-import ContactForm from '@/components/ContactForm'
+import FAQAccordion from '@/components/FAQAccordion'
+import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
-import { realisations, features, process } from '@/lib/content'
+import { realisations, features, process, faqSection } from '@/lib/content'
 
 export default function Home() {
   return (
@@ -70,9 +71,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Stack */}
+        {/* Outils */}
         <div className="bg-bg-soft">
-          <StackStrip />
+          <Toolbox />
         </div>
 
         {/* À propos */}
@@ -80,8 +81,25 @@ export default function Home() {
           <About />
         </div>
 
+        {/* FAQ */}
+        <section id="faq">
+          <div className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24">
+            <SectionTitle
+              title={faqSection.title}
+              underlineWord={faqSection.underlineWord}
+              subtitle={faqSection.subtitle}
+              accent="terracotta"
+            />
+            <div className="mt-10 max-w-3xl">
+              <FAQAccordion />
+            </div>
+          </div>
+        </section>
+
         {/* Contact */}
-        <ContactForm />
+        <div className="bg-bg-soft">
+          <Contact />
+        </div>
       </main>
 
       <Footer />

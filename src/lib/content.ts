@@ -5,12 +5,13 @@ export const nav = {
     { label: "Apports", href: "#apports" },
     { label: "Réalisations", href: "#realisations" },
     { label: "Méthode", href: "#methode" },
-    { label: "Stack", href: "#stack" },
+    { label: "Outils", href: "#outils" },
     { label: "À propos", href: "#apropos" },
+    { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
   ],
-  cta: "Télécharger mon CV",
-  ctaHref: "/cv-remi-beccat.pdf",
+  cta: "Me contacter",
+  ctaHref: "mailto:remibekka@gmail.com",
 }
 
 export const hero = {
@@ -18,13 +19,10 @@ export const hero = {
   leadStart: "Je construis des systèmes de",
   keywords: ["Scraping", "Automatisation", "Data", "IA"],
   leadEnd: "utilisables par toute l'équipe.",
-  meta: "Freelance ou intégré à votre équipe · Lyon",
+  meta: "Disponible immédiatement · Lyon",
   ctaPrimary: { label: "Me contacter", href: "mailto:remibekka@gmail.com" },
   ctaSecondary: { label: "Voir mes réalisations", href: "#realisations" },
 }
-
-export const marqueeText =
-  "GROWTH OPS — SCRAPING B2B — AUTOMATISATION MAKE — AGENTS IA — ENRICHISSEMENT CONTACTS — WORKFLOWS MULTI-ÉTAPES — API INSEE SIRENE — PAPPERS — APOLLO — HUBSPOT — SALES NAVIGATOR — PHAROW — EVABOOT — VPS 24/7 — ORCHESTRATION MULTI-APIS — LYON — CDI —"
 
 export const features = [
   {
@@ -63,10 +61,8 @@ export const features = [
 ]
 
 // ─────────────────────────────────────────────────────────────────────────
-// SECTION FICTIVE — livrables extrapolés pour caler la structure et le design.
-// À remplacer par les vraies réalisations. Les valeurs `result` (et les [X])
-// sont des placeholders à confirmer avant mise en ligne.
 // Gabarit : problem + result = lecture rapide / how = niveau technique.
+// Ne publier ici que des chiffres défendables en entretien.
 // ─────────────────────────────────────────────────────────────────────────
 export const realisations = [
   {
@@ -78,7 +74,7 @@ export const realisations = [
     problem:
       "L'équipe commerciale montait ses listes de prospection à la main, cible par cible, plusieurs heures par semaine.",
     result:
-      "≈ 10 000 contacts collectés en autonomie, sans saisie manuelle — [X] h/semaine rendues à l'équipe.",
+      "≈ 10 000 contacts collectés en autonomie, sans saisie manuelle — plusieurs heures par semaine rendues à l'équipe commerciale.",
     how: [
       "Scénario Make déclenché sur une liste de critères (secteur, taille, zone)",
       "Chaînage Sales Navigator → Pharow → Evaboot pour l'extraction",
@@ -96,7 +92,7 @@ export const realisations = [
     problem:
       "Les fichiers prospects arrivaient incomplets et en double, avec des SIRET manquants ou erronés.",
     result:
-      "Base fiabilisée à [X] %, doublons éliminés, chaque contact rattaché à une entreprise vérifiée.",
+      "Base fiabilisée : doublons éliminés, chaque contact rattaché à une entreprise vérifiée par son SIRET.",
     how: [
       "Rapprochement SIRET via l'API INSEE SIRENE",
       "Complétion des données société (effectif, code NAF, adresse)",
@@ -114,7 +110,7 @@ export const realisations = [
     problem:
       "Aucun moyen simple de contrôler la validité des adresses et la base légale d'un fichier avant une campagne.",
     result:
-      "Contrôle ramené à quelques minutes, [X] fichiers assainis avant envoi — outil déployé pour l'équipe.",
+      "Contrôle ramené à quelques minutes, chaque fichier assaini avant envoi — outil déployé et utilisé par l'équipe.",
     how: [
       "Interface de dépôt de fichier utilisable sans compétence technique",
       "Vérification syntaxe, domaine et délivrabilité de chaque adresse",
@@ -144,11 +140,11 @@ export const realisations = [
   {
     title: "Cartographier les prospects B2B à 15 minutes à pied",
     type: "Carte interactive",
-    context: "Réalisé pour Company_Name",
+    context: "Réalisé pour un client (anonymisé)",
     summary:
       "Une carte qui transforme une adresse en liste priorisée d'entreprises à démarcher autour d'elle.",
     problem:
-      "Company_Name changeait de locaux et voulait savoir quelles entreprises cibler autour de sa nouvelle adresse, sans aucune base de prospection existante sur cette zone.",
+      "L'entreprise changeait de locaux et voulait savoir quelles sociétés démarcher autour de sa nouvelle adresse, sans aucune base de prospection existante sur cette zone.",
     result:
       "99 comptes qualifiés sur 466 identifiés dans le périmètre, priorisés par effectif et type d'interlocuteur — prêts à démarcher.",
     how: [
@@ -225,43 +221,131 @@ export const process = [
   },
 ]
 
-export const stack = [
-  "Sales Navigator",
-  "Pharow",
-  "Evaboot",
-  "Societeinfo",
-  "HubSpot",
-  "Make",
-  "n8n",
-  "Airtable",
-  "Notion",
-  "Claude",
-  "Claude Code",
-  "Cursor",
-  "Figma",
-  "Excel",
+// Niveaux : 3 = Autonome (j'ai livré avec), 2 = Opérationnel (utilisé en
+// production), 1 = Notions (je sais où chercher). Pas de pourcentage inventé.
+export const toolLevels = {
+  3: { label: "Autonome", hint: "j'ai livré avec" },
+  2: { label: "Opérationnel", hint: "utilisé en production" },
+  1: { label: "Notions", hint: "je sais où chercher" },
+} as const
+
+export type ToolLevel = keyof typeof toolLevels
+
+export const toolGroups: {
+  title: string
+  tag: string
+  accent: "terracotta" | "sage"
+  tools: { name: string; level: ToolLevel }[]
+}[] = [
+  {
+    title: "Prospection & données B2B",
+    tag: "Cœur de métier",
+    accent: "terracotta",
+    tools: [
+      { name: "Sales Navigator", level: 3 },
+      { name: "Pharow", level: 3 },
+      { name: "Evaboot", level: 3 },
+      { name: "Societeinfo", level: 3 },
+      { name: "API INSEE Sirene", level: 3 },
+      { name: "Pappers", level: 3 },
+    ],
+  },
+  {
+    title: "Automatisation & CRM",
+    tag: "En production",
+    accent: "sage",
+    tools: [
+      { name: "Make", level: 3 },
+      { name: "HubSpot", level: 2 },
+      { name: "n8n", level: 2 },
+      { name: "Airtable", level: 2 },
+      { name: "Brevo", level: 2 },
+      { name: "Twilio", level: 2 },
+    ],
+  },
+  {
+    title: "Agents & IA",
+    tag: "Focus actuel",
+    accent: "terracotta",
+    tools: [
+      { name: "Claude", level: 3 },
+      { name: "Claude Code", level: 3 },
+      { name: "Apollo · RocketReach (API)", level: 3 },
+      { name: "Cursor", level: 2 },
+      { name: "Python via LLM", level: 1 },
+    ],
+  },
+  {
+    title: "Pilotage & design",
+    tag: "Support",
+    accent: "sage",
+    tools: [
+      { name: "Excel", level: 3 },
+      { name: "Notion", level: 3 },
+      { name: "Figma", level: 2 },
+    ],
+  },
 ]
 
-export const faqs = [
+export const toolsIntro =
+  "Trois niveaux, pas de pourcentage inventé. Autonome : j'ai livré un système avec. Opérationnel : je l'ai utilisé en production. Notions : je sais où aller chercher."
+
+// Réponses : un tableau de paragraphes. Une ligne qui commence par "• "
+// s'affiche comme puce.
+export const faqSection = {
+  title: "Avant que vous ne les posiez.",
+  underlineWord: "posiez",
+  subtitle: "7 réponses pour gagner 5 minutes au premier échange.",
+}
+
+export const faqs: { q: string; a: string[] }[] = [
   {
-    q: "Quel type de poste recherches-tu ?",
-    a: "Un CDI Growth Ops à Lyon, disponible en septembre 2026. Je cherche une équipe qui a des besoins concrets en scraping B2B, automatisation ou agents IA — pas un poste où je vais faire du reporting Looker Studio.",
+    q: "Pourquoi un CDI et pas du freelance ?",
+    a: [
+      "Je priorise le CDI pour la stabilité, la durée et la montée en compétences rapide. Le vrai impact sur une stack growth arrive après 6 à 12 mois : on connaît les vrais cas tordus, on construit avec l'équipe, on mesure ce qui bouge.",
+      "Cela dit, je suis ouvert au freelance si le chantier est précis et le périmètre clair.",
+    ],
   },
   {
-    q: "Quelle est ta zone de recherche ?",
-    a: "Lyon uniquement. Startup, scale-up, SaaS, industrie B2B — peu importe le secteur, ce qui compte c'est que l'équipe ait un vrai enjeu d'acquisition à résoudre.",
+    q: "Ce que je ne fais pas",
+    a: [
+      "Je préfère le dire en premier :",
+      "• Pas de reporting pur. Un poste où je passe mes journées dans Looker Studio sans rien construire, ce n'est pas pour moi.",
+      "• Je ne suis pas développeur. Python via LLM quand il le faut, pas de JavaScript en production. Je monte en compétences si besoin.",
+      "• Pas de management pour l'instant : je n'en ai pas encore eu l'occasion.",
+      "• En revanche, je me débrouille sans dev avec les API, les webhooks, Make, n8n et les outils no-code — les 7 APIs de l'agent Hermes tournent sans développeur.",
+      "Si un point est bloquant, autant le savoir maintenant.",
+    ],
   },
   {
-    q: "Sur quels sujets peux-tu être opérationnel dès le premier mois ?",
-    a: "Scraping B2B et enrichissement de contacts (j'ai livré 10 000 contacts chez Locabri), automatisations Make accessibles à l'équipe, et construction d'agents IA sur VPS. Sur HubSpot : import, gestion contacts, pipelines.",
+    q: "Salaire attendu ?",
+    a: [
+      "À discuter franchement dès le premier échange, en fonction du périmètre, de l'autonomie attendue et de la stack. Je préfère que ce soit clair tout de suite.",
+    ],
   },
   {
-    q: "Quels outils maîtrises-tu vraiment ?",
-    a: "Autonome sur : Sales Navigator, Pharow, Evaboot, Societeinfo, API INSEE SIRENE, Make, agents IA (Pappers, Apollo, RocketReach, Notion orchestrés). Opérationnel sur : HubSpot, n8n, Airtable, Brevo, Twilio. Python si besoin via LLM, déploiement autonome.",
+    q: "Géographie · télétravail ?",
+    a: [
+      "Basé à Lyon. Présentiel ou hybride, l'un comme l'autre me va. Full remote possible si l'équipe est structurée pour.",
+    ],
   },
   {
-    q: "Qu'est-ce qui te différencie d'un growth classique ?",
-    a: "La plupart des growth exécutent des tactiques. Moi je construis les systèmes qui permettent à l'équipe d'exécuter plus vite et sans dépendre d'un profil technique. Mes outils sont documentés, déployés, et utilisés par d'autres — pas des scripts qui dorment sur mon ordi.",
+    q: "Vous codez en quoi, exactement ?",
+    a: [
+      "À l'aise avec HTML/CSS et le scripting Python via LLM : je lis, j'adapte et je déploie, sans prétendre être développeur. Pas de JavaScript en production.",
+      "Ce que je sais faire sans dev : API REST, webhooks, Make, n8n, Airtable, déploiement sur VPS. L'agent Hermes — 7 APIs orchestrées, exécution planifiée 24/7 — a été construit et mis en production sans développeur.",
+    ],
+  },
+  {
+    q: "Vous démarrez quand ?",
+    a: ["Immédiatement. Pas de préavis."],
+  },
+  {
+    q: "Pourquoi ce portfolio ?",
+    a: [
+      "Pour deux raisons honnêtes : monter en compétences sur Claude et les outils IA, et me démarquer des autres candidats. Je voulais voir de quoi l'IA est capable, et de quoi je suis capable avec elle.",
+      "C'est aussi la preuve concrète de ce que j'annonce : je construis des choses qui tournent, avec les outils du moment.",
+    ],
   },
 ]
 
@@ -271,28 +355,20 @@ export const about = {
   initials: "RB",
   paragraphs: [
     "Créatif dans l'âme, jamais à court d'idées, pour autant analytique et orienté data, j'ai naturellement atterri dans le growth marketing. Ce métier est la jonction parfaite entre l'envie de tester des idées et le besoin de mesurer, comprendre ce qui a fonctionné pour le reproduire.",
-    "En pratique, ça donne des choses qui n'ont pas l'air d'avoir de rapport entre elles. Un dashboard pour qu'une équipe arrête de piloter à l'aveugle. Une automatisation qui fait disparaître un process que tout le monde subissait. Une base de contacts allée chercher là où personne ne regardait. C'est pourtant le même geste à chaque fois : comprendre le problème avant de choisir l'outil.",
-    "Chez Locabri, l'équipe montait ses listes de prospection à la main. Plutôt que d'en monter une de plus, je suis allé regarder les clients déjà signés pour voir ce qu'ils avaient en commun. J'ai reconstruit tout le ciblage à partir de là, ce qui a donné environ 10 000 contacts qualifiés, sans saisie manuelle.",
-    "L'IA fait partie de mon quotidien de travail, pas comme sujet de veille mais comme outil que j'utilise tous les jours. C'est aussi une compétence que j'aime transmettre. Montrer à une équipe ce qu'elle peut réellement déléguer à une machine fait souvent gagner plus de temps que le dernier outil à la mode.",
-    "Je cherche aujourd'hui une équipe qui a un vrai enjeu d'acquisition. En CDI si vous recrutez, en freelance si vous avez un chantier précis à débloquer. Je suis à Lyon, et j'ai passé 18 mois en environnement anglophone, donc travailler en anglais ne me pose pas de problème. Ce qui m'intéresse le moins, en revanche, c'est de refaire ce qui existe déjà.",
   ],
 }
 
 export const contact = {
-  title: "Échangeons sur une opportunité CDI.",
+  title: "On en parle 30 minutes ?",
   subtitle:
-    "Je recherche un CDI Growth Ops à Lyon à partir de septembre 2026. Si vous avez un enjeu concret en scraping B2B, automatisation ou agents IA — parlons-en.",
+    "Pas de pitch. Trente minutes pour voir si votre enjeu d'acquisition et mon profil collent — scraping B2B, automatisation, agents IA. Disponible immédiatement à Lyon, en CDI ou en freelance. Je réponds dans la journée.",
   email: "remibekka@gmail.com",
   phone: "06 01 72 83 47",
-  location: "Lyon uniquement",
-  availability: "À partir de septembre 2026",
-  recherche: "CDI Growth Ops",
-  project: "guitarflow.fr",
-  ctas: [
-    { label: "Me contacter par email", href: "mailto:remibekka@gmail.com", style: "primary" as const },
-    { label: "Voir mon LinkedIn", href: "https://linkedin.com/in/remibeccat", style: "outline" as const },
-    { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf", style: "outline" as const },
-  ],
+  phoneHref: "tel:+33601728347",
+  linkedin: "https://www.linkedin.com/in/remibeccat/",
+  linkedinLabel: "/in/remibeccat",
+  ctaPrimary: { label: "M'écrire un email", href: "mailto:remibekka@gmail.com?subject=Opportunit%C3%A9%20Growth%20%C3%A0%20Lyon" },
+  ctaSecondary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
 }
 
 export const footer = {

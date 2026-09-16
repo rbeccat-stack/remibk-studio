@@ -15,14 +15,15 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: "Rémi BECCAT — Growth Engineer Junior à Lyon",
+  title: "Rémi BECCAT — Growth Marketer à Lyon · Scraping, automatisation, IA",
   description:
-    "Rémi BECCAT recherche un CDI Growth Engineer Junior à Lyon à partir de septembre 2026. Profil automatisation, IA, scraping B2B, data, dashboards et marketing operations.",
+    "Rémi BECCAT, Growth Marketer à Lyon, disponible immédiatement en CDI ou freelance. Je construis des systèmes de scraping B2B, d'automatisation Make et d'agents IA utilisables par toute l'équipe.",
   openGraph: {
-    title: "Rémi BECCAT — Growth Engineer Junior",
+    title: "Rémi BECCAT — Growth Marketer à Lyon",
     description:
-      "Growth Engineer Junior basé à Lyon, spécialisé en automatisation, IA opérationnelle, scraping B2B, data, dashboards et acquisition. Disponible à partir de septembre 2026 pour un CDI.",
+      "Systèmes de scraping B2B, automatisation et agents IA utilisables par toute l'équipe. 10 000 contacts qualifiés livrés, un agent IA en production 24/7. Disponible immédiatement.",
     type: "website",
+    locale: "fr_FR",
   },
 }
 

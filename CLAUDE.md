@@ -36,7 +36,7 @@ Loaded via `next/font/google` in `src/app/layout.tsx` as CSS variables (`--font-
 
 ### Component rules
 
-- All components are **Server Components** by default except `Header`, `FAQAccordion`, and `ContactForm` which are `'use client'` (burger menu state, accordion state, form state)
+- All components are **Server Components** by default except `Header`, `FAQAccordion`, and `WordCycle` which are `'use client'` (burger menu state, accordion state, hero word rotation)
 - Accent variants (`terracotta` / `sage` / `purple`) are typed as string literals — always use `as const` when defining them in `content.ts`
 
 ### Responsive breakpoints in use

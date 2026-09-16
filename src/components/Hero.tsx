@@ -1,5 +1,5 @@
 import { hero } from '@/lib/content'
-import Typewriter from '@/components/Typewriter'
+import WordCycle from '@/components/WordCycle'
 import GrowthIllustration from '@/components/GrowthIllustration'
 import PillBadge from '@/components/PillBadge'
 
@@ -15,7 +15,7 @@ export default function Hero() {
 
           <div className="mt-5 flex flex-col gap-0.5">
             <p className="text-muted text-base md:text-lg leading-snug">{hero.leadStart}</p>
-            <Typewriter
+            <WordCycle
               words={hero.keywords}
               className="block font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-terracotta leading-[1.2]"
             />
@@ -23,7 +23,7 @@ export default function Hero() {
           </div>
 
           <div className="mt-8">
-            <PillBadge>{hero.meta}</PillBadge>
+            <PillBadge accent="sage">{hero.meta}</PillBadge>
           </div>
 
           <div className="mt-6 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-5">

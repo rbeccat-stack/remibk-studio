@@ -114,6 +114,8 @@ export default function RealisationCard({
             {link && (
               <a
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`mt-6 inline-flex items-center gap-1.5 font-sans text-sm font-semibold ${accentText} underline-offset-4 hover:underline`}
               >
                 {link.label} <span aria-hidden>→</span>
