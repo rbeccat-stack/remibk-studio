@@ -53,9 +53,9 @@ Loaded via `next/font/google` in `src/app/layout.tsx` as CSS variables (`--font-
 
 ### Responsive breakpoints in use
 
-- Mobile-first; `sm:` (640px) for stacked→row CTA buttons and 2-col process grid
-- `md:` (768px) for main layout switches (2-col hero, 3-col features, 4-col process)
-- `lg:` (1024px) for hero font size only
+- Mobile-first; `sm:` (640px) for stacked→row CTA buttons, 2-col features and 2-col process grid
+- `md:` (768px) for main layout switches (2-col hero, 4-col process)
+- `lg:` (1024px) for hero font size, 4-col features and 4-col toolbox
 
 ### Deployment
 

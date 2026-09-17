@@ -47,6 +47,17 @@ export const features = [
     accent: "terracotta" as const,
   },
   {
+    icon: "📊",
+    title: "Data : préparation & dashboards",
+    bullets: [
+      "Nettoyage, déduplication et normalisation de bases CRM et exports",
+      "Croisement de sources : SIRET, INSEE SIRENE, HubSpot",
+      "Dashboards de prospection à jour automatiquement : volumes, réponses, pipeline",
+      "Modèles Excel documentés, tenus par l'équipe",
+    ],
+    accent: "sage" as const,
+  },
+  {
     icon: "🤖",
     title: "Agents IA & orchestration",
     bullets: [

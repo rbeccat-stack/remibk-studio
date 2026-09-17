@@ -39,11 +39,11 @@ export default function Home() {
               <SectionTitle
                 title="Ce que j'apporte"
                 underlineWord="j'apporte"
-                subtitle="Trois terrains où je livre vite, sans dépendre de quelqu'un d'autre pour avancer."
+                subtitle="Quatre terrains où je livre vite, sans dépendre de quelqu'un d'autre pour avancer."
                 accent="terracotta"
               />
             </Reveal>
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {features.map((f, i) => (
                 <Reveal key={f.title} delay={i * 80} className="h-full">
                   <FeatureCard {...f} />
