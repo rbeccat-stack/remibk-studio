@@ -7,21 +7,21 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border-dark/10 bg-bg/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border bg-bg-base/85 backdrop-blur-md">
       <div className="max-w-[1120px] mx-auto px-5 md:px-6 flex items-center justify-between h-14">
         {/* Logo */}
-        <a href="#accueil" className="flex flex-col leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta rounded">
-          <span className="font-serif font-bold text-text-main text-lg">{nav.name}</span>
-          <span className="text-muted text-[10px] font-sans tracking-widest uppercase">{nav.tagline}</span>
+        <a href="#accueil" className="flex flex-col leading-none rounded-lg">
+          <span className="font-semibold tracking-tight text-fg text-lg">{nav.name}</span>
+          <span className="font-mono text-[10px] tracking-widest uppercase text-fg-muted">{nav.tagline}</span>
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6" aria-label="Navigation principale">
+        <nav className="hidden md:flex items-center gap-1" aria-label="Navigation principale">
           {nav.links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-sans font-medium text-muted hover:text-text-main transition-colors"
+              className="rounded-lg px-3 py-1.5 text-sm font-medium text-fg-muted transition duration-200 ease-expo hover:bg-surface hover:text-fg"
             >
               {l.label}
             </a>
@@ -33,7 +33,7 @@ export default function Header() {
           href={nav.ctaHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-terracotta text-white text-sm font-sans font-semibold hover:bg-terracotta-dark transition-colors"
+          className="btn-shine hidden md:inline-flex items-center px-4 py-1.5 rounded-lg bg-accent text-white text-sm font-semibold shadow-cta transition duration-200 ease-expo hover:bg-accent-bright hover:shadow-cta-hover active:scale-[0.98]"
         >
           {nav.cta}
         </a>
@@ -41,7 +41,7 @@ export default function Header() {
         {/* Mobile burger */}
         <button
           type="button"
-          className="md:hidden -mr-2 p-2 text-text-main"
+          className="md:hidden -mr-2 rounded-lg p-2 text-fg transition duration-200 hover:bg-surface"
           aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
@@ -69,13 +69,13 @@ export default function Header() {
         <nav
           id="mobile-menu"
           aria-label="Navigation principale"
-          className="md:hidden border-t border-border-dark/10 bg-bg px-5 py-4 flex flex-col gap-1"
+          className="md:hidden animate-menu-in border-t border-border bg-bg-base/95 backdrop-blur-md px-5 py-4 flex flex-col gap-1"
         >
           {nav.links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="py-2.5 text-base font-sans font-medium text-text-main"
+              className="rounded-lg px-3 py-2.5 text-base font-medium text-fg transition duration-200 hover:bg-surface"
               onClick={() => setMenuOpen(false)}
             >
               {l.label}
@@ -85,7 +85,7 @@ export default function Header() {
             href={nav.ctaHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-flex justify-center items-center px-4 py-3 rounded-full bg-terracotta text-white text-sm font-sans font-semibold"
+            className="mt-3 inline-flex justify-center items-center px-4 py-3 rounded-lg bg-accent text-white text-sm font-semibold shadow-cta active:scale-[0.98]"
             onClick={() => setMenuOpen(false)}
           >
             {nav.cta}

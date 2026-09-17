@@ -1,17 +1,16 @@
 import type { Metadata } from 'next'
-import { Fraunces, Manrope } from 'next/font/google'
+import { Inter, Geist_Mono } from 'next/font/google'
+import AmbientBackground from '@/components/AmbientBackground'
 import './globals.css'
 
-const fraunces = Fraunces({
-  variable: '--font-fraunces',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
-  weight: ['700', '900'],
 })
 
-const manrope = Manrope({
-  variable: '--font-manrope',
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
 })
 
 export const metadata: Metadata = {
@@ -31,9 +30,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="fr"
-      className={`${fraunces.variable} ${manrope.variable}`}
+      className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen font-sans">{children}</body>
+      <body className="relative min-h-full font-sans bg-bg-base text-fg">
+        <AmbientBackground />
+        <div className="relative z-10">{children}</div>
+      </body>
     </html>
   )
 }

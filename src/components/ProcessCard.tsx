@@ -1,3 +1,5 @@
+import SpotlightCard from '@/components/SpotlightCard'
+
 interface ProcessCardProps {
   num: string
   title: string
@@ -6,22 +8,18 @@ interface ProcessCardProps {
 
 export default function ProcessCard({ num, title, description }: ProcessCardProps) {
   return (
-    <div className="card-hover border border-border-dark/12 rounded-2xl p-4 sm:p-6 bg-card flex flex-col gap-3">
+    <SpotlightCard className="h-full p-5 sm:p-6">
       <span
-        className="font-serif font-bold text-4xl sm:text-5xl leading-none select-none"
-        style={{
-          WebkitTextStroke: '2px #C75B2A',
-          color: 'transparent',
-        }}
+        className="font-mono text-4xl sm:text-5xl font-semibold leading-none tabular-nums text-gradient-accent select-none"
         aria-hidden
       >
         {num}
       </span>
-      <div>
-        <p className="text-[10px] font-sans font-semibold uppercase tracking-widest text-muted mb-1">Étape</p>
-        <h3 className="font-serif font-bold text-xl text-text-main">{title}</h3>
+      <div className="mt-4">
+        <p className="font-mono text-[10px] uppercase tracking-widest text-fg-muted mb-1.5">Étape</p>
+        <h3 className="font-semibold text-xl tracking-tight text-fg">{title}</h3>
       </div>
-      <p className="text-sm font-sans text-muted leading-relaxed">{description}</p>
-    </div>
+      <p className="mt-3 text-sm text-fg-muted leading-relaxed">{description}</p>
+    </SpotlightCard>
   )
 }

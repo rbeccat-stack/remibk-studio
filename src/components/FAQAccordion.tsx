@@ -17,12 +17,12 @@ function Answer({ lines }: { lines: string[] }) {
   }
 
   return (
-    <div className="flex flex-col gap-3 text-sm font-sans text-muted leading-relaxed md:text-base">
+    <div className="flex flex-col gap-3 text-sm text-fg-muted leading-relaxed md:text-base">
       {blocks.map((b, i) =>
         b.type === 'p' ? (
           <p key={i}>{b.text}</p>
         ) : (
-          <ul key={i} className="flex flex-col gap-2 pl-5 list-disc marker:text-terracotta">
+          <ul key={i} className="flex flex-col gap-2 pl-5 list-disc marker:text-accent-2">
             {b.items.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -45,8 +45,8 @@ export default function FAQAccordion() {
         return (
           <div
             key={faq.q}
-            className={`rounded-2xl border bg-card-light transition-colors ${
-              isOpen ? 'border-terracotta/40' : 'border-border-dark/12 hover:border-border-dark/30'
+            className={`rounded-2xl border bg-card shadow-card transition duration-300 ease-expo ${
+              isOpen ? 'border-border-accent shadow-card-hover' : 'border-border hover:border-border-hover'
             }`}
           >
             <button
@@ -55,20 +55,20 @@ export default function FAQAccordion() {
               aria-expanded={isOpen}
               aria-controls={`faq-answer-${i}`}
               id={`faq-question-${i}`}
-              className="w-full flex items-center justify-between gap-4 px-5 py-4 md:px-6 text-left"
+              className="group w-full flex items-center justify-between gap-4 px-5 py-4 md:px-6 text-left rounded-2xl"
             >
-              <span className="font-serif font-bold text-base md:text-lg text-text-main leading-snug">
+              <span className="font-semibold text-base md:text-lg tracking-tight text-fg leading-snug">
                 {faq.q}
               </span>
               <span
                 aria-hidden="true"
-                className={`shrink-0 w-7 h-7 rounded-full border flex items-center justify-center text-base leading-none transition-[transform,background-color,color,border-color] duration-200 ${
+                className={`shrink-0 w-7 h-7 rounded-lg border flex items-center justify-center text-base leading-none transition-[background-color,color,border-color,box-shadow] duration-300 ease-expo ${
                   isOpen
-                    ? 'rotate-45 bg-terracotta border-terracotta text-white'
-                    : 'border-border-dark/20 text-muted'
+                    ? 'bg-accent border-accent text-white shadow-cta'
+                    : 'border-white/10 bg-surface text-fg-muted shadow-inset-highlight group-hover:text-fg group-hover:border-border-hover'
                 }`}
               >
-                +
+                <span className={`transition-transform duration-300 ease-expo ${isOpen ? 'rotate-45' : ''}`}>+</span>
               </span>
             </button>
             <div
