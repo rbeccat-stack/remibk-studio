@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Étude de cas : constituer un fichier de prospection fiable sur les façadiers à partir de sources publiques.">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Cibler les façadiers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EEF6F8; --surface:#FFFFFF; --ink:#2E3438; --muted:#4F606B; --line:#CFE2E7; --soft:#E3F1F4;
+  --accent:#FF5757; --accent-strong:#E04848; --accent-text:#C73E3E;
+  --teal:#1D95AD; --teal-text:#15717F; --teal-soft:#E8F4F7;
+  --foot-bg:#2E3438; --foot-ink:#FFFFFF; --foot-muted:#BCD0D1;
+  --hero-bg:#1A6F80; --hero-glow:#1D95AD; --hero-ink:#FFFFFF; --hero-muted:#D8EEF2; --hero-accent:#FF5757; --hero-line:rgba(255,255,255,.22);
+  --display:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --body:"Open Sans","Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"Roboto Mono",Consolas,"Courier New",monospace;
+}
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body);padding-inline:20px;padding-block:20px 48px}
+.wrap{max-width:980px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);line-height:1.12;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;letter-spacing:-.01em}
+h3{font-size:1.06rem;font-weight:700}
+p{margin:0;max-width:66ch}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.eyebrow{font:500 .74rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.eyebrow.red{color:var(--teal-text)}
+a{color:var(--teal-text);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* En-tête : bandeau bleu pétrole */
+.hero{background:radial-gradient(120% 90% at 100% 0%,var(--hero-glow) 0%,transparent 55%),var(--hero-bg);color:var(--hero-ink);border-radius:14px;padding:44px clamp(20px,4vw,48px) 30px;display:grid;gap:20px}
+.hero .eyebrow{color:var(--hero-muted)}
+.hero h1{font-size:clamp(2.1rem,5.2vw,3.7rem);font-weight:900;letter-spacing:-.02em;max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--hero-ink);text-decoration:underline;text-decoration-color:var(--hero-accent);text-decoration-thickness:.12em;text-underline-offset:.14em}
+.hero .lede{font-size:1.1rem;color:var(--hero-ink);max-width:60ch}
+.byline{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--hero-muted);font-size:.9rem}
+.figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--hero-line);border:1px solid var(--hero-line);border-radius:8px;overflow:hidden;margin-top:8px}
+.fig{background:rgba(0,0,0,.14);padding:16px 16px 14px;display:grid;gap:4px;align-content:start}
+.fig b{font:700 clamp(1.7rem,3.4vw,2.4rem)/1 var(--display);font-variant-numeric:tabular-nums;color:var(--hero-ink)}
+.fig span{font-size:.86rem;color:var(--hero-muted);line-height:1.35}
+.fig.key{box-shadow:inset 0 4px 0 var(--hero-accent)}
+
+/* Sections */
+section{padding-block:44px;border-bottom:1px solid var(--line);display:grid;gap:22px}
+.head{display:grid;gap:8px}
+.head p{color:var(--muted)}
+.tldr{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:20px 22px;display:grid;gap:10px}
+.tldr ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
+
+/* Pièges */
+.traps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.trap{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:10px;align-content:start}
+.trap .big{font:900 2rem/1 var(--display);color:var(--teal-text);font-variant-numeric:tabular-nums}
+.trap p{font-size:.94rem}
+.trap .ex{font-size:.86rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+
+/* Méthode */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:52px minmax(0,1fr) 150px;gap:18px;padding-block:18px;border-bottom:1px solid var(--line);align-items:start}
+.step .n{width:36px;height:36px;border-radius:50%;background:var(--teal-text);color:#FFFFFF;display:grid;place-items:center;font:700 1.05rem/1 var(--display)}
+.step .txt{display:grid;gap:6px}
+.step .txt p{font-size:.95rem}
+.step .src{font-size:.8rem;color:var(--muted)}
+.step .out{text-align:right;display:grid;gap:2px}
+.step .out b{font:700 1.35rem/1.1 var(--display);font-variant-numeric:tabular-nums}
+.step .out span{font-size:.8rem;color:var(--muted);line-height:1.3}
+
+/* Graphiques */
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:grid;gap:14px}
+.chart-title{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;align-items:baseline}
+.chart-title .eyebrow{letter-spacing:.08em}
+.bars{display:grid;gap:7px}
+.bar{display:grid;grid-template-columns:minmax(120px,210px) minmax(0,1fr) 88px;gap:12px;align-items:center;font-size:.88rem}
+.bar .lab{line-height:1.25}
+.bar .lab .mono{font-size:.8rem;color:var(--muted);display:block}
+.track{height:16px;position:relative}
+.fill{height:100%;background:var(--teal);border-radius:0 4px 4px 0;min-width:2px;transition:filter .15s}
+.fill.patina{background:var(--teal-text)}
+.fill.hot{background:var(--accent)}
+.fill.pale{background:var(--line)}
+.bar:hover .fill{filter:brightness(1.08)}
+.bar .val{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:.84rem}
+.bar .val small{color:var(--muted)}
+.note{font-size:.84rem;color:var(--muted)}
+.duo{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:start}
+
+/* Grille du test */
+.grid20{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;max-width:360px}
+.cell{aspect-ratio:1;border-radius:3px;background:var(--soft);border:1px solid var(--line)}
+.cell.c1{background:var(--accent);border-color:var(--accent)}
+.cell.c2{background:var(--teal);border-color:var(--teal)}
+.cell.c3{background:repeating-linear-gradient(45deg,var(--muted) 0 2px,transparent 2px 6px);border-color:var(--muted)}
+.legend{display:grid;gap:6px;font-size:.86rem}
+.legend div{display:flex;gap:8px;align-items:center}
+.legend i{width:14px;height:14px;border-radius:3px;display:inline-block;flex:none;border:1px solid var(--line)}
+
+/* Tableau */
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.88rem}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 .72rem/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--soft)}
+tr:last-child td{border-bottom:0}
+td.code{font-family:var(--mono);color:var(--teal-text);white-space:nowrap}
+
+/* IA et contrôle */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:grid;gap:10px;align-content:start}
+.panel ul{margin:0;padding-left:1.1em;display:grid;gap:7px;font-size:.93rem}
+.score{display:flex;align-items:baseline;gap:10px}
+.score b{font:900 2.6rem/1 var(--display);color:var(--teal-text);font-variant-numeric:tabular-nums}
+
+/* Missions */
+.missions{display:grid;gap:0;border-top:1px solid var(--line)}
+.mission{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:20px;padding-block:16px;border-bottom:1px solid var(--line)}
+.mission .q{font-weight:600}
+.mission .q small{display:block;font:500 .72rem/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--teal-text);margin-bottom:4px}
+.mission p{font-size:.94rem}
+
+.rgpd{display:flex;gap:14px;align-items:flex-start;background:var(--teal-soft);border:1px solid var(--line);border-radius:10px;padding:14px 18px;font-size:.92rem}
+.rgpd b{font-family:var(--display);white-space:nowrap;color:var(--teal-text)}
+.limits{margin:0;padding-left:1.1em;display:grid;gap:8px;max-width:72ch}
+footer{padding-block:36px 0;display:grid;gap:12px}
+footer .sig{font:700 1.3rem/1.2 var(--display)}
+footer .src{font-size:.8rem;color:var(--muted);max-width:80ch}
+
+
+/* Style de l'en-tête étendu à toute la page */
+.head::before{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--accent);margin-bottom:6px}
+.trap,.panel,.chart{border-top:3px solid var(--teal)}
+.band{background:radial-gradient(110% 120% at 100% 0%,var(--hero-glow) 0%,transparent 55%),var(--hero-bg);color:var(--hero-ink);border-radius:14px;padding:34px clamp(20px,4vw,48px);border-bottom:0;margin-block:28px}
+.band .eyebrow,.band .eyebrow.red{color:var(--hero-muted)}
+.band .head p{color:var(--hero-muted)}
+.band h2,.band h3{color:var(--hero-ink)}
+.band .missions{border-top-color:var(--hero-line)}
+.band .mission{border-bottom-color:var(--hero-line)}
+.band .mission:last-child{border-bottom:0}
+.band .mission .q small{color:var(--hero-muted)}
+.band .mission p{color:var(--hero-ink)}
+.tldr-band{padding-block:0;border-bottom:0}
+.tldr-band .tldr{background:radial-gradient(110% 140% at 100% 0%,var(--hero-glow) 0%,transparent 55%),var(--hero-bg);color:var(--hero-ink);border:0;border-left:6px solid var(--hero-accent);border-radius:0 14px 14px 0;padding:24px clamp(20px,3vw,32px);margin-top:28px}
+.tldr-band .tldr h3{color:var(--hero-ink)}
+.tldr-band .tldr li::marker{color:var(--hero-accent)}
+footer{background:var(--foot-bg);color:var(--foot-ink);border-radius:14px;padding:32px clamp(20px,4vw,48px);margin-top:28px}
+footer .src{color:var(--foot-muted)}
+footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--hero-accent);margin-top:10px}
+
+@media (max-width:760px){
+  .figures{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .traps,.two,.duo{grid-template-columns:1fr}
+  .step{grid-template-columns:40px minmax(0,1fr)}
+  .step .out{grid-column:2;text-align:left;display:flex;gap:8px;align-items:baseline}
+  .bar{grid-template-columns:minmax(0,1fr) 72px;row-gap:4px}
+  .bar .lab{grid-column:1 / -1}
+  .mission{grid-template-columns:1fr;gap:6px}
+  .hero{padding-top:32px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">Étude de cas · Constitution d'un fichier de prospection</div>
+  <h1>« Façadier » n'est pas un <em>code NAF</em>.</h1>
+  <p class="lede">Comment constituer un fichier de prospection fiable sur une cible de niche, les entreprises de façade de 6 à 199 salariés, uniquement à partir de sources publiques et gratuites. Chaque entreprise retenue l'est avec une preuve et une source.</p>
+  <div class="byline"><span>Rémi, candidat au poste de Chargé·e de Growth Marketing chez ReCom</span><span>Données au 26/09/2026</span></div>
+  <div class="figures" role="list">
+    <div class="fig" role="listitem"><b class="mono">625</b><span>entreprises analysées</span></div>
+    <div class="fig" role="listitem"><b class="mono">499</b><span>façadiers confirmés, chacun avec sa preuve</span></div>
+    <div class="fig key" role="listitem"><b class="mono">466</b><span>prospectables, sans procédure collective</span></div>
+    <div class="fig" role="listitem"><b class="mono">23</b><span>codes NAF différents pour un seul métier</span></div>
+  </div>
+</header>
+
+<section class="tldr-band" aria-labelledby="t-tldr">
+  <div class="tldr">
+    <h3 id="t-tldr">En 30 secondes</h3>
+    <ul>
+      <li>Un ciblage par code NAF rate une partie des façadiers et ramène surtout d'autres métiers : dans le code le plus fréquent, seules 3 entreprises sur 20 tirées au hasard font de la façade.</li>
+      <li>J'ai croisé quatre sources officielles (répertoire des entreprises, label RGE, annonces légales, web) pour prouver le métier de chaque entreprise, puis écarté celles en difficulté.</li>
+      <li>J'ai conçu la méthode et piloté un agent IA pour l'exécution. J'ai contrôlé ses résultats : 18 verdicts sur 20 relus étaient justes.</li>
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="t-pieges">
+  <div class="head">
+    <div class="eyebrow red">Le problème</div>
+    <h2 id="t-pieges">Trois raccourcis qui faussent un fichier</h2>
+    <p>Le réflexe classique consiste à filtrer par code NAF, puis par mot-clé dans le nom. Sur cette cible, aucun des deux ne suffit, et le statut « actif » du répertoire non plus.</p>
+  </div>
+  <div class="traps">
+    <article class="trap">
+      <div class="big">33 %</div>
+      <h3>Le code NAF disperse la cible</h3>
+      <p>Le premier code (43.99C, maçonnerie) ne regroupe qu'un tiers des façadiers. Il faut 8 codes pour en couvrir 90 %, et ces codes contiennent surtout des maçons, peintres ou isolateurs.</p>
+      <p class="ex">Test sur 20 entreprises tirées au hasard parmi les 9 056 du code 43.99C : 3 ont une activité façade.</p>
+    </article>
+    <article class="trap">
+      <div class="big">15 %</div>
+      <h3>Le nom ne suffit pas</h3>
+      <p>Le mot « façade » dans le nom est un bon indice, mais 15 % des entreprises vérifiées font un autre métier. Et il rate les façadiers qui ne portent pas ce mot.</p>
+      <p class="ex">« 5E FACADE » est un étancheur : dans le bâtiment, la « cinquième façade » désigne la toiture.</p>
+    </article>
+    <article class="trap">
+      <div class="big">31</div>
+      <h3>« Actif » ne veut pas dire en activité</h3>
+      <p>31 façadiers confirmés et déclarés actifs au répertoire sont en liquidation, en plan de cession ou en redressement d'après les annonces légales.</p>
+      <p class="ex">Appeler une entreprise en liquidation, c'est du temps commercial perdu. Ces entreprises sont écartées de la liste.</p>
+    </article>
+  </div>
+</section>
+
+<section aria-labelledby="t-methode">
+  <div class="head">
+    <div class="eyebrow red">La méthode</div>
+    <h2 id="t-methode">Cinq étapes, de la recherche à la liste prospectable</h2>
+    <p>Chaque étape ne traite que ce que la précédente n'a pas pu trancher. Les étapes 1, 2, 3 et 5 reposent sur des API publiques gratuites et sont automatisables. L'étape 4 demande du jugement.</p>
+  </div>
+  <ol class="steps">
+    <li class="step">
+      <div class="n">1</div>
+      <div class="txt"><h3>Extraire</h3><p>Recherche des mots « façade », « ravalement » et « bardage », filtrée sur les entreprises actives de 6 à 199 salariés. Exclusion des faux positifs évidents (immobilier, nettoyage, conseil), en mots entiers pour ne pas exclure « transformation habitat ».</p><span class="src">API Recherche d'entreprises (État) · libellés NAF INSEE</span></div>
+      <div class="out"><b class="mono">625</b><span>entreprises</span></div>
+    </li>
+    <li class="step">
+      <div class="n">2</div>
+      <div class="txt"><h3>Prouver par le label</h3><p>Qualification RGE « isolation des murs par l'extérieur » en cours de validité. C'est la preuve la plus forte : elle est délivrée après audit, elle n'est pas déclarative.</p><span class="src">ADEME, liste des entreprises RGE</span></div>
+      <div class="out"><b class="mono">286</b><span>confirmées sans intervention</span></div>
+    </li>
+    <li class="step">
+      <div class="n">3</div>
+      <div class="txt"><h3>Lire l'activité déclarée</h3><p>La phrase que le dirigeant a déclarée au greffe pour décrire son métier, plus précise que le code NAF attribué par l'INSEE.</p><span class="src">BODACC, annonces de création et de modification</span></div>
+      <div class="out"><b class="mono">72</b><span>entreprises tranchées</span></div>
+    </li>
+    <li class="step">
+      <div class="n">4</div>
+      <div class="txt"><h3>Contrôler sur le web</h3><p>Recherche nom + commune, lecture du site ou des fiches professionnelles, verdict motivé avec son lien. Réalisé par un agent IA, puis relu sur échantillon.</p><span class="src">Sites, PagesJaunes, annuaires, objet social</span></div>
+      <div class="out"><b class="mono">201</b><span>verdicts, chacun avec sa source</span></div>
+    </li>
+    <li class="step">
+      <div class="n">5</div>
+      <div class="txt"><h3>Écarter les entreprises en difficulté</h3><p>Dernier jugement connu pour chaque entreprise : liquidation, plan de cession, redressement ou sauvegarde. Une entreprise en procédure sort de la liste prospectable.</p><span class="src">BODACC, procédures collectives</span></div>
+      <div class="out"><b class="mono">466</b><span>prospectables</span></div>
+    </li>
+  </ol>
+</section>
+
+<section aria-labelledby="t-resultats">
+  <div class="head">
+    <div class="eyebrow red">Les résultats</div>
+    <h2 id="t-resultats">Ce que donnent les 625 entreprises analysées</h2>
+  </div>
+
+  <div class="chart" role="figure" aria-labelledby="c1">
+    <div class="chart-title"><h3 id="c1">De l'extraction à la liste prospectable</h3><span class="eyebrow">nombre d'entreprises</span></div>
+    <div class="bars">
+      <div class="bar" title="625 entreprises trouvées par les mots-clés, après exclusions"><div class="lab">Analysées</div><div class="track"><div class="fill pale" style="width:100%"></div></div><div class="val">625</div></div>
+      <div class="bar" title="499 entreprises avec au moins une preuve d'activité façade"><div class="lab">Façadiers confirmés</div><div class="track"><div class="fill patina" style="width:79.84%"></div></div><div class="val">499 <small>80 %</small></div></div>
+      <div class="bar" title="466 façadiers confirmés sans procédure collective"><div class="lab">Prospectables</div><div class="track"><div class="fill hot" style="width:74.56%"></div></div><div class="val">466 <small>75 %</small></div></div>
+    </div>
+    <p class="note">Les 159 autres : 63 probables (indices sans preuve, dont 47 non vérifiées), 26 douteuses, 37 hors cible (échafaudagiste, menuisier, fabricant, restaurant…), et 33 façadiers confirmés mais en procédure collective ou radiés.</p>
+  </div>
+
+  <div class="duo">
+    <div class="chart" role="figure" aria-labelledby="c2">
+      <div class="chart-title"><h3 id="c2">Les 499 façadiers confirmés, par code NAF</h3><span class="eyebrow">part des confirmés</span></div>
+      <div class="bars">
+        <div class="bar" title="43.99C : 167 façadiers"><div class="lab">Maçonnerie générale<span class="mono">43.99C</span></div><div class="track"><div class="fill" style="width:100%"></div></div><div class="val">167 <small>33 %</small></div></div>
+        <div class="bar" title="43.34Z : 89 façadiers"><div class="lab">Peinture et vitrerie<span class="mono">43.34Z</span></div><div class="track"><div class="fill" style="width:53.3%"></div></div><div class="val">89 <small>18 %</small></div></div>
+        <div class="bar" title="43.29A : 43 façadiers"><div class="lab">Isolation<span class="mono">43.29A</span></div><div class="track"><div class="fill" style="width:25.75%"></div></div><div class="val">43 <small>9 %</small></div></div>
+        <div class="bar" title="43.39Z : 41 façadiers"><div class="lab">Autres finitions<span class="mono">43.39Z</span></div><div class="track"><div class="fill" style="width:24.55%"></div></div><div class="val">41 <small>8 %</small></div></div>
+        <div class="bar" title="43.99D : 33 façadiers"><div class="lab">Autres travaux spécialisés<span class="mono">43.99D</span></div><div class="track"><div class="fill" style="width:19.76%"></div></div><div class="val">33 <small>7 %</small></div></div>
+        <div class="bar" title="43.99A : 30 façadiers"><div class="lab">Étanchéité<span class="mono">43.99A</span></div><div class="track"><div class="fill" style="width:17.96%"></div></div><div class="val">30 <small>6 %</small></div></div>
+        <div class="bar" title="43.91B : 30 façadiers"><div class="lab">Couverture<span class="mono">43.91B</span></div><div class="track"><div class="fill" style="width:17.96%"></div></div><div class="val">30 <small>6 %</small></div></div>
+        <div class="bar" title="43.31Z : 15 façadiers"><div class="lab">Plâtrerie<span class="mono">43.31Z</span></div><div class="track"><div class="fill" style="width:8.98%"></div></div><div class="val">15 <small>3 %</small></div></div>
+        <div class="bar" title="15 autres codes NAF : 51 façadiers au total"><div class="lab">15 autres codes<span class="mono">promotion, ingénierie, nettoyage…</span></div><div class="track"><div class="fill pale" style="width:30.54%"></div></div><div class="val">51 <small>10 %</small></div></div>
+      </div>
+      <p class="note">8 codes couvrent 90 % des façadiers. Mais ces 8 codes rassemblent des dizaines de milliers d'entreprises, en majorité d'autres métiers.</p>
+    </div>
+
+    <div class="chart" role="figure" aria-labelledby="c3">
+      <div class="chart-title"><h3 id="c3">Le test du code 43.99C</h3></div>
+      <p class="note" style="color:var(--ink)">20 entreprises tirées au hasard parmi les 9 056 entreprises de 6 à 199 salariés classées en maçonnerie générale, puis vérifiées une par une.</p>
+      <div class="grid20" aria-hidden="true">
+        <div class="cell c1" title="Façadier de métier"></div>
+        <div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div>
+        <div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div>
+        <div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div>
+      </div>
+      <div class="legend">
+        <div><i style="background:var(--accent);border-color:var(--accent)"></i><span><b class="mono">1</b> façadier de métier</span></div>
+        <div><i style="background:var(--teal);border-color:var(--teal)"></i><span><b class="mono">2</b> font de la façade parmi d'autres activités</span></div>
+        <div><i style="background:repeating-linear-gradient(45deg,var(--muted) 0 2px,transparent 2px 6px)"></i><span><b class="mono">5</b> indice faible, non confirmé</span></div>
+        <div><i style="background:var(--soft)"></i><span><b class="mono">12</b> pas d'activité façade</span></div>
+      </div>
+      <p class="note">Ordre de grandeur sur un petit échantillon : la part réelle se situe probablement entre 5 % et 36 %. Cibler ce code, c'est appeler surtout des maçons.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="t-extrait">
+  <div class="head">
+    <div class="eyebrow red">Extrait de la liste</div>
+    <h2 id="t-extrait">6 façadiers, 6 codes NAF différents</h2>
+    <p>Six entreprises de la liste prospectable, toutes confirmées par leur label RGE. Aucun filtre NAF unique ne les aurait réunies.</p>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Entreprise</th><th>Commune</th><th>Salariés</th><th>Code NAF déclaré</th><th>Preuve du métier</th></tr></thead>
+      <tbody>
+        <tr><td>FACADES CONCEPT</td><td>Loperhet (29)</td><td class="mono">50 à 99</td><td class="code">43.39Z</td><td>RGE isolation des murs par l'extérieur</td></tr>
+        <tr><td>PRO FACADE</td><td>Metz (57)</td><td class="mono">50 à 99</td><td class="code">43.29A</td><td>RGE isolation des murs par l'extérieur</td></tr>
+        <tr><td>ARMOR PEINTURE</td><td>Plélo (22)</td><td class="mono">50 à 99</td><td class="code">43.34Z</td><td>RGE isolation des murs par l'extérieur, sans « façade » dans le nom</td></tr>
+        <tr><td>PROVENCE FACADES MEDITERRANEE</td><td>Roquefort-la-Bédoule (13)</td><td class="mono">20 à 49</td><td class="code">43.99C</td><td>RGE isolation des murs par l'extérieur</td></tr>
+        <tr><td>BATI FACADES 43</td><td>Le Puy-en-Velay (43)</td><td class="mono">20 à 49</td><td class="code">43.99D</td><td>RGE isolation des murs par l'extérieur</td></tr>
+        <tr><td>GENTY COUVERTURE INDUSTRIELLE BARDAGE ETANCHEITE</td><td>Saint-Laurent-Blangy (62)</td><td class="mono">50 à 99</td><td class="code">43.91B</td><td>RGE isolation des murs par l'extérieur, couvreur qui fait du bardage</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="rgpd"><b>RGPD</b><span>La liste ne contient que des données d'entreprises : raison sociale, SIREN, commune, effectif, code NAF, preuve et source. Aucun nom de dirigeant, email ou téléphone n'a été collecté.</span></div>
+</section>
+
+<section aria-labelledby="t-ia">
+  <div class="head">
+    <div class="eyebrow red">Mon rôle et celui de l'IA</div>
+    <h2 id="t-ia">J'ai piloté un agent IA, puis contrôlé son travail</h2>
+    <p>L'exécution (scripts Python, appels d'API, recherches web) a été réalisée avec Claude Code. Mon travail a été de définir la cible et les règles de classement, de trancher les cas ambigus et de vérifier les résultats.</p>
+  </div>
+  <div class="two">
+    <div class="panel">
+      <h3>Ce que j'ai décidé</h3>
+      <ul>
+        <li>La cible et le périmètre : 6 à 199 salariés, entreprises actives.</li>
+        <li>Une hiérarchie de preuves : label RGE, puis activité déclarée au greffe, puis contrôle web, puis absence de preuve.</li>
+        <li>La définition du façadier : couvreurs-bardeurs et poseurs de façade légère inclus, mais isolés dans une colonne pour pouvoir les filtrer.</li>
+        <li>Le garde-fou RGPD : aucune donnée personnelle.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Ce que le contrôle a corrigé</h3>
+      <div class="score"><b class="mono">18/20</b><span class="note">verdicts de l'IA justes après relecture de 20 cas tirés au hasard. Les 2 erreurs étaient des excès de prudence : aucun faux « confirmé ».</span></div>
+      <ul>
+        <li>5 alertes juridiques fausses, dues à des dates mal triées, revérifiées à la main.</li>
+        <li>20 façadiers oubliés, parce que leur activité déclarée n'était pas lue en entier.</li>
+        <li>15 liens sources morts, remplacés par la fiche officielle de l'entreprise.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="t-limites">
+  <div class="head">
+    <div class="eyebrow red">Les limites</div>
+    <h2 id="t-limites">Ce que ce fichier ne dit pas</h2>
+  </div>
+  <ul class="limits">
+    <li><b>Il ne couvre pas tout le marché.</b> Il part des entreprises dont le nom contient un mot-clé. Un façadier nommé « SARL Dupont » n'y est pas. Prochaine étape : extraire toutes les entreprises labellisées RGE « isolation par l'extérieur », quel que soit leur nom.</li>
+    <li><b>47 entreprises restent non vérifiées.</b> L'outil de recherche web plafonnait à 200 recherches par session. Ce sont surtout des entreprises de bardage : les couvreurs-bardeurs sont donc un peu sous-représentés.</li>
+    <li><b>« Confirmé » veut dire qu'une source atteste une activité façade</b>, pas forcément que c'est l'activité principale. La spécialité de chaque entreprise est indicative.</li>
+    <li><b>Les données datent du 26/09/2026.</b> Les procédures collectives évoluent vite : il faut revérifier juste avant chaque campagne.</li>
+  </ul>
+</section>
+
+<section class="band" aria-labelledby="t-recom">
+  <div class="head">
+    <div class="eyebrow red">Et chez ReCom</div>
+    <h2 id="t-recom">Ce que cette démarche apporterait au poste</h2>
+    <p>J'ai choisi les façadiers parce que c'est un marché de niche typique, comme celui de votre cas client James Hardie, fabricant de bardage. La méthode vaut pour n'importe quel métier mal décrit par son code NAF.</p>
+  </div>
+  <div class="missions">
+    <div class="mission"><div class="q"><small>Mission de l'offre</small>Constituer et enrichir les fichiers de prospection</div><p>Des sources officielles et gratuites, une preuve et une source par ligne, et les entreprises en difficulté écartées avant le premier appel.</p></div>
+    <div class="mission"><div class="q"><small>Mission de l'offre</small>Paramétrer le CRM et les reportings</div><p>Un fichier prêt à importer : le SIREN comme clé de dédoublonnage, un classement, une spécialité et une alerte juridique, utilisables comme champs de segmentation.</p></div>
+    <div class="mission"><div class="q"><small>Mission de l'offre</small>Mettre en place l'automatisation</div><p>Les étapes 1, 2, 3 et 5 tournent sans intervention, sur des API publiques sans clé. Seule l'étape 4 demande du jugement, et elle peut être confiée à une IA à condition de relire un échantillon.</p></div>
+    <div class="mission"><div class="q"><small>Mission de l'offre</small>Accompagner l'équipe commerciale</div><p>Chaque ligne dit pourquoi l'entreprise est dans la liste : un business developer sait d'emblée à qui il parle et quoi dire.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="sig">Rémi</div>
+  <p>Je serais ravi d'en parler et, surtout, de découvrir comment vous constituez vos fichiers aujourd'hui.</p>
+  <p><a href="/" style="color:var(--hero-ink)">Voir mon portfolio</a></p>
+  <p class="src">Sources : API Recherche d'entreprises (recherche-entreprises.api.gouv.fr) · ADEME, liste des entreprises RGE (data.ademe.fr) · BODACC, API de la DILA · INSEE, nomenclature NAF rév. 2. Toutes gratuites et consultables sans compte.</p>
+</footer>
+
+</div>
+
+</body>
+</html>
