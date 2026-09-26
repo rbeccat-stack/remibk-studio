@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
       beforeFiles: [
         {
           source: "/",
-          has: [{ type: "host", value: "facadiers.remibk-studio.fr" }],
+          has: [{ type: "host", value: "cibler-les-facadiers.remibk-studio.fr" }],
           destination: "/cibler-les-facadiers/index.html",
         },
       ],
