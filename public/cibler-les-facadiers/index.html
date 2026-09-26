@@ -93,7 +93,7 @@ section{padding-block:44px;border-bottom:1px solid var(--line);display:grid;gap:
 .duo{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:start}
 
 /* Grille du test */
-.grid20{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;max-width:360px}
+.grid20{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:3px;max-width:320px}
 .cell{aspect-ratio:1;border-radius:3px;background:var(--soft);border:1px solid var(--line)}
 .cell.c1{background:var(--accent);border-color:var(--accent)}
 .cell.c2{background:var(--teal);border-color:var(--teal)}
@@ -177,8 +177,8 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
   <div class="byline"><span>Rémi, candidat au poste de Chargé·e de Growth Marketing chez ReCom</span><span>Données au 26/09/2026</span></div>
   <div class="figures" role="list">
     <div class="fig" role="listitem"><b class="mono">625</b><span>entreprises analysées</span></div>
-    <div class="fig" role="listitem"><b class="mono">499</b><span>façadiers confirmés, chacun avec sa preuve</span></div>
-    <div class="fig key" role="listitem"><b class="mono">466</b><span>prospectables, sans procédure collective</span></div>
+    <div class="fig" role="listitem"><b class="mono">498</b><span>façadiers confirmés, chacun avec sa preuve</span></div>
+    <div class="fig key" role="listitem"><b class="mono">465</b><span>prospectables, sans procédure collective</span></div>
     <div class="fig" role="listitem"><b class="mono">23</b><span>codes NAF différents pour un seul métier</span></div>
   </div>
 </header>
@@ -187,9 +187,9 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
   <div class="tldr">
     <h3 id="t-tldr">En 30 secondes</h3>
     <ul>
-      <li>Un ciblage par code NAF rate une partie des façadiers et ramène surtout d'autres métiers : dans le code le plus fréquent, seules 3 entreprises sur 20 tirées au hasard font de la façade.</li>
+      <li>Un ciblage par code NAF rate une partie des façadiers et ramène surtout d'autres métiers : sur 100 entreprises tirées au hasard dans le code le plus fréquent, seules 26 font de la façade, et 5 en font leur métier.</li>
       <li>J'ai croisé quatre sources officielles (répertoire des entreprises, label RGE, annonces légales, web) pour prouver le métier de chaque entreprise, puis écarté celles en difficulté.</li>
-      <li>J'ai conçu la méthode et piloté un agent IA pour l'exécution. J'ai contrôlé ses résultats : 18 verdicts sur 20 relus étaient justes.</li>
+      <li>J'ai conçu la méthode et piloté un agent IA pour l'exécution. J'ai contrôlé ses résultats : 37 verdicts sur 40 vérifiés étaient justes.</li>
     </ul>
   </div>
 </section>
@@ -202,10 +202,10 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
   </div>
   <div class="traps">
     <article class="trap">
-      <div class="big">33 %</div>
+      <div class="big">34 %</div>
       <h3>Le code NAF disperse la cible</h3>
       <p>Le premier code (43.99C, maçonnerie) ne regroupe qu'un tiers des façadiers. Il faut 8 codes pour en couvrir 90 %, et ces codes contiennent surtout des maçons, peintres ou isolateurs.</p>
-      <p class="ex">Test sur 20 entreprises tirées au hasard parmi les 9 056 du code 43.99C : 3 ont une activité façade.</p>
+      <p class="ex">Test sur 100 entreprises tirées au hasard parmi les 9 056 du code 43.99C : 26 ont une activité façade, 5 en font leur métier.</p>
     </article>
     <article class="trap">
       <div class="big">15 %</div>
@@ -246,13 +246,13 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
     </li>
     <li class="step">
       <div class="n">4</div>
-      <div class="txt"><h3>Contrôler sur le web</h3><p>Recherche nom + commune, lecture du site ou des fiches professionnelles, verdict motivé avec son lien. Réalisé par un agent IA, puis relu sur échantillon.</p><span class="src">Sites, PagesJaunes, annuaires, objet social</span></div>
+      <div class="txt"><h3>Contrôler sur le web</h3><p>Recherche nom + commune, lecture du site ou des fiches professionnelles, verdict motivé avec son lien. Réalisé par un agent IA, puis vérifié sur un échantillon de 40 verdicts.</p><span class="src">Sites, PagesJaunes, annuaires, objet social</span></div>
       <div class="out"><b class="mono">201</b><span>verdicts, chacun avec sa source</span></div>
     </li>
     <li class="step">
       <div class="n">5</div>
       <div class="txt"><h3>Écarter les entreprises en difficulté</h3><p>Dernier jugement connu pour chaque entreprise : liquidation, plan de cession, redressement ou sauvegarde. Une entreprise en procédure sort de la liste prospectable.</p><span class="src">BODACC, procédures collectives</span></div>
-      <div class="out"><b class="mono">466</b><span>prospectables</span></div>
+      <div class="out"><b class="mono">465</b><span>prospectables</span></div>
     </li>
   </ol>
 </section>
@@ -267,18 +267,18 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
     <div class="chart-title"><h3 id="c1">De l'extraction à la liste prospectable</h3><span class="eyebrow">nombre d'entreprises</span></div>
     <div class="bars">
       <div class="bar" title="625 entreprises trouvées par les mots-clés, après exclusions"><div class="lab">Analysées</div><div class="track"><div class="fill pale" style="width:100%"></div></div><div class="val">625</div></div>
-      <div class="bar" title="499 entreprises avec au moins une preuve d'activité façade"><div class="lab">Façadiers confirmés</div><div class="track"><div class="fill patina" style="width:79.84%"></div></div><div class="val">499 <small>80 %</small></div></div>
-      <div class="bar" title="466 façadiers confirmés sans procédure collective"><div class="lab">Prospectables</div><div class="track"><div class="fill hot" style="width:74.56%"></div></div><div class="val">466 <small>75 %</small></div></div>
+      <div class="bar" title="498 entreprises avec au moins une preuve d'activité façade"><div class="lab">Façadiers confirmés</div><div class="track"><div class="fill patina" style="width:79.68%"></div></div><div class="val">498 <small>80 %</small></div></div>
+      <div class="bar" title="465 façadiers confirmés sans procédure collective"><div class="lab">Prospectables</div><div class="track"><div class="fill hot" style="width:74.4%"></div></div><div class="val">465 <small>74 %</small></div></div>
     </div>
-    <p class="note">Les 159 autres : 63 probables (indices sans preuve, dont 47 non vérifiées), 26 douteuses, 37 hors cible (échafaudagiste, menuisier, fabricant, restaurant…), et 33 façadiers confirmés mais en procédure collective ou radiés.</p>
+    <p class="note">Les 160 autres : 64 probables (indices sans preuve, dont 47 non vérifiées), 26 douteuses, 37 hors cible (échafaudagiste, menuisier, fabricant, restaurant…), et 33 façadiers confirmés mais en procédure collective ou radiés.</p>
   </div>
 
   <div class="duo">
     <div class="chart" role="figure" aria-labelledby="c2">
-      <div class="chart-title"><h3 id="c2">Les 499 façadiers confirmés, par code NAF</h3><span class="eyebrow">part des confirmés</span></div>
+      <div class="chart-title"><h3 id="c2">Les 498 façadiers confirmés, par code NAF</h3><span class="eyebrow">part des confirmés</span></div>
       <div class="bars">
-        <div class="bar" title="43.99C : 167 façadiers"><div class="lab">Maçonnerie générale<span class="mono">43.99C</span></div><div class="track"><div class="fill" style="width:100%"></div></div><div class="val">167 <small>33 %</small></div></div>
-        <div class="bar" title="43.34Z : 89 façadiers"><div class="lab">Peinture et vitrerie<span class="mono">43.34Z</span></div><div class="track"><div class="fill" style="width:53.3%"></div></div><div class="val">89 <small>18 %</small></div></div>
+        <div class="bar" title="43.99C : 167 façadiers"><div class="lab">Maçonnerie générale<span class="mono">43.99C</span></div><div class="track"><div class="fill" style="width:100%"></div></div><div class="val">167 <small>34 %</small></div></div>
+        <div class="bar" title="43.34Z : 88 façadiers"><div class="lab">Peinture et vitrerie<span class="mono">43.34Z</span></div><div class="track"><div class="fill" style="width:52.69%"></div></div><div class="val">88 <small>18 %</small></div></div>
         <div class="bar" title="43.29A : 43 façadiers"><div class="lab">Isolation<span class="mono">43.29A</span></div><div class="track"><div class="fill" style="width:25.75%"></div></div><div class="val">43 <small>9 %</small></div></div>
         <div class="bar" title="43.39Z : 41 façadiers"><div class="lab">Autres finitions<span class="mono">43.39Z</span></div><div class="track"><div class="fill" style="width:24.55%"></div></div><div class="val">41 <small>8 %</small></div></div>
         <div class="bar" title="43.99D : 33 façadiers"><div class="lab">Autres travaux spécialisés<span class="mono">43.99D</span></div><div class="track"><div class="fill" style="width:19.76%"></div></div><div class="val">33 <small>7 %</small></div></div>
@@ -292,20 +292,17 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
 
     <div class="chart" role="figure" aria-labelledby="c3">
       <div class="chart-title"><h3 id="c3">Le test du code 43.99C</h3></div>
-      <p class="note" style="color:var(--ink)">20 entreprises tirées au hasard parmi les 9 056 entreprises de 6 à 199 salariés classées en maçonnerie générale, puis vérifiées une par une.</p>
+      <p class="note" style="color:var(--ink)">100 entreprises tirées au hasard parmi les 9 056 entreprises de 6 à 199 salariés classées en maçonnerie générale, puis vérifiées une par une, avec une double vérification des preuves.</p>
       <div class="grid20" aria-hidden="true">
-        <div class="cell c1" title="Façadier de métier"></div>
-        <div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div>
-        <div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div>
-        <div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div>
+        <div class="cell c1" title="Façadier de métier"></div><div class="cell c1" title="Façadier de métier"></div><div class="cell c1" title="Façadier de métier"></div><div class="cell c1" title="Façadier de métier"></div><div class="cell c1" title="Façadier de métier"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c2" title="Façade parmi d'autres activités"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell c3" title="Indice faible, non confirmé"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div><div class="cell" title="Pas d'activité façade"></div>
       </div>
       <div class="legend">
-        <div><i style="background:var(--accent);border-color:var(--accent)"></i><span><b class="mono">1</b> façadier de métier</span></div>
-        <div><i style="background:var(--teal);border-color:var(--teal)"></i><span><b class="mono">2</b> font de la façade parmi d'autres activités</span></div>
-        <div><i style="background:repeating-linear-gradient(45deg,var(--muted) 0 2px,transparent 2px 6px)"></i><span><b class="mono">5</b> indice faible, non confirmé</span></div>
-        <div><i style="background:var(--soft)"></i><span><b class="mono">12</b> pas d'activité façade</span></div>
+        <div><i style="background:var(--accent);border-color:var(--accent)"></i><span><b class="mono">5</b> façadiers de métier</span></div>
+        <div><i style="background:var(--teal);border-color:var(--teal)"></i><span><b class="mono">21</b> font de la façade parmi d'autres activités</span></div>
+        <div><i style="background:repeating-linear-gradient(45deg,var(--muted) 0 2px,transparent 2px 6px)"></i><span><b class="mono">20</b> indice faible, non confirmé</span></div>
+        <div><i style="background:var(--soft)"></i><span><b class="mono">54</b> pas d'activité façade</span></div>
       </div>
-      <p class="note">Ordre de grandeur sur un petit échantillon : la part réelle se situe probablement entre 5 % et 36 %. Cibler ce code, c'est appeler surtout des maçons.</p>
+      <p class="note">La part réelle de façadiers dans ce code se situe probablement entre 18 % et 35 %. Environ 3 entreprises sur 4 ne font pas de façade : cibler ce code, c'est appeler surtout des maçons.</p>
     </div>
   </div>
 </section>
@@ -350,11 +347,12 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
     </div>
     <div class="panel">
       <h3>Ce que le contrôle a corrigé</h3>
-      <div class="score"><b class="mono">18/20</b><span class="note">verdicts de l'IA justes après relecture de 20 cas tirés au hasard. Les 2 erreurs étaient des excès de prudence : aucun faux « confirmé ».</span></div>
+      <div class="score"><b class="mono">37/40</b><span class="note">verdicts de l'IA justes sur 40 tirés au hasard : 20 relus par moi (18 justes) et 20 contre-vérifiés sur les registres officiels et les sites des entreprises (19 justes). Les 3 erreurs ont été corrigées.</span></div>
       <ul>
         <li>5 alertes juridiques fausses, dues à des dates mal triées, revérifiées à la main.</li>
         <li>20 façadiers oubliés, parce que leur activité déclarée n'était pas lue en entier.</li>
         <li>15 liens sources morts, remplacés par la fiche officielle de l'entreprise.</li>
+        <li>Le test du code NAF, porté de 20 à 100 entreprises, chaque preuve contrôlée sur sa source.</li>
       </ul>
     </div>
   </div>
