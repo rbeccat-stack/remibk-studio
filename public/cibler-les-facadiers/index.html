@@ -17,7 +17,7 @@
   --accent:#FF5757; --accent-strong:#E04848; --accent-text:#C73E3E;
   --teal:#1D95AD; --teal-text:#15717F; --teal-soft:#E8F4F7;
   --foot-bg:#2E3438; --foot-ink:#FFFFFF; --foot-muted:#BCD0D1;
-  --hero-bg:#1A6F80; --hero-glow:#1D95AD; --hero-ink:#FFFFFF; --hero-muted:#D8EEF2; --hero-accent:#FF5757; --hero-line:rgba(255,255,255,.22);
+  --hero-bg:#1A6F80; --hero-glow:#154E5C; --hero-ink:#FFFFFF; --hero-muted:#F0F9FA; --hero-accent:#FF5757; --hero-line:rgba(255,255,255,.22);
   --display:"Roboto","Helvetica Neue",Arial,sans-serif;
   --body:"Open Sans","Segoe UI",Helvetica,Arial,sans-serif;
   --mono:"Roboto Mono",Consolas,"Courier New",monospace;
@@ -47,13 +47,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .fig{background:rgba(0,0,0,.14);padding:16px 16px 14px;display:grid;gap:4px;align-content:start}
 .fig b{font:700 clamp(1.7rem,3.4vw,2.4rem)/1 var(--display);font-variant-numeric:tabular-nums;color:var(--hero-ink)}
 .fig span{font-size:.86rem;color:var(--hero-muted);line-height:1.35}
-.fig.key{box-shadow:inset 0 4px 0 var(--hero-accent)}
+.fig.key{background:rgba(255,87,87,.18)}
 
 /* Sections */
 section{padding-block:44px;border-bottom:1px solid var(--line);display:grid;gap:22px}
 .head{display:grid;gap:8px}
 .head p{color:var(--muted)}
-.tldr{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:20px 22px;display:grid;gap:10px}
+.tldr{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:grid;gap:10px}
+.tldr h2{font-size:1.06rem;font-weight:700}
 .tldr ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
 
 /* Pièges */
@@ -65,7 +66,7 @@ section{padding-block:44px;border-bottom:1px solid var(--line);display:grid;gap:
 
 /* Méthode */
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
-.step{display:grid;grid-template-columns:52px minmax(0,1fr) 150px;gap:18px;padding-block:18px;border-bottom:1px solid var(--line);align-items:start}
+.step{display:grid;grid-template-columns:52px minmax(0,1fr) 150px;gap:18px;padding-block:22px;border-bottom:1px solid var(--line);align-items:start}
 .step .n{width:36px;height:36px;border-radius:50%;background:var(--teal-text);color:#FFFFFF;display:grid;place-items:center;font:700 1.05rem/1 var(--display)}
 .step .txt{display:grid;gap:6px}
 .step .txt p{font-size:.95rem}
@@ -80,7 +81,7 @@ section{padding-block:44px;border-bottom:1px solid var(--line);display:grid;gap:
 .chart-title .eyebrow{letter-spacing:.08em}
 .bars{display:grid;gap:7px}
 .bar{display:grid;grid-template-columns:minmax(120px,210px) minmax(0,1fr) 88px;gap:12px;align-items:center;font-size:.88rem}
-.bar .lab{line-height:1.25}
+.bar .lab{line-height:1.5}
 .bar .lab .mono{font-size:.8rem;color:var(--muted);display:block}
 .track{height:16px;position:relative}
 .fill{height:100%;background:var(--teal);border-radius:0 4px 4px 0;min-width:2px;transition:filter .15s}
@@ -135,7 +136,6 @@ footer .src{font-size:.8rem;color:var(--muted);max-width:80ch}
 
 /* Style de l'en-tête étendu à toute la page */
 .head::before{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--accent);margin-bottom:6px}
-.trap,.panel,.chart{border-top:3px solid var(--teal)}
 .band{background:radial-gradient(110% 120% at 100% 0%,var(--hero-glow) 0%,transparent 55%),var(--hero-bg);color:var(--hero-ink);border-radius:14px;padding:34px clamp(20px,4vw,48px);border-bottom:0;margin-block:28px}
 .band .eyebrow,.band .eyebrow.red{color:var(--hero-muted)}
 .band .head p{color:var(--hero-muted)}
@@ -146,8 +146,8 @@ footer .src{font-size:.8rem;color:var(--muted);max-width:80ch}
 .band .mission .q small{color:var(--hero-muted)}
 .band .mission p{color:var(--hero-ink)}
 .tldr-band{padding-block:0;border-bottom:0}
-.tldr-band .tldr{background:radial-gradient(110% 140% at 100% 0%,var(--hero-glow) 0%,transparent 55%),var(--hero-bg);color:var(--hero-ink);border:0;border-left:6px solid var(--hero-accent);border-radius:0 14px 14px 0;padding:24px clamp(20px,3vw,32px);margin-top:28px}
-.tldr-band .tldr h3{color:var(--hero-ink)}
+.tldr-band .tldr{background:radial-gradient(110% 140% at 100% 0%,var(--hero-glow) 0%,transparent 55%),var(--hero-bg);color:var(--hero-ink);border:0;border-radius:14px;padding:24px clamp(20px,3vw,32px);margin-top:28px}
+.tldr-band .tldr h2{color:var(--hero-ink)}
 .tldr-band .tldr li::marker{color:var(--hero-accent)}
 footer{background:var(--foot-bg);color:var(--foot-ink);border-radius:14px;padding:32px clamp(20px,4vw,48px);margin-top:28px}
 footer .src{color:var(--foot-muted)}
@@ -172,7 +172,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
 <div class="wrap">
 
 <header class="hero">
-  <div class="eyebrow">Étude de cas · Constitution d'un fichier de prospection</div>
+  <div class="eyebrow">Étude de cas</div>
   <h1>« Façadier » n'est pas un <em>code NAF</em>.</h1>
   <p class="lede">Comment constituer un fichier de prospection fiable sur une cible de niche, les entreprises de façade de 6 à 199 salariés, uniquement à partir de sources publiques et gratuites. Chaque entreprise retenue l'est avec une preuve et une source.</p>
   <div class="byline"><span>Rémi, candidat au poste de Chargé·e de Growth Marketing chez ReCom</span><span>Données au 26/09/2026</span></div>
@@ -186,7 +186,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
 
 <section class="tldr-band" aria-labelledby="t-tldr">
   <div class="tldr">
-    <h3 id="t-tldr">En 30 secondes</h3>
+    <h2 id="t-tldr">En 30 secondes</h2>
     <ul>
       <li>Un ciblage par code NAF rate une partie des façadiers et ramène surtout d'autres métiers : sur 100 entreprises tirées au hasard dans le code le plus fréquent, seules 26 font de la façade, et 5 en font leur métier.</li>
       <li>J'ai croisé quatre sources officielles (répertoire des entreprises, label RGE, annonces légales, web) pour prouver le métier de chaque entreprise, puis écarté celles en difficulté.</li>
