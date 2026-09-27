@@ -159,6 +159,11 @@ td.code{font-family:var(--mono);color:var(--teal-text);white-space:nowrap}
 .dl-arrow{margin-left:auto;flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent-text);color:#FFFFFF;transition:background .12s,transform .12s}
 .dl:hover .dl-arrow{background:var(--accent-strong);transform:translateY(2px)}
 .dl-arrow svg{width:18px;height:18px}
+.dl-top{position:fixed;top:16px;right:16px;z-index:50;display:inline-flex;align-items:center;gap:8px;background:var(--accent-text);color:#FFFFFF;font-family:var(--display);font-weight:700;font-size:.86rem;padding:9px 15px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(46,52,56,.22);transition:background .12s,transform .12s}
+.dl-top:hover{background:var(--accent-strong);transform:translateY(-1px)}
+.dl-top:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.dl-top svg{width:16px;height:16px;flex:none}
+@media (max-width:600px){.dl-top{gap:0;padding:11px;border-radius:50%}.dl-top .dl-top-label{display:none}}
 .limits{margin:0;padding-left:1.1em;display:grid;gap:8px;max-width:72ch}
 footer{padding-block:36px 0;display:grid;gap:12px}
 footer .sig{font:700 1.3rem/1.2 var(--display)}
@@ -200,6 +205,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
 </head>
 <body>
 
+<a class="dl-top" id="dl-top" href="/cibler-les-facadiers/Etude_facadiers_dispersion_NAF.xlsx" download title="Télécharger l'étude (Excel .xlsx)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span class="dl-top-label">Télécharger l'étude</span></a>
 
 <div class="wrap">
 
@@ -290,7 +296,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
   </ol>
 </section>
 
-<section aria-labelledby="t-resultats">
+<section id="resultats" aria-labelledby="t-resultats">
   <div class="head">
     <div class="eyebrow red">Les résultats</div>
     <h2 id="t-resultats">Ce que donnent les 625 entreprises analysées</h2>
@@ -443,6 +449,16 @@ document.querySelectorAll('.siren').forEach(function(btn){
     btn._t=setTimeout(function(){btn.classList.remove('copied');label.textContent=btn._prev;},1600);
   });
 });
+(function(){
+  var top=document.getElementById('dl-top');
+  if(!top)return;
+  top.addEventListener('click',function(){
+    var target=document.getElementById('resultats');
+    if(!target)return;
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    setTimeout(function(){target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});},120);
+  });
+})();
 </script>
 
 </body>
