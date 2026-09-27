@@ -39,11 +39,13 @@ a.src-link{color:var(--accent-text);font-weight:700}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* Info-bulle */
-.tip{position:relative;font-weight:700;color:var(--accent-text);border-bottom:1.5px dashed var(--accent-text);cursor:help}
+.tip{position:relative;font-weight:700;background:var(--accent);color:#FFFFFF;padding:.06em .28em;border-radius:3px;cursor:help}
 .tip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.tip .tip-content{display:none;position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%);width:340px;max-width:min(85vw,340px);background:var(--ink);color:#FFFFFF;padding:14px 16px;border-radius:10px;font-weight:400;font-size:.85rem;line-height:1.55;box-shadow:0 10px 28px rgba(0,0,0,.28);z-index:20;text-align:left}
-.tip .tip-content ul{margin:0;padding-left:1.1em;display:grid;gap:8px}
-.tip .tip-content::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--ink)}
+.tip .tip-content{display:none;position:absolute;left:0;bottom:calc(100% + 10px);width:360px;max-width:min(85vw,360px);background:var(--ink);color:#FFFFFF;padding:14px 16px;border-radius:10px;font-weight:400;font-size:.85rem;line-height:1.55;box-shadow:0 10px 28px rgba(0,0,0,.28);z-index:20;text-align:left;white-space:normal}
+.tip .tip-content .tip-line{display:block;position:relative;padding-left:1.1em}
+.tip .tip-content .tip-line + .tip-line{margin-top:8px}
+.tip .tip-content .tip-line::before{content:"•";position:absolute;left:0;color:var(--hero-accent)}
+.tip .tip-content::after{content:"";position:absolute;top:100%;left:26px;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--ink)}
 .tip:hover .tip-content,.tip:focus-visible .tip-content,.tip:focus-within .tip-content{display:block}
 
 /* En-tête : bandeau bleu pétrole */
@@ -248,7 +250,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
     </li>
     <li class="step">
       <div class="n">2</div>
-      <div class="txt"><h3>Prouver par le label</h3><p><span class="tip" tabindex="0">Qualification RGE<span class="tip-content"><ul><li>RGE (Reconnu Garant de l'Environnement) est une qualification délivrée après audit par un organisme certificateur comme Qualibat. Ce n'est pas du déclaratif, c'est donc la preuve la plus forte.</li><li>Le domaine « Isolation des murs par l'extérieur » (ITE) est la signature du façadier. Pour un autre métier, un autre domaine jouera ce rôle. Il y en a 33 : pompes à chaleur, photovoltaïque, fenêtres, combles…</li></ul></span></span> « isolation des murs par l'extérieur » en cours de validité. C'est la preuve la plus forte : elle est délivrée après audit, elle n'est pas déclarative.</p><span class="src">ADEME, liste des entreprises RGE</span></div>
+      <div class="txt"><h3>Prouver par le label</h3><p><span class="tip" tabindex="0">Qualification RGE<span class="tip-content"><span class="tip-line">RGE (Reconnu Garant de l'Environnement) est une qualification délivrée après audit par un organisme certificateur comme Qualibat. Ce n'est pas du déclaratif, c'est donc la preuve la plus forte.</span><span class="tip-line">Le domaine « Isolation des murs par l'extérieur » (ITE) est la signature du façadier. Pour un autre métier, un autre domaine jouera ce rôle. Il y en a 33 : pompes à chaleur, photovoltaïque, fenêtres, combles…</span></span></span> « isolation des murs par l'extérieur » en cours de validité. C'est la preuve la plus forte : elle est délivrée après audit, elle n'est pas déclarative.</p><span class="src">ADEME, liste des entreprises RGE</span></div>
       <div class="out"><b class="mono">286</b><span>confirmées sans intervention</span></div>
     </li>
     <li class="step">
