@@ -189,6 +189,11 @@ footer .src{font-size:.8rem;color:var(--muted);max-width:80ch}
 footer{background:var(--foot-bg);color:var(--foot-ink);border-radius:14px;padding:32px clamp(20px,4vw,48px);margin-top:28px}
 footer .src{color:var(--foot-muted)}
 footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--hero-accent);margin-top:10px}
+.portfolio-cta{display:inline-flex;align-items:center;gap:10px;width:fit-content;background:var(--accent-text);color:#FFFFFF;font-family:var(--display);font-weight:700;font-size:1rem;padding:12px 22px;border-radius:999px;text-decoration:none;margin:4px 0 2px;transition:background .14s,transform .14s}
+.portfolio-cta:hover{background:var(--accent-strong);transform:translateY(-1px)}
+.portfolio-cta:focus-visible{outline:2px solid #FFFFFF;outline-offset:3px}
+.portfolio-cta svg{width:18px;height:18px;flex:none;transition:transform .14s}
+.portfolio-cta:hover svg{transform:translateX(4px)}
 
 @media (max-width:760px){
   .figures{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -428,7 +433,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
 <footer>
   <div class="sig">Rémi</div>
   <p>Je serais ravi d'en parler et, surtout, de découvrir comment vous constituez vos fichiers aujourd'hui.</p>
-  <p><a href="https://www.remibk-studio.fr/" style="color:var(--hero-ink)">Voir mon portfolio</a></p>
+  <a class="portfolio-cta" href="https://www.remibk-studio.fr/">Voir mon portfolio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
   <p class="src">Sources : API Recherche d'entreprises (recherche-entreprises.api.gouv.fr) · ADEME, liste des entreprises RGE (data.ademe.fr) · BODACC, API de la DILA · INSEE, nomenclature NAF rév. 2. Toutes gratuites et consultables sans compte.</p>
 </footer>
 
