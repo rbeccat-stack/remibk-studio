@@ -147,6 +147,18 @@ td.code{font-family:var(--mono);color:var(--teal-text);white-space:nowrap}
 
 .rgpd{display:flex;gap:14px;align-items:flex-start;background:var(--teal-soft);border:1px solid var(--line);border-radius:10px;padding:14px 18px;font-size:.92rem}
 .rgpd b{font-family:var(--display);white-space:nowrap;color:var(--teal-text)}
+.dl{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;color:var(--ink);box-shadow:0 8px 24px rgba(199,62,62,.14);transition:transform .12s,box-shadow .12s;max-width:100%}
+.dl:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(199,62,62,.24)}
+.dl:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.dl-badge{display:grid;place-items:center;width:48px;height:48px;flex:none;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-text));color:#FFFFFF;box-shadow:0 4px 14px rgba(199,62,62,.4)}
+.dl-badge svg{width:24px;height:24px}
+.dl-txt{display:grid;gap:3px;line-height:1.25;min-width:0}
+.dl-main{font-family:var(--display);font-weight:700;font-size:1.02rem;color:var(--ink)}
+.dl-sub{font-size:.8rem;color:var(--muted);font-family:var(--mono);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dl-tag{background:var(--accent);color:#FFFFFF;font-family:var(--body);font-weight:600;font-size:.72rem;padding:2px 8px;border-radius:4px;letter-spacing:.01em}
+.dl-arrow{margin-left:auto;flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent-text);color:#FFFFFF;transition:background .12s,transform .12s}
+.dl:hover .dl-arrow{background:var(--accent-strong);transform:translateY(2px)}
+.dl-arrow svg{width:18px;height:18px}
 .limits{margin:0;padding-left:1.1em;display:grid;gap:8px;max-width:72ch}
 footer{padding-block:36px 0;display:grid;gap:12px}
 footer .sig{font:700 1.3rem/1.2 var(--display)}
@@ -348,6 +360,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
     </table>
   </div>
   <div class="rgpd"><b>RGPD</b><span>La liste ne contient que des données d'entreprises : raison sociale, SIREN, commune, effectif, code NAF, preuve et source. Aucun nom de dirigeant, email ou téléphone n'a été collecté.</span></div>
+  <a class="dl" href="/cibler-les-facadiers/Etude_facadiers_dispersion_NAF.xlsx" download><span class="dl-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span><span class="dl-txt"><span class="dl-main">Télécharger le classeur complet</span><span class="dl-sub"><span class="dl-tag">Excel .xlsx</span>625 entreprises · 5 onglets · 206 Ko</span></span><span class="dl-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 13 12 19 18 13"/></svg></span></a>
 </section>
 
 <section aria-labelledby="t-ia">
@@ -409,7 +422,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
 <footer>
   <div class="sig">Rémi</div>
   <p>Je serais ravi d'en parler et, surtout, de découvrir comment vous constituez vos fichiers aujourd'hui.</p>
-  <p><a href="/" style="color:var(--hero-ink)">Voir mon portfolio</a></p>
+  <p><a href="https://www.remibk-studio.fr/" style="color:var(--hero-ink)">Voir mon portfolio</a></p>
   <p class="src">Sources : API Recherche d'entreprises (recherche-entreprises.api.gouv.fr) · ADEME, liste des entreprises RGE (data.ademe.fr) · BODACC, API de la DILA · INSEE, nomenclature NAF rév. 2. Toutes gratuites et consultables sans compte.</p>
 </footer>
 
