@@ -14,7 +14,7 @@
 <style>
 :root{
   --bg:#EEF6F8; --surface:#FFFFFF; --ink:#2E3438; --muted:#4F606B; --line:#CFE2E7; --soft:#E3F1F4;
-  --accent:#FF5757; --accent-strong:#E04848; --accent-text:#C73E3E;
+  --accent:#FF5757; --accent-strong:#A93434; --accent-text:#C73E3E;
   --teal:#1D95AD; --teal-text:#15717F; --teal-soft:#E8F4F7;
   --foot-bg:#2E3438; --foot-ink:#FFFFFF; --foot-muted:#BCD0D1;
   --hero-bg:#1A6F80; --hero-glow:#146F82; --hero-ink:#FFFFFF; --hero-muted:#D8EEF2; --hero-accent:#FF5757; --hero-line:rgba(255,255,255,.22);
@@ -39,7 +39,7 @@ a.src-link{color:var(--accent-text);font-weight:700}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* Info-bulle */
-.tip{position:relative;font-weight:700;background:var(--accent);color:#FFFFFF;padding:.06em .28em;border-radius:3px;cursor:help}
+.tip{position:relative;font-weight:700;background:var(--accent-text);color:#FFFFFF;padding:.06em .28em;border-radius:3px;cursor:help}
 .tip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .tip .tip-content{display:none;position:absolute;left:0;bottom:calc(100% + 10px);width:360px;max-width:min(85vw,360px);background:var(--ink);color:#FFFFFF;padding:14px 16px;border-radius:10px;font-weight:400;font-size:.85rem;line-height:1.55;box-shadow:0 10px 28px rgba(0,0,0,.28);z-index:20;text-align:left;white-space:normal}
 .tip .tip-content .tip-line{display:block;position:relative;padding-left:1.1em}
@@ -155,7 +155,7 @@ td.code{font-family:var(--mono);color:var(--teal-text);white-space:nowrap}
 .dl-txt{display:grid;gap:3px;line-height:1.25;min-width:0}
 .dl-main{font-family:var(--display);font-weight:700;font-size:1.02rem;color:var(--ink)}
 .dl-sub{font-size:.8rem;color:var(--muted);font-family:var(--mono);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.dl-tag{background:var(--accent);color:#FFFFFF;font-family:var(--body);font-weight:600;font-size:.72rem;padding:2px 8px;border-radius:4px;letter-spacing:.01em}
+.dl-tag{background:var(--accent-text);color:#FFFFFF;font-family:var(--body);font-weight:600;font-size:.72rem;padding:2px 8px;border-radius:4px;letter-spacing:.01em}
 .dl-arrow{margin-left:auto;flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent-text);color:#FFFFFF;transition:background .12s,transform .12s}
 .dl:hover .dl-arrow{background:var(--accent-strong);transform:translateY(2px)}
 .dl-arrow svg{width:18px;height:18px}
