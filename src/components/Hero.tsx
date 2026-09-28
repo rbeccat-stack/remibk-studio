@@ -20,7 +20,6 @@ export default function Hero() {
             </p>
             <WordCycle
               words={hero.keywords}
-              suffix="."
               className="animate-fade-up [animation-delay:160ms] text-gradient-accent animate-shimmer mt-1 max-w-full font-semibold text-[clamp(2rem,8vw,3.5rem)] leading-[1.05] tracking-tight"
             />
 

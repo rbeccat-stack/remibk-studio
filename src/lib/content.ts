@@ -303,8 +303,8 @@ export const toolsIntro =
 // Réponses : un tableau de paragraphes. Une ligne qui commence par "• "
 // s'affiche comme puce.
 export const faqSection = {
-  title: "Avant que tu me les poses.",
-  underlineWord: "les poses",
+  title: "Avant qu'on en parle.",
+  underlineWord: "en parle",
   subtitle: "7 réponses pour gagner 5 minutes au premier échange.",
 }
 
