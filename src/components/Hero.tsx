@@ -1,6 +1,5 @@
 import { hero } from '@/lib/content'
-import WordCycle from '@/components/WordCycle'
-import GrowthIllustration from '@/components/GrowthIllustration'
+import HeroTV from '@/components/HeroTV'
 import PillBadge from '@/components/PillBadge'
 import HeroParallax from '@/components/HeroParallax'
 
@@ -14,14 +13,6 @@ export default function Hero() {
             <h1 className="animate-fade-up text-fg text-shadow-emboss font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.03em] text-balance">
               {hero.title}
             </h1>
-
-            <p className="animate-fade-up [animation-delay:80ms] mt-6 text-lg md:text-xl text-fg-muted leading-relaxed">
-              {hero.lead}
-            </p>
-            <WordCycle
-              words={hero.keywords}
-              className="animate-fade-up [animation-delay:160ms] text-accent-ink text-shadow-emboss mt-1 max-w-full font-extrabold text-[clamp(2rem,8vw,3.5rem)] leading-[1.05] tracking-tight"
-            />
 
             <div className="animate-fade-up [animation-delay:240ms] mt-8">
               <PillBadge accent="sage" live>{hero.meta}</PillBadge>
@@ -45,9 +36,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right column — growth hacking illustration */}
+          {/* Right column — téléviseur qui diffuse les mots-clés */}
           <div className="animate-fade-up [animation-delay:200ms]">
-            <GrowthIllustration />
+            <HeroTV lead={hero.lead} keywords={hero.keywords} />
           </div>
         </div>
       </HeroParallax>

@@ -45,6 +45,8 @@
 
   /* Encre embossée : reflet blanc sous la lettre */
   --text-shadow-emboss: 0 1px 0 #ffffff;
+  /* Lueur de phosphore rouge sur l'écran du téléviseur */
+  --text-shadow-phosphor: 0 0 2px rgba(255, 71, 87, 0.9), 0 0 16px rgba(255, 71, 87, 0.55);
 
   /* Motion : ressort mécanique pour les interactions, expo pour les apparitions */
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -52,6 +54,7 @@
 
   --animate-fade-up: fade-up 600ms var(--ease-expo) both;
   --animate-menu-in: menu-in 200ms var(--ease-expo) both;
+  --animate-crt-sweep: crt-sweep 7s linear infinite;
 
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(24px); }
@@ -60,6 +63,11 @@
   @keyframes menu-in {
     from { opacity: 0; transform: translateY(-8px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+  /* Bande claire qui descend l'écran cathodique */
+  @keyframes crt-sweep {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(400%); }
   }
 }
 
@@ -212,40 +220,6 @@ body {
     linear-gradient(90deg, rgba(99, 110, 114, 0.14) 1px, transparent 1px);
   background-size: 20px 20px;
 }
-
-/* -------------------------------------------------------------------------- */
-/*  Illustration hero (SVG)                                                   */
-/* -------------------------------------------------------------------------- */
-@keyframes gh-draw {
-  to { stroke-dashoffset: 0; }
-}
-
-@keyframes gh-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-@keyframes gh-float-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-9px); }
-}
-
-.gh-curve {
-  stroke-dasharray: 480;
-  stroke-dashoffset: 480;
-  animation: gh-draw 2.4s var(--ease-expo) 0.2s forwards;
-}
-
-.gh-rocket,
-.gh-float,
-.gh-float-slow {
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-.gh-rocket { animation: gh-float 3.6s ease-in-out infinite; }
-.gh-float { animation: gh-float 4.5s ease-in-out infinite; }
-.gh-float-slow { animation: gh-float-slow 6s ease-in-out infinite; }
 
 /* -------------------------------------------------------------------------- */
 /*  Rotation des mots du hero                                                 */

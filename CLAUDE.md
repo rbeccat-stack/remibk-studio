@@ -40,7 +40,8 @@ Light matte-plastic chassis (`#e0e5ec`), single light source top-left (highlight
 - Buttons are physical keys: `key-primary` (red) / `key-chassis` (grey) — uppercase, press down 2px with inverted shadow on `:active`
 - `Reveal` — one-shot fade-up on scroll (IntersectionObserver, 15 % threshold), `delay` prop for stagger
 - `HeroParallax` — hero fades/scales/translates over the first 50 vh of scroll
-- The only dark surfaces are the hero device bezel (`GrowthIllustration`) and the footer (`bg-console`)
+- `HeroTV` — hero TV set (chassis body, recessed CRT screen) that broadcasts `hero.lead` + the `WordCycle` keywords; screen text sizes use container units (`cqw`)
+- The only dark surfaces are the TV screen frame and the footer (`bg-console`)
 
 ### Fonts
 
