@@ -11,6 +11,12 @@
         ],
         "createdAt": "2026-09-26T22:25:04.559Z",
         "reason": "Static analyzer false positive on CSS-var radial-gradient bg; verified real contrast ~5:1 via browser getComputedStyle"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+        "createdAt": "2026-09-29T15:27:52.319Z",
+        "reason": "Industrial Skeuomorphism design system supplied by the user specifies this exact curve as the primary mechanical spring easing for button/card interactions"
       }
     ]
   }
