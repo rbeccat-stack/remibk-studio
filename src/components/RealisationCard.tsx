@@ -7,6 +7,7 @@ interface RealisationCardProps {
   title: string
   type: string
   context: string
+  tools?: string[]
   summary: string
   problem: string
   result: string
@@ -19,6 +20,7 @@ export default function RealisationCard({
   title,
   type,
   context,
+  tools,
   summary,
   problem,
   result,
@@ -54,6 +56,11 @@ export default function RealisationCard({
               {type}
             </span>
             <span className="font-mono text-[11px] tracking-wide text-fg-muted">{context}</span>
+            {tools && tools.length > 0 && (
+              <span className="font-mono text-[11px] tracking-wide text-fg-subtle">
+                · {tools.join(', ')}
+              </span>
+            )}
           </div>
 
           <h3 className="mt-3 font-semibold text-xl tracking-tight leading-snug text-fg sm:text-2xl">

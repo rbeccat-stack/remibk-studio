@@ -79,6 +79,7 @@ export const realisations = [
     title: "Trouver les décideurs d'une entreprise",
     type: "Outil web",
     context: "Projet personnel",
+    tools: ["Make", "SocieteInfo API"],
     summary:
       "Un outil qui transforme un SIREN en liste de décideurs qualifiés, prêts à contacter.",
     problem:
@@ -98,6 +99,7 @@ export const realisations = [
     title: "Enrichir des décideurs à la chaîne",
     type: "Workflow",
     context: "Projet personnel",
+    tools: ["Make", "Google Sheets", "API SIRENE (INSEE)", "SocieteInfo API"],
     summary:
       "Le même principe que l'outil web, mais capable de traiter une liste entière sans repasser par l'interface.",
     problem:
@@ -116,6 +118,7 @@ export const realisations = [
     title: "Vérifier des emails avant une campagne",
     type: "Workflow + interface",
     context: "Réalisé chez Locabri",
+    tools: ["Make", "Google Sheets", "JavaScript"],
     summary:
       "Un outil qui repère les emails dont le domaine ne correspond ni au site ni au nom de l'entreprise.",
     problem:
@@ -134,6 +137,7 @@ export const realisations = [
     title: "Piloter la prospection en un coup d'œil (à retravailler)",
     type: "Dashboard",
     context: "Réalisé chez Locabri",
+    tools: ["HubSpot", "Excel"],
     summary:
       "Un tableau de bord qui rassemble tous les chiffres de prospection au même endroit, à jour automatiquement.",
     problem:
@@ -152,6 +156,7 @@ export const realisations = [
     title: "Cartographier les prospects B2B à 15 minutes à pied",
     type: "Carte interactive",
     context: "Réalisé pour un client (anonymisé)",
+    tools: ["API Recherche d'entreprises", "SVG", "HTML"],
     summary:
       "Une carte qui transforme une adresse en liste priorisée d'entreprises à démarcher autour d'elle.",
     problem:
@@ -171,6 +176,7 @@ export const realisations = [
     title: "Cibler un métier invisible aux codes NAF",
     type: "Étude de prospection",
     context: "Réalisé pour une candidature (ReCom, agence de growth B2B)",
+    tools: ["Python", "API Recherche d'entreprises", "RGE ADEME", "BODACC", "Excel"],
     summary:
       "Un fichier de prospection fiable construit à partir de sources publiques, sans dépendre du code NAF.",
     problem:
@@ -190,6 +196,7 @@ export const realisations = [
     title: "Un agent IA qui qualifie les prospects (à retravailler)",
     type: "Agent IA",
     context: "Projet personnel / R&D",
+    tools: ["Pappers", "Apollo", "RocketReach", "Notion", "VPS"],
     summary:
       "Ce qui prenait 3 à 4 heures de recherche manuelle se fait maintenant tout seul, 24 heures sur 24.",
     problem:
@@ -208,6 +215,7 @@ export const realisations = [
     title: "Guitar Flow — d'une idée à un produit vendu",
     type: "Projet complet",
     context: "Projet personnel",
+    tools: ["Claude Code", "Reddit", "Google Sheets", "Figma", "Cursor", "Gemini", "Canva"],
     summary:
       "Un produit physique pensé, testé puis lancé à partir des vrais besoins des guitaristes.",
     problem:
