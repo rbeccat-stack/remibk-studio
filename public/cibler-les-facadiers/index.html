@@ -232,7 +232,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
     <h2 id="t-tldr">En 30 secondes</h2>
     <ul>
       <li>Un ciblage par code NAF rate une partie des façadiers et ramène surtout d'autres métiers : sur 100 entreprises tirées au hasard dans le code le plus fréquent (43.99C, maçonnerie générale), seules 26 font de la façade, et 5 en font leur métier.</li>
-      <li>J'ai croisé quatre sources officielles (<a class="src-link" href="https://www.data.gouv.fr/datasets/donnees-des-entreprises-utilisees-dans-lannuaire-des-entreprises" target="_blank" rel="noopener">répertoire des entreprises</a>, <a class="src-link" href="https://entreprise.api.gouv.fr/catalogue/ademe/certifications_rge" target="_blank" rel="noopener">label RGE</a>, <a class="src-link" href="https://www.data.gouv.fr/datasets/bodacc" target="_blank" rel="noopener">annonces légales</a>, web) pour prouver le métier de chaque entreprise, puis écarté celles en difficulté.</li>
+      <li>J'ai croisé quatre sources officielles (<a class="src-link" href="https://www.data.gouv.fr/datasets/donnees-des-entreprises-utilisees-dans-lannuaire-des-entreprises" target="_blank" rel="noopener">répertoire des entreprises</a>, <a class="src-link" href="https://entreprise.api.gouv.fr/catalogue/ademe/certifications_rge" target="_blank" rel="noopener">label RGE</a>, <a class="src-link" href="https://www.data.gouv.fr/datasets/bodacc" target="_blank" rel="noopener">annonces légales</a>, web) pour confirmer le métier de chaque entreprise, puis écarté celles en difficulté.</li>
       <li>J'ai conçu la méthode et piloté un agent IA pour l'exécution. J'ai contrôlé ses résultats : 37 verdicts sur 40 vérifiés étaient justes.</li>
     </ul>
   </div>
@@ -242,7 +242,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
   <div class="head">
     <div class="eyebrow red">Le problème</div>
     <h2 id="t-pieges">Trois raccourcis qui faussent un fichier</h2>
-    <p>Le réflexe classique consiste à filtrer par code NAF, puis par mot-clé dans le nom. Sur cette cible, aucun des deux ne suffit, et « entreprise en activité » du répertoire non plus.</p>
+    <p>Le réflexe classique consiste à filtrer par code NAF, puis par mot-clé dans la dénomination de l'entreprise. Sur cette cible, aucun des deux ne suffit, et « entreprise en activité » du répertoire de l'INSEE non plus.</p>
   </div>
   <div class="traps">
     <article class="trap">
