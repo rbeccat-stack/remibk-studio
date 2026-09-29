@@ -135,16 +135,16 @@ export const realisations = [
     type: "Workflow + interface",
     context: "Réalisé chez Locabri",
     summary:
-      "Un outil simple pour contrôler en quelques minutes que les adresses d'un fichier sont valides et exploitables.",
+      "Un outil qui repère les emails dont le domaine ne correspond ni au site ni au nom de l'entreprise.",
     problem:
-      "Aucun moyen simple de contrôler la validité des adresses et la base légale d'un fichier avant une campagne.",
+      "Avant une campagne, aucun moyen simple de repérer les emails dont le domaine ne correspondait pas à l'entreprise visée — erreur de saisie, contact parti, adresse générique.",
     result:
-      "Contrôle ramené à quelques minutes, chaque fichier assaini avant envoi — outil déployé et utilisé par l'équipe.",
+      "Chaque contact annoté d'un score de cohérence (0 à 100) entre son email, le site de l'entreprise et son nom légal, avec un commentaire explicite.",
     how: [
-      "Interface de dépôt de fichier utilisable sans compétence technique",
-      "Vérification syntaxe, domaine et délivrabilité de chaque adresse",
-      "Contrôle de la source et du consentement associé (RGPD)",
-      "Export d'une liste nettoyée + journal des contrôles conservé",
+      "Dépôt d'un fichier Excel (onglet CONTACTS) via une interface d'upload",
+      "Détection souple des colonnes Email, URL et Nom légal, quel que soit leur intitulé",
+      "Extraction et comparaison des domaines (email, site, nom nettoyé, acronyme)",
+      "Fichier de résultat généré automatiquement, prêt à consulter ou télécharger",
     ],
     accent: "terracotta" as const,
   },
