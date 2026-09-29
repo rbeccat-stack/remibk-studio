@@ -193,6 +193,26 @@ export const realisations = [
     link: { label: "Voir l'étude complète", href: "/cibler-les-facadiers" },
   },
   {
+    title: "Swipe and Prospect — qualifier des associations preuves à l'appui",
+    type: "Application web",
+    context: "Projet personnel — en cours",
+    tools: ["Next.js", "TypeScript", "SQLite", "Cheerio", "Zod"],
+    summary:
+      "Une application qui prépare, pour chaque association, un dossier sourcé et un brouillon d'approche, avant toute prise de contact.",
+    problem:
+      "Repérer des associations à accompagner sur le numérique prend du temps, et une simple liste de noms ne dit pas si le besoin existe vraiment. Un texte généré sans preuves, lui, invente des besoins.",
+    result:
+      "V0 fonctionnelle en local : 9 associations lyonnaises qualifiées en pilote, chaque fait relié à sa source ou marqué « à vérifier », aucun message envoyé à une association.",
+    how: [
+      "Ciblage versionné : chaque dossier garde la version des critères utilisée",
+      "Collecte limitée à trois pages publiques par association, avec URL et date de consultation",
+      "Fiche qui sépare faits sourcés, hypothèses et inconnus, puis brouillon d'approche versionné",
+      "Dossier envoyé uniquement à soi-même pour relecture ; l'analyse IA est prête, à brancher sur un fournisseur",
+    ],
+    accent: "terracotta" as const,
+    link: { label: "Voir l'application", href: "https://swipe-and-prospect.remibk-studio.fr" },
+  },
+  {
     title: "Un agent IA qui qualifie les prospects (à retravailler)",
     type: "Agent IA",
     context: "Projet personnel / R&D",
