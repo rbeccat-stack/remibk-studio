@@ -273,13 +273,11 @@ export type ToolLevel = keyof typeof toolLevels
 export const toolGroups: {
   title: string
   tag: string
-  accent: "terracotta" | "sage"
   tools: { name: string; level: ToolLevel }[]
 }[] = [
   {
     title: "Prospection & données B2B",
     tag: "Cœur de métier",
-    accent: "terracotta",
     tools: [
       { name: "Sales Navigator", level: 3 },
       { name: "Pharow", level: 3 },
@@ -292,7 +290,6 @@ export const toolGroups: {
   {
     title: "Automatisation & CRM",
     tag: "En production",
-    accent: "sage",
     tools: [
       { name: "Make", level: 3 },
       { name: "HubSpot", level: 2 },
@@ -305,7 +302,6 @@ export const toolGroups: {
   {
     title: "Agents & IA",
     tag: "Focus actuel",
-    accent: "terracotta",
     tools: [
       { name: "Claude", level: 3 },
       { name: "Claude Code", level: 3 },
@@ -317,7 +313,6 @@ export const toolGroups: {
   {
     title: "Pilotage & design",
     tag: "Support",
-    accent: "sage",
     tools: [
       { name: "Excel", level: 3 },
       { name: "Notion", level: 3 },

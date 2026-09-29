@@ -6,23 +6,15 @@ import { toolGroups, toolLevels, toolsIntro, type ToolLevel } from '@/lib/conten
 
 const LEVELS: ToolLevel[] = [3, 2, 1]
 
-// Niveau affiché comme une rangée de LEDs : allumées = niveau atteint.
-function LevelDots({
-  level,
-  accent,
-  srLabel = true,
-}: {
-  level: ToolLevel
-  accent: 'terracotta' | 'sage'
-  srLabel?: boolean
-}) {
-  const lit = accent === 'terracotta' ? 'led-red' : 'led-green'
+// Niveau affiché comme une rangée de LEDs vertes : allumées = niveau atteint.
+// Pas de rouge ici : il se lirait comme une alerte sur une compétence.
+function LevelDots({ level, srLabel = true }: { level: ToolLevel; srLabel?: boolean }) {
   const { label, hint } = toolLevels[level]
 
   return (
     <span className="inline-flex items-center gap-1.5" title={`${label} — ${hint}`}>
       {[1, 2, 3].map((n) => (
-        <span key={n} aria-hidden="true" className={`led h-2 w-2 ${n <= level ? lit : 'led-off'}`} />
+        <span key={n} aria-hidden="true" className={`led h-2 w-2 ${n <= level ? 'led-green' : 'led-off'}`} />
       ))}
       {srLabel && <span className="sr-only">{label}</span>}
     </span>
@@ -37,7 +29,7 @@ export default function Toolbox() {
           title="Ma boîte à outils"
           underlineWord="outils"
           subtitle={toolsIntro}
-          accent="terracotta"
+          accent="sage"
         />
       </Reveal>
 
@@ -47,14 +39,14 @@ export default function Toolbox() {
             <Panel className="h-full p-6">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <h3 className="font-bold text-lg tracking-tight text-fg leading-tight">{group.title}</h3>
-                <PillBadge accent={group.accent}>{group.tag}</PillBadge>
+                <PillBadge accent="sage">{group.tag}</PillBadge>
               </div>
 
               <ul className="mt-4 divide-y divide-border [&>li+li]:shadow-[inset_0_1px_0_#fff]">
                 {group.tools.map((tool) => (
                   <li key={tool.name} className="flex items-center justify-between gap-4 py-2.5">
                     <span className="text-sm font-medium text-fg">{tool.name}</span>
-                    <LevelDots level={tool.level} accent={group.accent} />
+                    <LevelDots level={tool.level} />
                   </li>
                 ))}
               </ul>
@@ -68,7 +60,7 @@ export default function Toolbox() {
         {LEVELS.map((level) => (
           <div key={level} className="flex items-center gap-2.5">
             <dt className="flex items-center gap-2">
-              <LevelDots level={level} accent="terracotta" srLabel={false} />
+              <LevelDots level={level} srLabel={false} />
               <span className="text-sm font-bold text-fg">{toolLevels[level].label}</span>
             </dt>
             <dd className="text-sm text-fg-muted">{toolLevels[level].hint}</dd>
