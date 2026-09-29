@@ -113,24 +113,6 @@ export const realisations = [
     accent: "sage" as const,
   },
   {
-    title: "Nettoyer et fiabiliser une base de contacts",
-    type: "Workflow",
-    context: "Réalisé chez Locabri",
-    summary:
-      "Les fichiers de prospects arrivaient incomplets et en double — ce système les corrige tout seul.",
-    problem:
-      "Les fichiers prospects arrivaient incomplets et en double, avec des SIRET manquants ou erronés.",
-    result:
-      "Base fiabilisée : doublons éliminés, chaque contact rattaché à une entreprise vérifiée par son SIRET.",
-    how: [
-      "Rapprochement SIRET via l'API INSEE SIRENE",
-      "Complétion des données société (effectif, code NAF, adresse)",
-      "Règle de dédoublonnage sur SIRET + email normalisé",
-      "Rapport d'anomalies généré à chaque passage",
-    ],
-    accent: "sage" as const,
-  },
-  {
     title: "Vérifier des emails avant une campagne",
     type: "Workflow + interface",
     context: "Réalisé chez Locabri",
@@ -149,7 +131,7 @@ export const realisations = [
     accent: "terracotta" as const,
   },
   {
-    title: "Piloter la prospection en un coup d'œil",
+    title: "Piloter la prospection en un coup d'œil (à retravailler)",
     type: "Dashboard",
     context: "Réalisé chez Locabri",
     summary:
@@ -205,7 +187,7 @@ export const realisations = [
     link: { label: "Voir l'étude complète", href: "/cibler-les-facadiers" },
   },
   {
-    title: "Un agent IA qui qualifie les prospects",
+    title: "Un agent IA qui qualifie les prospects (à retravailler)",
     type: "Agent IA",
     context: "Projet personnel / R&D",
     summary:
