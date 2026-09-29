@@ -231,7 +231,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
   <div class="tldr">
     <h2 id="t-tldr">En 30 secondes</h2>
     <ul>
-      <li>Un ciblage par code NAF rate une partie des façadiers et ramène surtout d'autres métiers : sur 100 entreprises tirées au hasard dans le code le plus fréquent (43.99C, maçonnerie générale), seules 26 font de la façade, et 5 en font leur métier.</li>
+      <li>Un ciblage par code NAF rate une partie des façadiers et ramène surtout d'autres métiers : sur 100 entreprises tirées au hasard dans le code le plus fréquent (43.99C, maçonnerie générale), seules 26 font de la façade, et 5 en font leur cœur de métier.</li>
       <li>J'ai croisé quatre sources officielles (<a class="src-link" href="https://www.data.gouv.fr/datasets/donnees-des-entreprises-utilisees-dans-lannuaire-des-entreprises" target="_blank" rel="noopener">répertoire des entreprises</a>, <a class="src-link" href="https://entreprise.api.gouv.fr/catalogue/ademe/certifications_rge" target="_blank" rel="noopener">label RGE</a>, <a class="src-link" href="https://www.data.gouv.fr/datasets/bodacc" target="_blank" rel="noopener">annonces légales</a>, web) pour confirmer le métier de chaque entreprise, puis écarté celles en difficulté.</li>
       <li>J'ai conçu la méthode et piloté un agent IA pour l'exécution. J'ai contrôlé ses résultats : 37 verdicts sur 40 vérifiés étaient justes.</li>
     </ul>
@@ -249,7 +249,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
       <div class="big">32 %</div>
       <h3>Le code NAF disperse la cible</h3>
       <p>Le premier code (43.99C, maçonnerie générale) ne regroupe qu'un tiers des façadiers. Il faut 8 codes pour en couvrir près de 90 %, et ces codes contiennent surtout des maçons, peintres ou isolateurs.</p>
-      <p class="ex">Test sur 100 entreprises tirées au hasard parmi les 9 056 du code 43.99C : 26 ont une activité façade, 5 en font leur métier.</p>
+      <p class="ex">Test sur 100 entreprises tirées au hasard parmi les 9 056 du code 43.99C : 26 ont une activité façade, 5 en font leur cœur de métier.</p>
     </article>
     <article class="trap">
       <div class="big">15 %</div>
@@ -290,7 +290,7 @@ footer .sig::after{content:"";display:block;width:44px;height:4px;border-radius:
     </li>
     <li class="step">
       <div class="n">4</div>
-      <div class="txt"><h3>Contrôler sur le web</h3><p>Recherche nom + commune, lecture du site ou des fiches professionnelles, verdict motivé avec son lien. Réalisé par un agent IA, vérifié sur un échantillon de 40 verdicts, puis complété lors d'un audit le 28/09.</p><span class="src">Sites, PagesJaunes, annuaires, objet social</span></div>
+      <div class="txt"><h3>Contrôler sur le web</h3><p>Recherche nom + commune, lecture du site ou des fiches professionnelles, verdict motivé avec son lien. Réalisé par un agent IA sur toutes les entreprises restantes ; sa fiabilité a été mesurée en revérifiant 40 verdicts tirés au hasard (37 justes), puis complété lors d'un audit le 28/09.</p><span class="src">Sites, PagesJaunes, annuaires, objet social</span></div>
       <div class="out"><b class="mono">256</b><span>verdicts, chacun avec sa source</span></div>
     </li>
     <li class="step">
