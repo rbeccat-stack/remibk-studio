@@ -76,22 +76,23 @@ export const features = [
 // ─────────────────────────────────────────────────────────────────────────
 export const realisations = [
   {
-    title: "Trouver des prospects automatiquement",
-    type: "Workflow",
-    context: "Réalisé chez Locabri",
+    title: "Trouver les décideurs d'une entreprise",
+    type: "Outil web",
+    context: "Projet personnel",
     summary:
-      "Un système qui va chercher les bons contacts B2B à la place de l'équipe commerciale.",
+      "Un outil qui transforme un SIREN en liste de décideurs qualifiés, prêts à contacter.",
     problem:
-      "L'équipe commerciale montait ses listes de prospection à la main, cible par cible, plusieurs heures par semaine.",
+      "Identifier le bon interlocuteur dans une entreprise (marketing, growth, direction, RH) demandait une recherche manuelle croisant plusieurs outils.",
     result:
-      "≈ 10 000 contacts collectés en autonomie, sans saisie manuelle — plusieurs heures par semaine rendues à l'équipe commerciale.",
+      "Décideurs identifiés et qualifiés par rôle, avec email et score de délivrabilité, consultables via une interface web ou exportables en CSV.",
     how: [
-      "Scénario Make déclenché sur une liste de critères (secteur, taille, zone)",
-      "Chaînage Sales Navigator → Pharow → Evaboot pour l'extraction",
-      "Nettoyage et normalisation des champs avant sortie",
-      "Export CSV au format figé, prêt à importer dans le CRM",
+      "Interface web + webhook : un SIREN suffit pour lancer la recherche",
+      "Appel à l'API SocieteInfo, filtré sur une cinquantaine d'intitulés de poste pertinents (growth, marketing, direction, RH…)",
+      "Email et score de délivrabilité renvoyés pour chaque contact",
+      "Deux sorties selon le besoin : JSON pour l'interface, CSV agrégé pour l'export",
     ],
     accent: "terracotta" as const,
+    link: { label: "Voir l'outil", href: "https://enrichissement-decideurs.remibk-studio.fr" },
   },
   {
     title: "Nettoyer et fiabiliser une base de contacts",
@@ -164,6 +165,25 @@ export const realisations = [
       "Carte SVG interactive : filtres croisés, fiches détaillées, fond de plan dessiné à la main",
     ],
     accent: "terracotta" as const,
+  },
+  {
+    title: "Cibler un métier invisible aux codes NAF",
+    type: "Étude de prospection",
+    context: "Réalisé pour une candidature (ReCom, agence de growth B2B)",
+    summary:
+      "Un fichier de prospection fiable construit à partir de sources publiques, sans dépendre du code NAF.",
+    problem:
+      "Le code NAF ne suffit pas à cibler un métier de niche : sur 100 entreprises tirées au hasard dans le code le plus fréquent des façadiers, seules 26 faisaient vraiment ce métier.",
+    result:
+      "534 façadiers confirmés par preuve (label RGE, activité déclarée, contrôle web), 487 prospectables une fois les entreprises en procédure écartées.",
+    how: [
+      "Croisement de 4 sources publiques : Recherche d'entreprises, RGE ADEME, BODACC, contrôle web",
+      "Hiérarchie de preuves par entreprise, du label RGE à l'absence de preuve",
+      "Filtrage des entreprises en liquidation, redressement ou sauvegarde récente",
+      "Audit complet et fichier Excel livrable, prêt à prospecter",
+    ],
+    accent: "sage" as const,
+    link: { label: "Voir l'étude complète", href: "/cibler-les-facadiers" },
   },
   {
     title: "Un agent IA qui qualifie les prospects",
