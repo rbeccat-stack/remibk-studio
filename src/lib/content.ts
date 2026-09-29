@@ -95,6 +95,24 @@ export const realisations = [
     link: { label: "Voir l'outil", href: "https://enrichissement-decideurs.remibk-studio.fr" },
   },
   {
+    title: "Enrichir des décideurs à la chaîne",
+    type: "Workflow",
+    context: "Projet personnel",
+    summary:
+      "Le même principe que l'outil web, mais capable de traiter une liste entière sans repasser par l'interface.",
+    problem:
+      "L'outil web traite une entreprise à la fois : pas de solution pour enrichir une liste de SIREN sans relancer la recherche à la main pour chacun.",
+    result:
+      "Une liste de SIREN déposée dans un Google Sheet suffit à lancer la chaîne : établissements récupérés et décideurs qualifiés s'écrivent automatiquement, sans intervention.",
+    how: [
+      "Un SIREN ajouté dans l'onglet INPUT est détecté automatiquement",
+      "Récupération des établissements ouverts via l'API SIRENE (INSEE), écrits dans l'onglet OUTPUT",
+      "Déclenchement automatique du second scénario par webhook",
+      "Décideurs qualifiés (API SocieteInfo) ajoutés directement dans l'onglet CONTACTS",
+    ],
+    accent: "sage" as const,
+  },
+  {
     title: "Nettoyer et fiabiliser une base de contacts",
     type: "Workflow",
     context: "Réalisé chez Locabri",
