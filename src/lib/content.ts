@@ -155,7 +155,7 @@ export const realisations = [
   {
     title: "Cartographier les prospects B2B à 15 minutes à pied",
     type: "Carte interactive",
-    context: "Réalisé pour un client (anonymisé)",
+    context: "Projet personnel",
     tools: ["API Recherche d'entreprises", "SVG", "HTML"],
     summary:
       "Une carte qui transforme une adresse en liste priorisée d'entreprises à démarcher autour d'elle.",
@@ -175,7 +175,7 @@ export const realisations = [
   {
     title: "Cibler un métier invisible aux codes NAF",
     type: "Étude de prospection",
-    context: "Réalisé pour une candidature (ReCom, agence de growth B2B)",
+    context: "Projet personnel",
     tools: ["Python", "API Recherche d'entreprises", "RGE ADEME", "BODACC", "Excel"],
     summary:
       "Un fichier de prospection fiable construit à partir de sources publiques, sans dépendre du code NAF.",
