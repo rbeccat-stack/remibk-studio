@@ -126,7 +126,7 @@ export default function RealisationCard({
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-3 transition duration-200 ease-expo hover:gap-2.5"
+                className="btn-shine mt-6 inline-flex items-center gap-1.5 rounded-lg bg-accent-3 px-4 py-2 text-sm font-semibold text-bg-base shadow-cta transition duration-200 ease-expo hover:gap-2.5 hover:bg-accent-3/90 hover:shadow-cta-hover active:scale-[0.98]"
               >
                 {link.label} <span aria-hidden>→</span>
               </a>
