@@ -183,6 +183,7 @@ export const realisations = [
       "Carte SVG interactive : filtres croisés, fiches détaillées, fond de plan dessiné à la main",
     ],
     accent: "terracotta" as const,
+    link: { label: "Voir la carte", href: "https://cartographie-comptes-cibles.remibk-studio.fr/" },
   },
   {
     title: "Cibler un métier invisible aux codes NAF",
