@@ -11,7 +11,7 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-14 lg:gap-16 items-start md:items-center">
           {/* Left column */}
           <div className="flex flex-col items-start">
-            <h1 className="animate-fade-up text-gradient-fg font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.03em] text-balance">
+            <h1 className="animate-fade-up text-fg text-shadow-emboss font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.03em] text-balance">
               {hero.title}
             </h1>
 
@@ -20,11 +20,11 @@ export default function Hero() {
             </p>
             <WordCycle
               words={hero.keywords}
-              className="animate-fade-up [animation-delay:160ms] text-gradient-accent animate-shimmer mt-1 max-w-full font-semibold text-[clamp(2rem,8vw,3.5rem)] leading-[1.05] tracking-tight"
+              className="animate-fade-up [animation-delay:160ms] text-accent-ink text-shadow-emboss mt-1 max-w-full font-extrabold text-[clamp(2rem,8vw,3.5rem)] leading-[1.05] tracking-tight"
             />
 
             <div className="animate-fade-up [animation-delay:240ms] mt-8">
-              <PillBadge accent="sage">{hero.meta}</PillBadge>
+              <PillBadge accent="sage" live>{hero.meta}</PillBadge>
             </div>
 
             <div className="animate-fade-up [animation-delay:320ms] mt-6 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4">
@@ -32,13 +32,13 @@ export default function Hero() {
                 href={hero.ctaPrimary.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-shine inline-flex items-center px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm shadow-cta transition duration-200 ease-expo hover:bg-accent-bright hover:shadow-cta-hover active:scale-[0.98]"
+                className="key-primary inline-flex min-h-12 items-center px-4 py-3 rounded-xl text-xs"
               >
                 {hero.ctaPrimary.label}
               </a>
               <a
                 href={hero.ctaSecondary.href}
-                className="inline-flex items-center px-6 py-3 rounded-lg bg-surface text-fg font-semibold text-sm shadow-inset-highlight transition duration-200 ease-expo hover:bg-surface-hover hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1),0_0_20px_rgba(94,106,210,0.15)] active:scale-[0.98]"
+                className="key-chassis inline-flex min-h-12 items-center px-4 py-3 rounded-xl text-xs"
               >
                 {hero.ctaSecondary.label}
               </a>

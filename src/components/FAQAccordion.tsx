@@ -22,7 +22,7 @@ function Answer({ lines }: { lines: string[] }) {
         b.type === 'p' ? (
           <p key={i}>{b.text}</p>
         ) : (
-          <ul key={i} className="flex flex-col gap-2 pl-5 list-disc marker:text-accent-2">
+          <ul key={i} className="flex flex-col gap-2 pl-5 list-disc marker:text-accent">
             {b.items.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -45,8 +45,8 @@ export default function FAQAccordion() {
         return (
           <div
             key={faq.q}
-            className={`rounded-2xl border bg-card shadow-card transition duration-300 ease-expo ${
-              isOpen ? 'border-border-accent shadow-card-hover' : 'border-border hover:border-border-hover'
+            className={`rounded-2xl bg-bg-base transition-shadow duration-300 ease-spring ${
+              isOpen ? 'shadow-floating' : 'shadow-card'
             }`}
           >
             <button
@@ -57,18 +57,18 @@ export default function FAQAccordion() {
               id={`faq-question-${i}`}
               className="group w-full flex items-center justify-between gap-4 px-5 py-4 md:px-6 text-left rounded-2xl"
             >
-              <span className="font-semibold text-base md:text-lg tracking-tight text-fg leading-snug">
+              <span className="font-bold text-base md:text-lg tracking-tight text-fg leading-snug">
                 {faq.q}
               </span>
               <span
                 aria-hidden="true"
-                className={`shrink-0 w-7 h-7 rounded-lg border flex items-center justify-center text-base leading-none transition-[background-color,color,border-color,box-shadow] duration-300 ease-expo ${
+                className={`shrink-0 w-7 h-7 rounded-full bg-bg-base flex items-center justify-center text-base font-bold leading-none transition-[box-shadow,color] duration-150 ${
                   isOpen
-                    ? 'bg-accent border-accent text-white shadow-cta'
-                    : 'border-white/10 bg-surface text-fg-muted shadow-inset-highlight group-hover:text-fg group-hover:border-border-hover'
+                    ? 'shadow-pressed-sm text-accent-ink'
+                    : 'shadow-key text-fg-muted group-hover:text-accent-ink'
                 }`}
               >
-                <span className={`transition-transform duration-300 ease-expo ${isOpen ? 'rotate-45' : ''}`}>+</span>
+                <span className={`transition-transform duration-300 ease-spring ${isOpen ? 'rotate-45' : ''}`}>+</span>
               </span>
             </button>
             <div

@@ -1,71 +1,58 @@
 @import "tailwindcss";
 
 /* -------------------------------------------------------------------------- */
-/*  Design tokens — Linear / Modern                                           */
-/*  Exposés en utilitaires Tailwind : bg-surface, text-fg-muted, shadow-card…  */
+/*  Design tokens — Industrial Skeuomorphism                                  */
+/*  Lumière unique en haut à gauche : reflets en haut/gauche, ombres en       */
+/*  bas/droite. Exposés en utilitaires : bg-bg-base, shadow-card, text-shadow-emboss… */
 /* -------------------------------------------------------------------------- */
 @theme {
-  --font-sans: var(--font-inter), "Geist Sans", system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
-  /* Canvas */
-  --color-bg-deep: #020203;
-  --color-bg-base: #050506;
-  --color-bg-elevated: #0a0a0c;
-  --color-bg-input: #0f0f12;
+  /* Matériaux */
+  --color-bg-base: #e0e5ec; /* châssis ABS mat — niveau 0 */
+  --color-recessed: #d1d9e6; /* creux : écrans, fentes, conduits */
+  --color-console: #2d3436; /* façade sombre : footer, bezel */
+  --color-console-muted: #a8b2d1;
+  --color-screen: #101518;
 
-  /* Surfaces & bordures (translucides) */
-  --color-surface: rgba(255, 255, 255, 0.05);
-  --color-surface-hover: rgba(255, 255, 255, 0.08);
-  --color-border: rgba(255, 255, 255, 0.06);
-  --color-border-hover: rgba(255, 255, 255, 0.1);
-  --color-border-accent: rgba(94, 106, 210, 0.3);
+  /* Encre */
+  --color-fg: #2d3436;
+  --color-fg-muted: #4a5568;
+  --color-slate: #2c3e50;
 
-  /* Texte */
-  --color-fg: #ededef;
-  --color-fg-muted: #8a8f98;
-  --color-fg-subtle: rgba(255, 255, 255, 0.6);
+  /* Lumière */
+  --color-shade: #babecc;
+  --color-border: #babecc;
+  --color-border-strong: #a3b1c6;
 
-  /* Accent principal + deux variantes dans la même famille (les trois clés
-     terracotta / sage / purple de content.ts se mappent dessus) */
-  --color-accent: #5e6ad2;
-  --color-accent-bright: #6872d9;
-  --color-accent-glow: rgba(94, 106, 210, 0.3);
-  --color-accent-2: #818cf8;
-  --color-accent-3: #a78bfa;
+  /* Accent sécurité — le rouge vif sert aux surfaces et aux LEDs ; le texte
+     rouge utilise accent-ink (4,6:1 sur le châssis) */
+  --color-accent: #ff4757;
+  --color-accent-ink: #c0262d;
+  --color-led-green: #22c55e;
+  --color-led-amber: #f59e0b;
 
-  /* Ombres multi-couches : liseré + diffuse + ambiance (+ glow accent) */
-  --shadow-card: 0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 2px 20px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.2);
-  --shadow-card-hover: 0 0 0 1px rgba(255, 255, 255, 0.1),
-    0 8px 40px rgba(0, 0, 0, 0.5), 0 0 80px rgba(94, 106, 210, 0.1);
-  --shadow-cta: 0 0 0 1px rgba(94, 106, 210, 0.5),
-    0 4px 12px rgba(94, 106, 210, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
-  --shadow-cta-hover: 0 0 0 1px rgba(94, 106, 210, 0.6),
-    0 6px 24px rgba(94, 106, 210, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
-  --shadow-inset-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  /* Système d'ombres neumorphiques */
+  --shadow-card: 8px 8px 16px #babecc, -8px -8px 16px #ffffff;
+  --shadow-floating: 12px 12px 24px #babecc, -12px -12px 24px #ffffff,
+    inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+  --shadow-key: 4px 4px 8px #babecc, -4px -4px 8px #ffffff;
+  --shadow-pressed: inset 6px 6px 12px #babecc, inset -6px -6px 12px #ffffff;
+  --shadow-pressed-sm: inset 3px 3px 6px #babecc, inset -3px -3px 6px #ffffff;
+  --shadow-recessed: inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff;
+  --shadow-recessed-sm: inset 2px 2px 4px #babecc, inset -2px -2px 4px #ffffff;
 
-  /* Motion */
+  /* Encre embossée : reflet blanc sous la lettre */
+  --text-shadow-emboss: 0 1px 0 #ffffff;
+
+  /* Motion : ressort mécanique pour les interactions, expo pour les apparitions */
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-  --animate-float: float 9s ease-in-out infinite;
-  --animate-float-slow: float 12s ease-in-out infinite reverse;
-  --animate-pulse-glow: pulse-glow 6s ease-in-out infinite;
-  --animate-shimmer: shimmer 4s linear infinite;
   --animate-fade-up: fade-up 600ms var(--ease-expo) both;
   --animate-menu-in: menu-in 200ms var(--ease-expo) both;
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(1deg); }
-  }
-  @keyframes pulse-glow {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-  }
-  @keyframes shimmer {
-    to { background-position: 200% center; }
-  }
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
@@ -80,7 +67,7 @@
 /*  Base                                                                      */
 /* -------------------------------------------------------------------------- */
 html {
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 
@@ -92,89 +79,138 @@ body {
 }
 
 ::selection {
-  background: rgba(94, 106, 210, 0.35);
+  background: rgba(255, 71, 87, 0.25);
   color: var(--color-fg);
 }
 
 :focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-bg-base), 0 0 0 4px rgba(94, 106, 210, 0.5);
+  box-shadow: 0 0 0 2px var(--color-bg-base), 0 0 0 4px var(--color-accent);
   border-radius: 8px;
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Utilitaires composés (trop verbeux pour rester inline)                    */
+/*  Touches physiques                                                         */
 /* -------------------------------------------------------------------------- */
-@utility bg-ambient-base {
-  background: radial-gradient(ellipse at top, #0a0a0f 0%, #050506 50%, #020203 100%);
+
+/* Touche principale : plastique rouge injecté, s'enfonce au clic.
+   Dégradé calé pour garder ≥ 4,5:1 sous le texte blanc. */
+@utility key-primary {
+  color: #ffffff;
+  background-color: #e02a38;
+  background-image: linear-gradient(180deg, #f6404e 0%, #e02a38 50%, #c81f2c 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 4px 4px 8px rgba(166, 50, 60, 0.4), -4px -4px 8px rgba(255, 255, 255, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  transition: transform 150ms var(--ease-spring), box-shadow 150ms ease, filter 200ms ease;
+  &:hover {
+    filter: brightness(1.07);
+  }
+  &:active {
+    transform: translateY(2px);
+    box-shadow: inset 4px 4px 8px rgba(120, 20, 30, 0.45), inset -3px -3px 6px rgba(255, 130, 140, 0.35);
+  }
 }
 
-/* Bruit SVG très léger : évite le banding des gradients et donne du grain. */
-@utility bg-noise {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+/* Touche châssis : même plastique que le fond, texte encre */
+@utility key-chassis {
+  color: var(--color-fg);
+  background-color: var(--color-bg-base);
+  box-shadow: var(--shadow-key);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  transition: transform 150ms var(--ease-spring), box-shadow 150ms ease, color 200ms ease;
+  &:hover {
+    color: var(--color-accent-ink);
+  }
+  &:active {
+    transform: translateY(2px);
+    box-shadow: var(--shadow-pressed);
+  }
 }
 
-@utility bg-grid-64 {
+/* -------------------------------------------------------------------------- */
+/*  LEDs                                                                      */
+/*  Taille fixée dans le markup (w-2 h-2…) ; `led` pose la forme et le reflet */
+/* -------------------------------------------------------------------------- */
+@utility led {
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background-image: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2.5px);
+}
+
+@utility led-red {
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px 1px rgba(255, 71, 87, 0.6);
+}
+
+@utility led-green {
+  background-color: var(--color-led-green);
+  box-shadow: 0 0 8px 1px rgba(34, 197, 94, 0.65);
+}
+
+@utility led-amber {
+  background-color: var(--color-led-amber);
+  box-shadow: 0 0 8px 1px rgba(245, 158, 11, 0.6);
+}
+
+/* LED éteinte : simple douille creusée dans le châssis */
+@utility led-off {
+  background-color: var(--color-recessed);
+  background-image: none;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.25), 1px 1px 0 #ffffff;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Détails de fabrication & textures                                         */
+/* -------------------------------------------------------------------------- */
+
+/* Quatre vis à 12 px des angles */
+@utility screws {
+  --screw: rgba(0, 0, 0, 0.22) 0 1.5px, rgba(255, 255, 255, 0.9) 2px 2.5px, transparent 3px;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 1) 1px, transparent 1px);
-  background-size: 64px 64px;
+    radial-gradient(circle at 12px 12px, var(--screw)),
+    radial-gradient(circle at calc(100% - 12px) 12px, var(--screw)),
+    radial-gradient(circle at 12px calc(100% - 12px), var(--screw)),
+    radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), var(--screw));
 }
 
-/* Titre : dégradé vertical blanc → blanc 70 % */
-@utility text-gradient-fg {
-  background-image: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.7));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* Micro-texture du plastique mat (bruit fractal désaturé) */
+@utility bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Mot-clé accent : dégradé animé (shimmer) */
-@utility text-gradient-accent {
-  background-image: linear-gradient(to right, #5e6ad2, #818cf8, #5e6ad2);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* Fibre de carbone, 100 % CSS (pas de texture externe à charger) */
+@utility bg-carbon {
+  background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0,
+    linear-gradient(27deg, #222222 5px, transparent 5px) 0 10px,
+    linear-gradient(207deg, #222222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
 }
 
-/* Fond de carte : verre dégradé + liseré lumineux 1px en haut */
-@utility bg-card {
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+/* Lignes de balayage d'écran cathodique */
+@utility scanlines {
+  background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
 }
 
-/* Spotlight suivant la souris — position pilotée par --spot-x / --spot-y */
-@utility bg-spotlight {
-  background-image: radial-gradient(
-    300px circle at var(--spot-x, 50%) var(--spot-y, 50%),
-    rgba(94, 106, 210, 0.15),
-    transparent 60%
-  );
-}
-
-/* Balayage lumineux sur les CTA (pseudo-élément) */
-@utility btn-shine {
-  position: relative;
-  overflow: hidden;
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.18) 50%, transparent 60%);
-    transform: translateX(-120%);
-    transition: transform 600ms var(--ease-expo);
-  }
-  @media (hover: hover) {
-    &:hover:not(:disabled)::after {
-      transform: translateX(120%);
-    }
-  }
-}
-
-/* Trame pointillée du cadre portrait « À propos » */
-@utility portrait-frame {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1.2px, transparent 1px);
-  background-size: 18px 18px;
+/* Quadrillage de plan technique */
+@utility bg-blueprint {
+  background-image:
+    linear-gradient(rgba(99, 110, 114, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 110, 114, 0.14) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 /* -------------------------------------------------------------------------- */

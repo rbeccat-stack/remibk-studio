@@ -7,12 +7,17 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-bg-base/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border bg-bg-base/90 backdrop-blur-md shadow-[0_10px_20px_-14px_var(--color-shade)]">
+      {/* Rainure usinée : liseré clair sous le trait sombre */}
+      <span aria-hidden className="pointer-events-none absolute inset-x-0 -bottom-[2px] h-px bg-white" />
       <div className="max-w-[1120px] mx-auto px-5 md:px-6 flex items-center justify-between h-14">
         {/* Logo */}
         <a href="#accueil" className="flex flex-col leading-none rounded-lg">
-          <span className="font-semibold tracking-tight text-fg text-lg">{nav.name}</span>
-          <span className="font-mono text-[10px] tracking-widest uppercase text-fg-muted">{nav.tagline}</span>
+          <span className="font-extrabold tracking-tight text-fg text-shadow-emboss text-lg">{nav.name}</span>
+          <span className="mt-0.5 flex items-center gap-1.5">
+            <span aria-hidden className="led led-green h-1.5 w-1.5 animate-pulse" />
+            <span className="font-mono text-[10px] font-bold tracking-[0.08em] uppercase text-fg-muted">{nav.tagline}</span>
+          </span>
         </a>
 
         {/* Desktop nav */}
@@ -21,7 +26,7 @@ export default function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="rounded-lg px-3 py-1.5 text-sm font-medium text-fg-muted transition duration-200 ease-expo hover:bg-surface hover:text-fg"
+              className="rounded-lg px-3 py-1.5 text-sm font-medium text-fg-muted transition duration-200 hover:bg-bg-base hover:text-fg hover:shadow-recessed-sm"
             >
               {l.label}
             </a>
@@ -33,7 +38,7 @@ export default function Header() {
           href={nav.ctaHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-shine hidden md:inline-flex items-center px-4 py-1.5 rounded-lg bg-accent text-white text-sm font-semibold shadow-cta transition duration-200 ease-expo hover:bg-accent-bright hover:shadow-cta-hover active:scale-[0.98]"
+          className="key-primary hidden md:inline-flex items-center px-4 py-1.5 rounded-lg text-xs"
         >
           {nav.cta}
         </a>
@@ -41,7 +46,9 @@ export default function Header() {
         {/* Mobile burger */}
         <button
           type="button"
-          className="md:hidden -mr-2 rounded-lg p-2 text-fg transition duration-200 hover:bg-surface"
+          className={`md:hidden -mr-1 flex h-11 w-11 items-center justify-center rounded-xl bg-bg-base text-fg transition duration-150 ${
+            menuOpen ? 'shadow-pressed-sm' : 'shadow-key'
+          }`}
           aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
@@ -69,13 +76,13 @@ export default function Header() {
         <nav
           id="mobile-menu"
           aria-label="Navigation principale"
-          className="md:hidden animate-menu-in border-t border-border bg-bg-base/95 backdrop-blur-md px-5 py-4 flex flex-col gap-1"
+          className="md:hidden animate-menu-in border-t border-border bg-bg-base/95 backdrop-blur-md px-5 py-4 flex flex-col gap-1 shadow-[inset_0_1px_0_#fff]"
         >
           {nav.links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="rounded-lg px-3 py-2.5 text-base font-medium text-fg transition duration-200 hover:bg-surface"
+              className="flex min-h-12 items-center rounded-lg px-3 text-base font-medium text-fg transition duration-200 hover:shadow-recessed-sm active:shadow-recessed-sm"
               onClick={() => setMenuOpen(false)}
             >
               {l.label}
@@ -85,7 +92,7 @@ export default function Header() {
             href={nav.ctaHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-flex justify-center items-center px-4 py-3 rounded-lg bg-accent text-white text-sm font-semibold shadow-cta active:scale-[0.98]"
+            className="key-primary mt-3 inline-flex min-h-12 justify-center items-center px-4 py-3 rounded-xl text-sm"
             onClick={() => setMenuOpen(false)}
           >
             {nav.cta}

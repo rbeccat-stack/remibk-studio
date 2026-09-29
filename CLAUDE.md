@@ -28,28 +28,28 @@ One-page portfolio site (CDI job application for Rémi BECCAT — Growth Enginee
 
 - No `tailwind.config.js` — custom tokens are defined in `src/app/globals.css` inside an `@theme {}` block
 - Import syntax: `@import "tailwindcss"` (not the old `@tailwind base/components/utilities`)
-- Custom colors (`bg-bg-base`, `text-fg-muted`, `bg-accent`, etc.) map directly to `--color-*` CSS variables in `@theme`
-- Composite utilities (`bg-card`, `text-gradient-fg`, `text-gradient-accent`, `bg-spotlight`, `btn-shine`…) are declared with `@utility` in `globals.css`
+- Custom colors (`bg-bg-base`, `text-fg-muted`, `bg-accent`, etc.) map directly to `--color-*` CSS variables in `@theme`; shadows (`shadow-card`, `shadow-floating`, `shadow-key`, `shadow-pressed(-sm)`, `shadow-recessed(-sm)`) to `--shadow-*`; `text-shadow-emboss` to `--text-shadow-emboss`
+- Composite utilities are declared with `@utility` in `globals.css`: `key-primary` / `key-chassis` (button skins), `led` + `led-red|green|amber|off`, `screws`, `bg-noise`, `bg-carbon`, `scanlines`, `bg-blueprint`
 
-### Design system: Linear / Modern
+### Design system: Industrial Skeuomorphism
 
-Dark near-black canvas (`#050506`), single indigo accent (`#5E6AD2`), glass cards, multi-layer shadows, expo-out easing (200–300 ms), tiny hover movements (≤ 8 px). Key primitives:
+Light matte-plastic chassis (`#e0e5ec`), single light source top-left (highlights top/left, shadows bottom/right), neumorphic dual shadows, one safety-red accent (`#ff4757`) reserved for interactive elements and LEDs. Red **text** uses `accent-ink` (`#c0262d`, 4.6:1 on the chassis) — never `accent`. Spring easing (`ease-spring`) for hover/press, `ease-expo` for scroll reveals. Key primitives:
 
-- `AmbientBackground` — fixed 4-layer background (gradient, noise, floating radial-gradient blobs, 64px grid). Blobs are radial-gradients on purpose, **not** `filter: blur()` (perf).
-- `SpotlightCard` — glass card with mouse-tracking glow; use it for any card surface
+- `AmbientBackground` — fixed chassis background: top-left light hotspot + desaturated noise in overlay
+- `Panel` — module bolted on the chassis (neumorphic shadow, corner screws); props `lift`, `elevated`, `vents`, `led`. Use it for any card surface
+- Buttons are physical keys: `key-primary` (red) / `key-chassis` (grey) — uppercase, press down 2px with inverted shadow on `:active`
 - `Reveal` — one-shot fade-up on scroll (IntersectionObserver, 15 % threshold), `delay` prop for stagger
 - `HeroParallax` — hero fades/scales/translates over the first 50 vh of scroll
-
-Gradient text is intentional (design-system requirement); the impeccable hook ignore for `gradient-text` in `.impeccable/config.json` documents that.
+- The only dark surfaces are the hero device bezel (`GrowthIllustration`) and the footer (`bg-console`)
 
 ### Fonts
 
-Loaded via `next/font/google` in `src/app/layout.tsx` as CSS variables (`--font-inter`, `--font-geist-mono`), applied on `<html>`. Use `font-sans` (Inter) for everything, `font-mono` (Geist Mono) for labels, tags, step numbers and metadata.
+Loaded via `next/font/google` in `src/app/layout.tsx` as CSS variables (`--font-inter`, `--font-jetbrains-mono`), applied on `<html>`. Use `font-sans` (Inter) for everything, `font-mono` (JetBrains Mono) for labels, tags, step numbers and metadata (bold, uppercase, `tracking-[0.08em]`).
 
 ### Component rules
 
-- All components are **Server Components** by default except `Header`, `FAQAccordion`, `RealisationCard`, `WordCycle`, `SpotlightCard`, `Reveal` and `HeroParallax` which are `'use client'`
-- Accent variants (`terracotta` / `sage` / `purple`) are typed as string literals — always use `as const` when defining them in `content.ts`. The keys are historical: they now map to `accent` (indigo) / `accent-2` (light indigo) / `accent-3` (violet) inside each component.
+- All components are **Server Components** by default except `Header`, `FAQAccordion`, `RealisationCard`, `WordCycle`, `Reveal` and `HeroParallax` which are `'use client'`
+- Accent variants (`terracotta` / `sage` / `purple`) are typed as string literals — always use `as const` when defining them in `content.ts`. The keys are historical: they now map to LED colors red / green / amber, and text ink `accent-ink` / `slate`.
 
 ### Responsive breakpoints in use
 

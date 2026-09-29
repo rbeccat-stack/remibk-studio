@@ -12,11 +12,11 @@ import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
 import { realisations, features, process, faqSection } from '@/lib/content'
 
-// Séparateur de section : hairline + liseré dégradé centré.
+// Séparateur de section : rainure usinée (trait d'ombre + liseré de lumière).
 function Divider() {
   return (
     <div aria-hidden className="relative border-t border-border">
-      <span className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <span className="absolute inset-x-0 top-0 h-px bg-white" />
     </div>
   )
 }
@@ -89,7 +89,12 @@ export default function Home() {
                 accent="sage"
               />
             </Reveal>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-4">
+            <div className="relative mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-4">
+              {/* Conduit qui relie les étapes, visible dans les espaces entre modules */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 top-11 hidden h-3 rounded-full bg-recessed shadow-[inset_0_1px_3px_rgba(0,0,0,0.2)] md:block"
+              />
               {process.map((p, i) => (
                 <Reveal key={p.num} delay={i * 80} className="h-full">
                   <ProcessCard {...p} />

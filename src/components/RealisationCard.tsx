@@ -1,7 +1,7 @@
 'use client'
 
 import { useId, useState } from 'react'
-import SpotlightCard from '@/components/SpotlightCard'
+import Panel from '@/components/Panel'
 
 interface RealisationCardProps {
   title: string
@@ -31,16 +31,11 @@ export default function RealisationCard({
   const [open, setOpen] = useState(false)
   const detailId = useId()
   const isTerracotta = accent === 'terracotta'
-  const accentText = isTerracotta ? 'text-accent-2' : 'text-accent-3'
-  const tagStyle = isTerracotta
-    ? 'bg-accent/10 text-accent-2 border-accent/30'
-    : 'bg-accent-3/10 text-accent-3 border-accent-3/30'
-  const numStyle = isTerracotta
-    ? 'border-accent/30 text-accent-2'
-    : 'border-accent-3/30 text-accent-3'
+  const ink = isTerracotta ? 'text-accent-ink' : 'text-slate'
+  const led = isTerracotta ? 'led-red' : 'led-green'
 
   return (
-    <SpotlightCard as="article" lift={false} className={open ? 'border-border-accent' : ''}>
+    <Panel as="article" lift={false} elevated={open}>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -51,19 +46,20 @@ export default function RealisationCard({
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <span
-              className={`rounded-full border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest ${tagStyle}`}
+              className={`inline-flex items-center gap-1.5 rounded-full bg-bg-base px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.08em] shadow-recessed-sm ${ink}`}
             >
+              <span aria-hidden className={`led ${led} h-1.5 w-1.5`} />
               {type}
             </span>
             <span className="font-mono text-[11px] tracking-wide text-fg-muted">{context}</span>
             {tools && tools.length > 0 && (
-              <span className="font-mono text-[11px] tracking-wide text-fg-subtle">
+              <span className="font-mono text-[11px] tracking-wide text-fg-muted">
                 · {tools.join(', ')}
               </span>
             )}
           </div>
 
-          <h3 className="mt-3 font-semibold text-xl tracking-tight leading-snug text-fg sm:text-2xl">
+          <h3 className="mt-3 font-bold text-xl tracking-tight leading-snug text-fg sm:text-2xl">
             {title}
           </h3>
 
@@ -72,15 +68,14 @@ export default function RealisationCard({
           </p>
         </div>
 
+        {/* Touche ronde : enfoncée quand la fiche est ouverte */}
         <span
-          className={`mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border text-base leading-none transition-[background-color,border-color,color,box-shadow] duration-300 ease-expo ${
-            open
-              ? 'border-accent bg-accent text-white shadow-cta'
-              : 'border-white/10 bg-surface text-fg-muted shadow-inset-highlight group-hover:border-border-hover group-hover:text-fg'
+          className={`mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-bg-base text-base font-bold leading-none transition-[box-shadow,color] duration-150 ${
+            open ? 'shadow-pressed-sm text-accent-ink' : 'shadow-key text-fg-muted group-hover:text-accent-ink'
           }`}
           aria-hidden
         >
-          <span className={`transition-transform duration-300 ease-expo ${open ? 'rotate-45' : ''}`}>+</span>
+          <span className={`transition-transform duration-300 ease-spring ${open ? 'rotate-45' : ''}`}>+</span>
         </span>
       </button>
 
@@ -91,31 +86,31 @@ export default function RealisationCard({
         style={{ gridTemplateRows: open ? '1fr' : '0fr' }}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-border px-5 pb-5 pt-6 sm:px-7 sm:pb-7 md:px-8 md:pb-8">
+          <div className="border-t border-border shadow-[inset_0_1px_0_#fff] px-5 pb-5 pt-6 sm:px-7 sm:pb-7 md:px-8 md:pb-8">
             <p className="text-sm leading-relaxed text-fg">{problem}</p>
 
             <div className="mt-5">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-fg-muted">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-fg-muted">
                 Le résultat
               </span>
-              <p className={`mt-1.5 text-sm font-semibold leading-relaxed ${accentText}`}>
+              <p className={`mt-1.5 text-sm font-bold leading-relaxed ${ink}`}>
                 {result}
               </p>
             </div>
 
             <div className="mt-6">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-fg-muted">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-fg-muted">
                 Comment
               </span>
               <ol className="mt-4 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
                 {how.map((item, i) => (
                   <li key={item} className="flex items-start gap-3">
                     <span
-                      className={`shrink-0 rounded-md border bg-surface px-1.5 py-0.5 font-mono text-[10px] tabular-nums tracking-wider ${numStyle}`}
+                      className={`shrink-0 rounded-md bg-bg-base px-1.5 py-0.5 font-mono text-[10px] font-bold tabular-nums tracking-wider shadow-recessed-sm ${ink}`}
                     >
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span className="text-sm leading-snug text-fg-subtle">{item}</span>
+                    <span className="text-sm leading-snug text-fg-muted">{item}</span>
                   </li>
                 ))}
               </ol>
@@ -126,7 +121,7 @@ export default function RealisationCard({
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-shine mt-6 inline-flex items-center gap-1.5 rounded-lg bg-accent-3 px-4 py-2 text-sm font-semibold text-bg-base shadow-cta transition duration-200 ease-expo hover:gap-2.5 hover:bg-accent-3/90 hover:shadow-cta-hover active:scale-[0.98]"
+                className="key-primary mt-6 inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-xs hover:gap-2.5"
               >
                 {link.label} <span aria-hidden>→</span>
               </a>
@@ -134,6 +129,6 @@ export default function RealisationCard({
           </div>
         </div>
       </div>
-    </SpotlightCard>
+    </Panel>
   )
 }
