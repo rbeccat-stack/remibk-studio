@@ -69,7 +69,7 @@ export const features = [
         ],
         file: { label: "Télécharger le prompt (.md)", href: "/prompt-hermes.md" },
       },
-      "VPS 24/7, 7 APIs orchestrées (Pappers, Notion, RocketReach…)",
+      "VPS 24/7, 6 APIs orchestrées (Pappers, Notion, Apollo…)",
       "Skill system versionné, architecture multi-APIs",
       "Scripting via LLM, déploiement autonome",
     ],
@@ -223,7 +223,7 @@ export const realisations = [
     title: "Un agent IA qui qualifie les prospects (à retravailler)",
     type: "Agent IA",
     context: "Projet personnel / R&D",
-    tools: ["Pappers", "RocketReach", "Notion", "VPS"],
+    tools: ["Pappers", "Apollo", "Notion", "VPS"],
     summary:
       "Ce qui prenait 3 à 4 heures de recherche manuelle se fait maintenant tout seul, 24 heures sur 24.",
     problem:
@@ -231,7 +231,7 @@ export const realisations = [
     result:
       "Même travail livré en 20-30 min, l'agent tournant seul 24/7 sur un serveur dédié.",
     how: [
-      "7 APIs orchestrées (Pappers, RocketReach, Notion…)",
+      "6 APIs orchestrées (Pappers, Apollo, Notion…)",
       "Découpage en compétences réutilisables et versionnées",
       "Déploiement autonome sur VPS, exécution planifiée",
       "Sorties normalisées, prêtes à verser dans un CRM",
@@ -305,7 +305,7 @@ export const toolGroups: {
     tools: [
       { name: "Claude", level: 3 },
       { name: "Claude Code", level: 3 },
-      { name: "RocketReach (API)", level: 3 },
+      { name: "Apollo (API)", level: 3 },
       { name: "Cursor", level: 2 },
       { name: "Python via LLM", level: 1 },
     ],
@@ -344,7 +344,7 @@ export const faqs: { q: string; a: string[] }[] = [
       "• Pas de reporting pur. Un poste où je passe mes journées dans Looker Studio sans rien construire, ce n'est pas pour moi.",
       "• Je ne suis pas développeur. Python via LLM quand il le faut, pas de JavaScript en production. Je monte en compétences si besoin.",
       "• Pas de management pour l'instant : je n'en ai pas encore eu l'occasion.",
-      "• En revanche, je me débrouille sans dev avec les API, les webhooks, Make, n8n et les outils no-code — les 7 APIs de l'agent Hermes tournent sans développeur.",
+      "• En revanche, je me débrouille sans dev avec les API, les webhooks, Make, n8n et les outils no-code — les 6 APIs de l'agent Hermes tournent sans développeur.",
       "Si un point est bloquant, autant le savoir maintenant.",
     ],
   },
@@ -364,7 +364,7 @@ export const faqs: { q: string; a: string[] }[] = [
     q: "Tu codes en quoi, exactement ?",
     a: [
       "À l'aise avec HTML/CSS et le scripting Python via LLM : je lis, j'adapte et je déploie, sans prétendre être développeur. Pas de JavaScript en production.",
-      "Ce que je sais faire sans dev : API REST, webhooks, Make, n8n, Airtable, déploiement sur VPS. L'agent Hermes — 7 APIs orchestrées, exécution planifiée 24/7 — a été construit et mis en production sans développeur.",
+      "Ce que je sais faire sans dev : API REST, webhooks, Make, n8n, Airtable, déploiement sur VPS. L'agent Hermes — 6 APIs orchestrées, exécution planifiée 24/7 — a été construit et mis en production sans développeur.",
     ],
   },
   {
