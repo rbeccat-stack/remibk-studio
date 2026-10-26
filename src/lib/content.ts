@@ -321,9 +321,6 @@ export const toolGroups: {
   },
 ]
 
-export const toolsIntro =
-  "Trois niveaux, pas de pourcentage inventé. Autonome : j'ai livré un système avec. Opérationnel : je l'ai utilisé en production. Notions : je sais où aller chercher."
-
 // Réponses : un tableau de paragraphes. Une ligne qui commence par "• "
 // s'affiche comme puce.
 export const faqSection = {

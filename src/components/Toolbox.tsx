@@ -2,7 +2,7 @@ import SectionTitle from '@/components/SectionTitle'
 import PillBadge from '@/components/PillBadge'
 import Panel from '@/components/Panel'
 import Reveal from '@/components/Reveal'
-import { toolGroups, toolLevels, toolsIntro, type ToolLevel } from '@/lib/content'
+import { toolGroups, toolLevels, type ToolLevel } from '@/lib/content'
 
 const LEVELS: ToolLevel[] = [3, 2, 1]
 
@@ -28,7 +28,6 @@ export default function Toolbox() {
         <SectionTitle
           title="Ma boîte à outils"
           underlineWord="outils"
-          subtitle={toolsIntro}
           accent="sage"
         />
       </Reveal>
