@@ -70,7 +70,7 @@ export const features = [
         ],
         file: { label: "Télécharger le prompt (.md)", href: "/prompt-hermes.md" },
       },
-      "VPS 24/7, 7 APIs orchestrées (Pappers, Apollo, Notion, RocketReach…)",
+      "VPS 24/7, 7 APIs orchestrées (Pappers, Notion, RocketReach…)",
       "Skill system versionné, architecture multi-APIs",
       "Scripting via LLM, déploiement autonome",
     ],
@@ -224,7 +224,7 @@ export const realisations = [
     title: "Un agent IA qui qualifie les prospects (à retravailler)",
     type: "Agent IA",
     context: "Projet personnel / R&D",
-    tools: ["Pappers", "Apollo", "RocketReach", "Notion", "VPS"],
+    tools: ["Pappers", "RocketReach", "Notion", "VPS"],
     summary:
       "Ce qui prenait 3 à 4 heures de recherche manuelle se fait maintenant tout seul, 24 heures sur 24.",
     problem:
@@ -232,7 +232,7 @@ export const realisations = [
     result:
       "Même travail livré en 20-30 min, l'agent tournant seul 24/7 sur un serveur dédié.",
     how: [
-      "7 APIs orchestrées (Pappers, Apollo, RocketReach, Notion…)",
+      "7 APIs orchestrées (Pappers, RocketReach, Notion…)",
       "Découpage en compétences réutilisables et versionnées",
       "Déploiement autonome sur VPS, exécution planifiée",
       "Sorties normalisées, prêtes à verser dans un CRM",
@@ -311,7 +311,7 @@ export const toolGroups: {
       { name: "Pharow", level: 3 },
       { name: "Evaboot", level: 3 },
       { name: "Societeinfo", level: 3 },
-      { name: "API INSEE Sirene", level: 3 },
+      { name: "API et Open Data", level: 3 },
       { name: "Pappers", level: 3 },
     ],
   },
@@ -333,7 +333,7 @@ export const toolGroups: {
     tools: [
       { name: "Claude", level: 3 },
       { name: "Claude Code", level: 3 },
-      { name: "Apollo · RocketReach (API)", level: 3 },
+      { name: "RocketReach (API)", level: 3 },
       { name: "Cursor", level: 2 },
       { name: "Python via LLM", level: 1 },
     ],
