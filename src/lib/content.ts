@@ -31,6 +31,7 @@ export const features = [
       "10 000 contacts ciblés par reverse engineering de la BDD clients",
       "Sales Navigator, Pharow, Evaboot, Societeinfo",
       "Déduplication SIRET et enrichissement API INSEE SIRENE",
+      "Utilisation d'APIs pour automatiser la collecte et l'enrichissement",
       "Préparation et import HubSpot prêt à l'emploi",
     ],
     accent: "sage" as const,
