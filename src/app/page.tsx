@@ -2,7 +2,6 @@ import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import SectionTitle from '@/components/SectionTitle'
 import FeatureCard from '@/components/FeatureCard'
-import ProcessCard from '@/components/ProcessCard'
 import RealisationCard from '@/components/RealisationCard'
 import Toolbox from '@/components/Toolbox'
 import About from '@/components/About'
@@ -10,7 +9,7 @@ import FAQAccordion from '@/components/FAQAccordion'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
-import { realisations, features, process, faqSection } from '@/lib/content'
+import { realisations, features, faqSection } from '@/lib/content'
 
 // Séparateur de section : rainure usinée (trait d'ombre + liseré de lumière).
 function Divider() {
@@ -70,34 +69,6 @@ export default function Home() {
               {features.map((f, i) => (
                 <Reveal key={f.title} delay={i * 80} className="h-full">
                   <FeatureCard {...f} />
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <Divider />
-
-        {/* Méthode */}
-        <section id="methode">
-          <div className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24 lg:py-32">
-            <Reveal>
-              <SectionTitle
-                title="Comment je travaille"
-                underlineWord="travaille"
-                subtitle="Le même déroulé à chaque mission, du besoin flou au système qui tourne sans moi."
-                accent="sage"
-              />
-            </Reveal>
-            <div className="relative mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-4">
-              {/* Conduit qui relie les étapes, visible dans les espaces entre modules */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-x-0 top-11 hidden h-3 rounded-full bg-recessed shadow-[inset_0_1px_3px_rgba(0,0,0,0.2)] md:block"
-              />
-              {process.map((p, i) => (
-                <Reveal key={p.num} delay={i * 80} className="h-full">
-                  <ProcessCard {...p} />
                 </Reveal>
               ))}
             </div>

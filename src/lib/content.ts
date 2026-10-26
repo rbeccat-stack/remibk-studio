@@ -4,7 +4,6 @@ export const nav = {
   links: [
     { label: "Réalisations", href: "#realisations" },
     { label: "Apports", href: "#apports" },
-    { label: "Méthode", href: "#methode" },
     { label: "Outils", href: "#outils" },
     { label: "À propos", href: "#apropos" },
     { label: "FAQ", href: "#faq" },
@@ -258,33 +257,6 @@ export const realisations = [
     ],
     accent: "sage" as const,
     link: { label: "Voir Guitar Flow", href: "https://guitarflow.fr" },
-  },
-]
-
-export const process = [
-  {
-    num: "01",
-    title: "Comprendre",
-    description:
-      "Identifier l'objectif business, qui dans l'équipe va utiliser le système, et quels outils ils ont déjà.",
-  },
-  {
-    num: "02",
-    title: "Construire",
-    description:
-      "Transformer un besoin flou en workflow, agent ou pipeline de données — documenté et utilisable sans moi.",
-  },
-  {
-    num: "03",
-    title: "Livrer",
-    description:
-      "Déployer un outil que l'équipe peut utiliser dès le premier mois, sans dépendre d'un profil technique.",
-  },
-  {
-    num: "04",
-    title: "Itérer",
-    description:
-      "Suivre les résultats réels, corriger, améliorer — pas un POC qui dort, un système qui évolue.",
   },
 ]
 
