@@ -62,7 +62,9 @@ export const features = [
     icon: "🤖",
     title: "Agents IA & orchestration",
     bullets: [
-      "Agent Hermes : 3-4h de recherche → 20-30 min automatisées",
+      "Agent Hermes : automatisation et optimisation de la recherche d'entreprises pour candidatures spontanées (3-4h → 20-30 min)",
+      "Collecte croisée sur 2 sources minimum (registres légaux, site, réseaux), chaque info étiquetée confirmée, inférée ou non trouvée",
+      "Diagnostic des failles d'acquisition → 3 angles de candidature uniques, livrés en une page chiffrée",
       "VPS 24/7, 7 APIs orchestrées (Pappers, Apollo, Notion, RocketReach…)",
       "Skill system versionné, architecture multi-APIs",
       "Scripting via LLM, déploiement autonome",
