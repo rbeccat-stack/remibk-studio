@@ -296,7 +296,7 @@ export const toolGroups: {
       { name: "n8n", level: 2 },
       { name: "Airtable", level: 2 },
       { name: "Brevo", level: 2 },
-      { name: "Twilio", level: 2 },
+      { name: "Google Colab", level: 2 },
     ],
   },
   {
