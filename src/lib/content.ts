@@ -6,7 +6,6 @@ export const nav = {
     { label: "Apports", href: "#apports" },
     { label: "Outils", href: "#outils" },
     { label: "À propos", href: "#apropos" },
-    { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
   ],
   cta: "Réserver un call",
@@ -317,65 +316,6 @@ export const toolGroups: {
       { name: "Excel", level: 3 },
       { name: "Notion", level: 3 },
       { name: "Figma", level: 2 },
-    ],
-  },
-]
-
-// Réponses : un tableau de paragraphes. Une ligne qui commence par "• "
-// s'affiche comme puce.
-export const faqSection = {
-  title: "Avant qu'on en parle.",
-  underlineWord: "en parle",
-  subtitle: "7 réponses pour gagner 5 minutes au premier échange.",
-}
-
-export const faqs: { q: string; a: string[] }[] = [
-  {
-    q: "Pourquoi un CDI et pas du freelance ?",
-    a: [
-      "Je priorise le CDI pour la stabilité, la durée et la montée en compétences rapide. Le vrai impact sur une stack growth arrive après 6 à 12 mois : on connaît les vrais cas tordus, on construit avec l'équipe, on mesure ce qui bouge.",
-      "Cela dit, je suis ouvert au freelance si le chantier est précis et le périmètre clair.",
-    ],
-  },
-  {
-    q: "Ce que je ne fais pas",
-    a: [
-      "Je préfère le dire en premier :",
-      "• Pas de reporting pur. Un poste où je passe mes journées dans Looker Studio sans rien construire, ce n'est pas pour moi.",
-      "• Je ne suis pas développeur. Python via LLM quand il le faut, pas de JavaScript en production. Je monte en compétences si besoin.",
-      "• Pas de management pour l'instant : je n'en ai pas encore eu l'occasion.",
-      "• En revanche, je me débrouille sans dev avec les API, les webhooks, Make, n8n et les outils no-code — les 6 APIs de l'agent Hermes tournent sans développeur.",
-      "Si un point est bloquant, autant le savoir maintenant.",
-    ],
-  },
-  {
-    q: "Salaire attendu ?",
-    a: [
-      "À discuter franchement dès le premier échange, en fonction du périmètre, de l'autonomie attendue et de la stack. Je préfère que ce soit clair tout de suite.",
-    ],
-  },
-  {
-    q: "Géographie · télétravail ?",
-    a: [
-      "Basé à Lyon. Présentiel ou hybride, l'un comme l'autre me va. Full remote possible si l'équipe est structurée pour.",
-    ],
-  },
-  {
-    q: "Tu codes en quoi, exactement ?",
-    a: [
-      "À l'aise avec HTML/CSS et le scripting Python via LLM : je lis, j'adapte et je déploie, sans prétendre être développeur. Pas de JavaScript en production.",
-      "Ce que je sais faire sans dev : API REST, webhooks, Make, n8n, Airtable, déploiement sur VPS. L'agent Hermes — 6 APIs orchestrées, exécution planifiée 24/7 — a été construit et mis en production sans développeur.",
-    ],
-  },
-  {
-    q: "Tu démarres quand ?",
-    a: ["Immédiatement. Pas de préavis."],
-  },
-  {
-    q: "Pourquoi ce portfolio ?",
-    a: [
-      "Pour deux raisons honnêtes : monter en compétences sur Claude et les outils IA, et me démarquer des autres candidats. Je voulais voir de quoi l'IA est capable, et de quoi je suis capable avec elle.",
-      "C'est aussi la preuve concrète de ce que j'annonce : je construis des choses qui tournent, avec les outils du moment.",
     ],
   },
 ]

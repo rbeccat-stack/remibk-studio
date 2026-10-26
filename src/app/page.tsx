@@ -5,11 +5,10 @@ import FeatureCard from '@/components/FeatureCard'
 import RealisationCard from '@/components/RealisationCard'
 import Toolbox from '@/components/Toolbox'
 import About from '@/components/About'
-import FAQAccordion from '@/components/FAQAccordion'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
-import { realisations, features, faqSection } from '@/lib/content'
+import { realisations, features } from '@/lib/content'
 
 // Séparateur de section : rainure usinée (trait d'ombre + liseré de lumière).
 function Divider() {
@@ -84,25 +83,6 @@ export default function Home() {
 
         {/* À propos */}
         <About />
-
-        <Divider />
-
-        {/* FAQ */}
-        <section id="faq">
-          <div className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24 lg:py-32">
-            <Reveal>
-              <SectionTitle
-                title={faqSection.title}
-                underlineWord={faqSection.underlineWord}
-                subtitle={faqSection.subtitle}
-                accent="terracotta"
-              />
-            </Reveal>
-            <Reveal delay={80} className="mt-10 max-w-3xl">
-              <FAQAccordion />
-            </Reveal>
-          </div>
-        </section>
 
         <Divider />
 
