@@ -42,11 +42,13 @@ export default function Home() {
               />
             </Reveal>
             <div className="mt-10 flex flex-col gap-5">
-              {realisations.map((r, i) => (
-                <Reveal key={r.title} delay={Math.min(i, 3) * 80}>
-                  <RealisationCard {...r} />
-                </Reveal>
-              ))}
+              {realisations
+                .filter((r) => !r.draft)
+                .map((r, i) => (
+                  <Reveal key={r.title} delay={Math.min(i, 3) * 80}>
+                    <RealisationCard {...r} />
+                  </Reveal>
+                ))}
             </div>
           </div>
         </section>

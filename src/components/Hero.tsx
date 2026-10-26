@@ -14,7 +14,17 @@ export default function Hero() {
               {hero.title}
             </h1>
 
-            <div className="animate-fade-up [animation-delay:240ms] mt-8">
+            <p className="animate-fade-up [animation-delay:120ms] mt-6 max-w-[46ch] text-base md:text-lg text-fg-muted leading-relaxed">
+              {hero.proof}{' '}
+              <a
+                href={hero.proofLink.href}
+                className="font-medium text-accent-ink underline underline-offset-4 decoration-accent-ink/40 transition-colors hover:decoration-accent-ink"
+              >
+                {hero.proofLink.label}&nbsp;↓
+              </a>
+            </p>
+
+            <div className="animate-fade-up [animation-delay:240ms] mt-6">
               <PillBadge accent="sage" live>{hero.meta}</PillBadge>
             </div>
 

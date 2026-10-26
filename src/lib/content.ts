@@ -16,6 +16,9 @@ export const hero = {
   title: "Growth Marketer",
   lead: "Un savant mélange de",
   keywords: ["Scraping", "Data", "Automatisation", "IA"],
+  // Preuve chiffrée sous le titre : tirée de l'étude façadiers (26 vrais façadiers sur 100 dans le NAF).
+  proof: "534 façadiers confirmés en croisant 4 sources publiques, là où le code NAF se trompait 3 fois sur 4.",
+  proofLink: { label: "Voir les réalisations", href: "#realisations" },
   meta: "Disponible immédiatement · Lyon",
   ctaPrimary: { label: "Réserver un call · 30 min", href: "https://cal.com/remi-beccat-32m3gf/30min" },
   ctaSecondary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
@@ -140,7 +143,9 @@ export const realisations = [
     accent: "terracotta" as const,
   },
   {
-    title: "Piloter la prospection en un coup d'œil (à retravailler)",
+    // Masqué tant qu'il n'est pas retravaillé : passer draft à false pour le republier.
+    draft: true,
+    title: "Piloter la prospection en un coup d'œil",
     type: "Dashboard",
     context: "Réalisé chez Locabri",
     tools: ["HubSpot", "Excel"],
@@ -219,23 +224,24 @@ export const realisations = [
     link: { label: "Voir l'application", href: "https://swipe-and-prospect.remibk-studio.fr" },
   },
   {
-    title: "Un agent IA qui qualifie les prospects (à retravailler)",
+    title: "Hermes, l'agent qui prépare mes candidatures spontanées",
     type: "Agent IA",
-    context: "Projet personnel / R&D",
-    tools: ["Pappers", "Apollo", "Notion", "VPS"],
+    context: "Projet personnel",
+    tools: ["Claude", "Pappers", "Apollo", "Notion", "VPS"],
     summary:
-      "Ce qui prenait 3 à 4 heures de recherche manuelle se fait maintenant tout seul, 24 heures sur 24.",
+      "Pour une entreprise cible, un dossier sourcé et trois angles de candidature en 20 à 30 minutes.",
     problem:
-      "Qualifier un prospect demandait 3-4 h de recherche manuelle répartie sur une dizaine d'outils.",
+      "Une candidature spontanée sérieuse demandait 3 à 4 h de recherche à la main : registres légaux, site, réseaux, une dizaine d'outils.",
     result:
-      "Même travail livré en 20-30 min, l'agent tournant seul 24/7 sur un serveur dédié.",
+      "Le même dossier en 20-30 min : identité juridique, finances, stack, failles d'acquisition, puis trois angles de candidature propres à l'entreprise.",
     how: [
-      "6 APIs orchestrées (Pappers, Apollo, Notion…)",
-      "Découpage en compétences réutilisables et versionnées",
-      "Déploiement autonome sur VPS, exécution planifiée",
-      "Sorties normalisées, prêtes à verser dans un CRM",
+      "6 APIs orchestrées (Pappers, Apollo, Notion…) sur un VPS, exécution planifiée",
+      "Chaque info croisée sur 2 sources et étiquetée confirmée, inférée ou non trouvée",
+      "Compétences découpées et versionnées, réutilisées d'une cible à l'autre",
+      "Aucun fichier de contacts nominatifs : un scoring de comptes, conforme RGPD",
     ],
     accent: "terracotta" as const,
+    link: { label: "Lire le prompt", href: "/prompt-hermes.md" },
   },
   {
     title: "Guitar Flow — d'une idée à un produit vendu",
