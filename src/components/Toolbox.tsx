@@ -9,10 +9,10 @@ const LEVELS: ToolLevel[] = [3, 2, 1]
 // Niveau affiché comme une rangée de LEDs vertes : allumées = niveau atteint.
 // Pas de rouge ici : il se lirait comme une alerte sur une compétence.
 function LevelDots({ level, srLabel = true }: { level: ToolLevel; srLabel?: boolean }) {
-  const { label, hint } = toolLevels[level]
+  const { label } = toolLevels[level]
 
   return (
-    <span className="inline-flex items-center gap-1.5" title={`${label} — ${hint}`}>
+    <span className="inline-flex items-center gap-1.5" title={label}>
       {[1, 2, 3].map((n) => (
         <span key={n} aria-hidden="true" className={`led h-2 w-2 ${n <= level ? 'led-green' : 'led-off'}`} />
       ))}
@@ -55,17 +55,14 @@ export default function Toolbox() {
       </div>
 
       {/* Légende des niveaux */}
-      <dl className="mt-6 flex flex-wrap gap-x-8 gap-y-2">
+      <ul className="mt-6 flex flex-wrap gap-x-8 gap-y-2">
         {LEVELS.map((level) => (
-          <div key={level} className="flex items-center gap-2.5">
-            <dt className="flex items-center gap-2">
-              <LevelDots level={level} srLabel={false} />
-              <span className="text-sm font-bold text-fg">{toolLevels[level].label}</span>
-            </dt>
-            <dd className="text-sm text-fg-muted">{toolLevels[level].hint}</dd>
-          </div>
+          <li key={level} className="flex items-center gap-2">
+            <LevelDots level={level} srLabel={false} />
+            <span className="text-sm font-bold text-fg">{toolLevels[level].label}</span>
+          </li>
         ))}
-      </dl>
+      </ul>
     </section>
   )
 }

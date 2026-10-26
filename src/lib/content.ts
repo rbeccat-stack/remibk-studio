@@ -263,9 +263,9 @@ export const realisations = [
 // Niveaux : 3 = Autonome (j'ai livré avec), 2 = Opérationnel (utilisé en
 // production), 1 = Notions (je sais où chercher). Pas de pourcentage inventé.
 export const toolLevels = {
-  3: { label: "Autonome", hint: "j'ai livré avec" },
-  2: { label: "Opérationnel", hint: "utilisé en production" },
-  1: { label: "Notions", hint: "je sais où chercher" },
+  3: { label: "Autonome" },
+  2: { label: "Opérationnel" },
+  1: { label: "Notions" },
 } as const
 
 export type ToolLevel = keyof typeof toolLevels
