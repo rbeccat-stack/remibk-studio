@@ -52,7 +52,7 @@ export const features = [
     title: "Data : préparation & dashboards",
     bullets: [
       "Nettoyage, déduplication et normalisation de bases CRM et exports",
-      "Croisement de sources : SIRET, INSEE SIRENE, HubSpot",
+      "Croisement de sources : SIRET, INSEE SIRENE, BODACC, HubSpot",
       "Dashboards de prospection à jour automatiquement : volumes, réponses, pipeline",
       "Modèles Excel documentés, tenus par l'équipe",
     ],
