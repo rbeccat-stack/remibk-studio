@@ -1,3 +1,5 @@
+import { promptHermes } from "./prompt-hermes"
+
 export const nav = {
   name: "rémi beccat",
   tagline: "Growth Marketer",
@@ -70,6 +72,7 @@ export const features = [
       "Scripting via LLM, déploiement autonome",
     ],
     accent: "purple" as const,
+    promptLink: { label: "Voir le prompt d'Hermes", text: promptHermes },
   },
 ]
 

@@ -1,10 +1,13 @@
 import Panel from '@/components/Panel'
+import PromptPreview from '@/components/PromptPreview'
 
 interface FeatureCardProps {
   icon: string
   title: string
   bullets: string[]
   accent: 'terracotta' | 'sage' | 'purple'
+  /** Lien « voir le prompt » : le texte s'affiche au survol. */
+  promptLink?: { label: string; text: string }
 }
 
 const led = {
@@ -13,7 +16,7 @@ const led = {
   purple: 'amber',
 } as const
 
-export default function FeatureCard({ icon, title, bullets, accent }: FeatureCardProps) {
+export default function FeatureCard({ icon, title, bullets, accent, promptLink }: FeatureCardProps) {
   return (
     <Panel vents led={led[accent]} className="h-full p-6 md:p-8">
       <div className="flex h-11 w-11 items-center justify-center rounded-full bg-bg-base text-2xl shadow-key">
@@ -29,6 +32,7 @@ export default function FeatureCard({ icon, title, bullets, accent }: FeatureCar
           </li>
         ))}
       </ul>
+      {promptLink && <PromptPreview {...promptLink} />}
     </Panel>
   )
 }
