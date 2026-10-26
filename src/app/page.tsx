@@ -32,29 +32,6 @@ export default function Home() {
 
         <Divider />
 
-        {/* Apports */}
-        <section id="apports">
-          <div className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24 lg:py-32">
-            <Reveal>
-              <SectionTitle
-                title="Ce que j'apporte, en 4 axes"
-                underlineWord="j'apporte"
-                subtitle="Quatre terrains où je livre vite, sans dépendre de quelqu'un d'autre pour avancer."
-                accent="terracotta"
-              />
-            </Reveal>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {features.map((f, i) => (
-                <Reveal key={f.title} delay={i * 80} className="h-full">
-                  <FeatureCard {...f} />
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <Divider />
-
         {/* Réalisations */}
         <section id="realisations">
           <div className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24 lg:py-32">
@@ -70,6 +47,29 @@ export default function Home() {
               {realisations.map((r, i) => (
                 <Reveal key={r.title} delay={Math.min(i, 3) * 80}>
                   <RealisationCard {...r} />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* Apports */}
+        <section id="apports">
+          <div className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24 lg:py-32">
+            <Reveal>
+              <SectionTitle
+                title="Ce que j'apporte, en 4 axes"
+                underlineWord="j'apporte"
+                subtitle="Quatre terrains où je livre vite, sans dépendre de quelqu'un d'autre pour avancer."
+                accent="terracotta"
+              />
+            </Reveal>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {features.map((f, i) => (
+                <Reveal key={f.title} delay={i * 80} className="h-full">
+                  <FeatureCard {...f} />
                 </Reveal>
               ))}
             </div>

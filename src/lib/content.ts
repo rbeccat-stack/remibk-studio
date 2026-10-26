@@ -2,8 +2,8 @@ export const nav = {
   name: "rémi beccat",
   tagline: "Growth Marketer",
   links: [
-    { label: "Apports", href: "#apports" },
     { label: "Réalisations", href: "#realisations" },
+    { label: "Apports", href: "#apports" },
     { label: "Méthode", href: "#methode" },
     { label: "Outils", href: "#outils" },
     { label: "À propos", href: "#apropos" },
