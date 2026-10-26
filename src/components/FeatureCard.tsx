@@ -1,13 +1,12 @@
 import Panel from '@/components/Panel'
-import PromptPreview from '@/components/PromptPreview'
+import BulletDetail, { type DetailedBullet } from '@/components/BulletDetail'
 
 interface FeatureCardProps {
   icon: string
   title: string
-  bullets: string[]
+  /** Une puce peut porter un détail affiché au survol (+ fichier à télécharger). */
+  bullets: (string | DetailedBullet)[]
   accent: 'terracotta' | 'sage' | 'purple'
-  /** Lien « voir le prompt » : le texte s'affiche au survol. */
-  promptLink?: { label: string; text: string }
 }
 
 const led = {
@@ -16,7 +15,7 @@ const led = {
   purple: 'amber',
 } as const
 
-export default function FeatureCard({ icon, title, bullets, accent, promptLink }: FeatureCardProps) {
+export default function FeatureCard({ icon, title, bullets, accent }: FeatureCardProps) {
   return (
     <Panel vents led={led[accent]} className="h-full p-6 md:p-8">
       <div className="flex h-11 w-11 items-center justify-center rounded-full bg-bg-base text-2xl shadow-key">
@@ -26,13 +25,16 @@ export default function FeatureCard({ icon, title, bullets, accent, promptLink }
       <h3 className="mt-5 font-bold text-xl tracking-tight text-fg">{title}</h3>
       <ul className="mt-4 flex flex-col gap-2.5">
         {bullets.map((b) => (
-          <li key={b} className="flex items-start gap-2.5">
+          <li key={typeof b === 'string' ? b : b.text} className="flex items-start gap-2.5">
             <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-[2px] bg-border-strong shadow-[1px_1px_0_#fff]" />
-            <span className="text-sm text-fg-muted leading-relaxed">{b}</span>
+            {typeof b === 'string' ? (
+              <span className="text-sm text-fg-muted leading-relaxed">{b}</span>
+            ) : (
+              <BulletDetail {...b} />
+            )}
           </li>
         ))}
       </ul>
-      {promptLink && <PromptPreview {...promptLink} />}
     </Panel>
   )
 }

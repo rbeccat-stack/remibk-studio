@@ -1,5 +1,3 @@
-import { promptHermes } from "./prompt-hermes"
-
 export const nav = {
   name: "rémi beccat",
   tagline: "Growth Marketer",
@@ -64,15 +62,19 @@ export const features = [
     icon: "🤖",
     title: "Agents IA & orchestration",
     bullets: [
-      "Agent Hermes : automatisation et optimisation de la recherche d'entreprises pour candidatures spontanées (3-4h → 20-30 min)",
-      "Collecte croisée sur 2 sources minimum (registres légaux, site, réseaux), chaque info étiquetée confirmée, inférée ou non trouvée",
-      "Diagnostic des failles d'acquisition → 3 angles de candidature uniques, livrés en une page chiffrée",
+      {
+        text: "Agent Hermes : automatisation et optimisation de la recherche d'entreprises pour candidatures spontanées (3-4h → 20-30 min)",
+        details: [
+          "Collecte croisée sur 2 sources minimum (registres légaux, site, réseaux), chaque info étiquetée confirmée, inférée ou non trouvée",
+          "Diagnostic des failles d'acquisition → 3 angles de candidature uniques, livrés en une page chiffrée",
+        ],
+        file: { label: "Télécharger le prompt (.md)", href: "/prompt-hermes.md" },
+      },
       "VPS 24/7, 7 APIs orchestrées (Pappers, Apollo, Notion, RocketReach…)",
       "Skill system versionné, architecture multi-APIs",
       "Scripting via LLM, déploiement autonome",
     ],
     accent: "purple" as const,
-    promptLink: { label: "Voir le prompt d'Hermes", text: promptHermes },
   },
 ]
 
