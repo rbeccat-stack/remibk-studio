@@ -37,7 +37,7 @@ export default function Home() {
           <div className="max-w-[1120px] mx-auto px-5 md:px-6 py-16 md:py-24 lg:py-32">
             <Reveal>
               <SectionTitle
-                title="Ce que j'apporte"
+                title="Ce que j'apporte, en 4 axes"
                 underlineWord="j'apporte"
                 subtitle="Quatre terrains où je livre vite, sans dépendre de quelqu'un d'autre pour avancer."
                 accent="terracotta"
