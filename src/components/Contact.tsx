@@ -34,6 +34,16 @@ export default function Contact() {
             <p className="mt-5 text-sm md:text-base text-fg-muted leading-relaxed max-w-[52ch]">
               {contact.availability.text}
             </p>
+            <dl className="mt-6 grid gap-x-4 gap-y-3 sm:grid-cols-[auto_1fr]">
+              {contact.terms.map((t) => (
+                <div key={t.label} className="contents">
+                  <dt className="font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-fg-muted sm:pt-[3px]">
+                    {t.label}
+                  </dt>
+                  <dd className="-mt-2 text-sm font-medium text-fg leading-relaxed sm:mt-0">{t.value}</dd>
+                </div>
+              ))}
+            </dl>
             <div className="mt-6 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
               <a
                 href={contact.ctaPrimary.href}

@@ -338,6 +338,12 @@ export const contact = {
     highlight: "dispo ASAP.",
     text: "Le créneau le plus rapide pour un call : 24h. Si tu préfères l'écrit, écris-moi, je réponds dans la journée. Le CV est en téléchargement direct.",
   },
+  terms: [
+    { label: "Contrat", value: "CDI en priorité, freelance possible sur un chantier précis" },
+    { label: "Lieu", value: "Lyon · présentiel ou hybride, full remote si l'équipe est structurée pour" },
+    { label: "Démarrage", value: "Immédiat, pas de préavis" },
+    { label: "Salaire", value: "À discuter dès le premier échange, selon le périmètre" },
+  ],
   ctaPrimary: { emoji: "📞", label: "Réserver un call · 30 min", href: "https://cal.com/remi-beccat-32m3gf/30min" },
   ctaSecondary: { emoji: "↓", label: "Télécharger CV · 1 page", href: "/cv-remi-beccat.pdf" },
   email: "remibekka@gmail.com",
