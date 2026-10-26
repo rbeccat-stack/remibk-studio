@@ -22,7 +22,7 @@ Always run `npm run build` after any change. TypeScript errors surface here, not
 
 One-page portfolio site (CDI job application for Rémi BECCAT — Growth Engineer Junior, Lyon).
 
-**Content is fully centralized in `src/lib/content.ts`.** Every text string, link, stat, FAQ entry, and CTA lives there. Modify content there first; touch components only if structure needs to change.
+**Content is fully centralized in `src/lib/content.ts`.** Every text string, link, stat, and CTA lives there. Modify content there first; touch components only if structure needs to change.
 
 ### Tailwind v4 specifics
 
@@ -49,7 +49,7 @@ Loaded via `next/font/google` in `src/app/layout.tsx` as CSS variables (`--font-
 
 ### Component rules
 
-- All components are **Server Components** by default except `Header`, `FAQAccordion`, `RealisationCard`, `WordCycle`, `Reveal` and `HeroParallax` which are `'use client'`
+- All components are **Server Components** by default except `Header`, `BulletDetail`, `RealisationCard`, `WordCycle`, `Reveal` and `HeroParallax` which are `'use client'`
 - Accent variants (`terracotta` / `sage` / `purple`) are typed as string literals — always use `as const` when defining them in `content.ts`. The keys are historical: they now map to LED colors red / green / amber, and text ink `accent-ink` / `slate`.
 
 ### Responsive breakpoints in use
