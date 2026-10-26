@@ -307,7 +307,7 @@ export const toolGroups: {
       { name: "Claude Code", level: 3 },
       { name: "Apollo (API)", level: 3 },
       { name: "Cursor", level: 2 },
-      { name: "Python via LLM", level: 1 },
+      { name: "Python via LLM", level: 2 },
     ],
   },
   {
