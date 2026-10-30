@@ -6,7 +6,7 @@ import { toolGroups, toolLevels, type ToolLevel } from '@/lib/content'
 
 const LEVELS: ToolLevel[] = [3, 2, 1]
 
-// Niveau affiché comme une rangée de LEDs vertes : allumées = niveau atteint.
+// Niveau affiché comme une rangée de pastilles vertes : pleines = niveau atteint.
 // Pas de rouge ici : il se lirait comme une alerte sur une compétence.
 function LevelDots({ level, srLabel = true }: { level: ToolLevel; srLabel?: boolean }) {
   const { label } = toolLevels[level]
@@ -14,7 +14,7 @@ function LevelDots({ level, srLabel = true }: { level: ToolLevel; srLabel?: bool
   return (
     <span className="inline-flex items-center gap-1.5" title={label}>
       {[1, 2, 3].map((n) => (
-        <span key={n} aria-hidden="true" className={`led h-2 w-2 ${n <= level ? 'led-green' : 'led-off'}`} />
+        <span key={n} aria-hidden="true" className={`dot h-1.5 w-1.5 ${n <= level ? 'dot-green' : 'dot-off'}`} />
       ))}
       {srLabel && <span className="sr-only">{label}</span>}
     </span>
@@ -37,14 +37,14 @@ export default function Toolbox() {
           <Reveal key={group.title} delay={i * 80}>
             <Panel className="h-full p-6">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <h3 className="font-bold text-lg tracking-tight text-fg leading-tight">{group.title}</h3>
+                <h3 className="font-medium text-lg tracking-[-0.012em] text-fg leading-tight">{group.title}</h3>
                 <PillBadge accent="sage">{group.tag}</PillBadge>
               </div>
 
-              <ul className="mt-4 divide-y divide-border [&>li+li]:shadow-[inset_0_1px_0_#fff]">
+              <ul className="mt-4 divide-y divide-border">
                 {group.tools.map((tool) => (
                   <li key={tool.name} className="flex items-center justify-between gap-4 py-2.5">
-                    <span className="text-sm font-medium text-fg">{tool.name}</span>
+                    <span className="text-sm text-fg-secondary">{tool.name}</span>
                     <LevelDots level={tool.level} />
                   </li>
                 ))}
@@ -59,7 +59,7 @@ export default function Toolbox() {
         {LEVELS.map((level) => (
           <li key={level} className="flex items-center gap-2">
             <LevelDots level={level} srLabel={false} />
-            <span className="text-sm font-bold text-fg">{toolLevels[level].label}</span>
+            <span className="text-sm text-fg-muted">{toolLevels[level].label}</span>
           </li>
         ))}
       </ul>

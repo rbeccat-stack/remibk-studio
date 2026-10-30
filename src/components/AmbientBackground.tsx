@@ -1,10 +1,8 @@
-// Châssis : plastique gris mat, point chaud de lumière en haut à gauche,
-// micro-grain en mode overlay pour imiter les imperfections du matériau.
+// Fond de page quasi noir, éclairé par un halo indigo diffus en haut.
 export default function AmbientBackground() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-bg-base">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.65),transparent_55%)]" />
-      <div className="absolute inset-0 bg-noise opacity-25 mix-blend-overlay" />
+      <div className="absolute inset-x-0 top-0 h-[70vh] bg-[radial-gradient(ellipse_70%_60%_at_50%_-10%,rgba(94,106,210,0.16),transparent_70%)]" />
     </div>
   )
 }

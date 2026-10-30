@@ -1,21 +1,21 @@
 interface PillBadgeProps {
   children: React.ReactNode
   accent?: 'terracotta' | 'sage' | 'neutral'
-  /** LED qui respire (statut en direct). */
+  /** Pastille qui respire (statut en direct). */
   live?: boolean
 }
 
-const led = {
-  terracotta: 'led-red',
-  sage: 'led-green',
-  neutral: 'led-off',
+const dot = {
+  terracotta: 'dot-accent',
+  sage: 'dot-green',
+  neutral: 'dot-off',
 }
 
-// Étiquette creusée dans le châssis, LED de statut + texte tamponné.
+// Étiquette pilule à filet, pastille de statut + texte.
 export default function PillBadge({ children, accent = 'neutral', live = false }: PillBadgeProps) {
   return (
-    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bg-base shadow-recessed-sm font-mono text-xs font-bold tracking-[0.08em] uppercase text-fg-muted">
-      <span aria-hidden className={`led ${led[accent]} h-2 w-2 ${live ? 'animate-pulse' : ''}`} />
+    <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-border bg-white/[0.03] text-xs font-medium text-fg-secondary">
+      <span aria-hidden className={`dot ${dot[accent]} h-1.5 w-1.5 ${live ? 'animate-pulse' : ''}`} />
       {children}
     </span>
   )

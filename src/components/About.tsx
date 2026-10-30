@@ -11,10 +11,10 @@ export default function About() {
             {/* Portrait — remplacer le monogramme par une photo :
                 <img src="/photo-remi.jpg" alt="Rémi BECCAT" className="absolute inset-0 h-full w-full object-cover grayscale transition duration-500 hover:grayscale-0" />
                 (déposer le fichier dans public/) */}
-            <div className="bg-blueprint relative mx-auto aspect-[4/5] w-full max-w-[220px] overflow-hidden sm:max-w-[260px] md:max-w-[280px] rounded-2xl bg-recessed shadow-recessed md:mx-0 lg:max-w-[320px]">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[220px] overflow-hidden sm:max-w-[260px] md:max-w-[280px] rounded-2xl border border-border bg-surface bg-[radial-gradient(ellipse_at_50%_0%,rgba(94,106,210,0.28),transparent_70%)] md:mx-0 lg:max-w-[320px]">
               <span
                 aria-hidden
-                className="absolute inset-0 grid place-items-center text-accent-ink text-shadow-emboss font-extrabold text-7xl tracking-tight lg:text-8xl"
+                className="absolute inset-0 grid place-items-center text-fg font-medium text-7xl tracking-[-0.04em] lg:text-8xl"
               >
                 {about.initials}
               </span>
@@ -22,7 +22,7 @@ export default function About() {
 
             {/* Texte */}
             <div>
-              <h2 className="flex flex-wrap items-baseline gap-3 text-fg text-shadow-emboss font-bold text-3xl tracking-tight leading-tight md:text-4xl">
+              <h2 className="flex flex-wrap items-baseline gap-3 text-fg font-medium text-3xl tracking-[-0.022em] leading-[1.1] md:text-4xl">
                 {about.title}
                 <span aria-hidden className="text-2xl md:text-3xl text-fg">
                   {about.emoji}

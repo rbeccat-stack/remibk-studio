@@ -13,7 +13,7 @@ export default function SectionTitle({
   accent = 'terracotta',
   centered = false,
 }: SectionTitleProps) {
-  const led = accent === 'terracotta' ? 'led-red' : 'led-green'
+  const dot = accent === 'terracotta' ? 'dot-accent' : 'dot-green'
 
   const renderTitle = () => {
     if (!underlineWord) return title
@@ -29,14 +29,14 @@ export default function SectionTitle({
 
   return (
     <div className={centered ? 'text-center' : ''}>
-      <div className={`flex items-center gap-3 mb-3 ${centered ? 'justify-center' : ''}`}>
-        <span aria-hidden className={`led ${led} h-2.5 w-2.5`} />
-        <h2 className="text-fg text-shadow-emboss font-bold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
+      <div className={`flex items-center gap-3 mb-4 ${centered ? 'justify-center' : ''}`}>
+        <span aria-hidden className={`dot ${dot} h-2 w-2`} />
+        <h2 className="text-fg font-medium text-3xl sm:text-4xl md:text-[40px] leading-[1.1] tracking-[-0.022em]">
           {renderTitle()}
         </h2>
       </div>
       {subtitle && (
-        <p className={`text-fg-muted text-base md:text-lg leading-relaxed ${centered ? 'max-w-xl mx-auto' : 'max-w-2xl'}`}>
+        <p className={`text-fg-muted text-[15px] md:text-base leading-relaxed ${centered ? 'max-w-xl mx-auto' : 'max-w-2xl'}`}>
           {subtitle}
         </p>
       )}

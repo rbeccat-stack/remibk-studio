@@ -31,8 +31,8 @@ export default function RealisationCard({
   const [open, setOpen] = useState(false)
   const detailId = useId()
   const isTerracotta = accent === 'terracotta'
-  const ink = isTerracotta ? 'text-accent-ink' : 'text-slate'
-  const led = isTerracotta ? 'led-red' : 'led-green'
+  const ink = isTerracotta ? 'text-accent-ink' : 'text-fg-secondary'
+  const dot = isTerracotta ? 'dot-accent' : 'dot-green'
 
   return (
     <Panel as="article" lift={false} elevated={open}>
@@ -41,25 +41,25 @@ export default function RealisationCard({
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls={detailId}
-        className="flex w-full items-start justify-between gap-5 p-5 text-left sm:gap-6 sm:p-7 md:p-8 rounded-2xl"
+        className="flex w-full items-start justify-between gap-5 p-5 text-left sm:gap-6 sm:p-7 md:p-8 rounded-2xl transition-colors duration-200 hover:bg-white/[0.015]"
       >
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <span
-              className={`inline-flex items-center gap-1.5 rounded-full bg-bg-base px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.08em] shadow-recessed-sm ${ink}`}
+              className={`inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-0.5 font-mono text-[11px] ${ink}`}
             >
-              <span aria-hidden className={`led ${led} h-1.5 w-1.5`} />
+              <span aria-hidden className={`dot ${dot} h-1.5 w-1.5`} />
               {type}
             </span>
-            <span className="font-mono text-[11px] tracking-wide text-fg-muted">{context}</span>
+            <span className="font-mono text-[11px] text-fg-muted">{context}</span>
             {tools && tools.length > 0 && (
-              <span className="font-mono text-[11px] tracking-wide text-fg-muted">
+              <span className="font-mono text-[11px] text-fg-muted">
                 · {tools.join(', ')}
               </span>
             )}
           </div>
 
-          <h3 className="mt-3 font-bold text-xl tracking-tight leading-snug text-fg sm:text-2xl">
+          <h3 className="mt-3 font-medium text-xl tracking-[-0.018em] leading-snug text-fg sm:text-2xl">
             {title}
           </h3>
 
@@ -68,14 +68,14 @@ export default function RealisationCard({
           </p>
         </div>
 
-        {/* Touche ronde : enfoncée quand la fiche est ouverte */}
+        {/* Bouton rond : surface active quand la fiche est ouverte */}
         <span
-          className={`mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-bg-base text-base font-bold leading-none transition-[box-shadow,color] duration-150 ${
-            open ? 'shadow-pressed-sm text-accent-ink' : 'shadow-key text-fg-muted group-hover:text-accent-ink'
+          className={`mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-base leading-none transition-colors duration-150 ${
+            open ? 'border-border-strong bg-surface text-accent-ink' : 'border-border text-fg-muted group-hover:border-border-strong group-hover:text-fg'
           }`}
           aria-hidden
         >
-          <span className={`transition-transform duration-300 ease-spring ${open ? 'rotate-45' : ''}`}>+</span>
+          <span className={`transition-transform duration-300 ease-quart ${open ? 'rotate-45' : ''}`}>+</span>
         </span>
       </button>
 
@@ -86,27 +86,27 @@ export default function RealisationCard({
         style={{ gridTemplateRows: open ? '1fr' : '0fr' }}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-border shadow-[inset_0_1px_0_#fff] px-5 pb-5 pt-6 sm:px-7 sm:pb-7 md:px-8 md:pb-8">
-            <p className="text-sm leading-relaxed text-fg">{problem}</p>
+          <div className="border-t border-border px-5 pb-5 pt-6 sm:px-7 sm:pb-7 md:px-8 md:pb-8">
+            <p className="text-sm leading-relaxed text-fg-secondary">{problem}</p>
 
             <div className="mt-5">
-              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-fg-muted">
+              <span className="font-mono text-xs text-fg-muted">
                 Le résultat
               </span>
-              <p className={`mt-1.5 text-sm font-bold leading-relaxed ${ink}`}>
+              <p className={`mt-1.5 text-sm font-medium leading-relaxed ${ink}`}>
                 {result}
               </p>
             </div>
 
             <div className="mt-6">
-              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-fg-muted">
+              <span className="font-mono text-xs text-fg-muted">
                 Comment
               </span>
               <ol className="mt-4 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
                 {how.map((item, i) => (
                   <li key={item} className="flex items-start gap-3">
                     <span
-                      className={`shrink-0 rounded-md bg-bg-base px-1.5 py-0.5 font-mono text-[10px] font-bold tabular-nums tracking-wider shadow-recessed-sm ${ink}`}
+                      className={`shrink-0 rounded-md border border-border px-1.5 py-0.5 font-mono text-[11px] tabular-nums ${ink}`}
                     >
                       {String(i + 1).padStart(2, '0')}
                     </span>
@@ -121,7 +121,7 @@ export default function RealisationCard({
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="key-primary mt-6 inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-xs hover:gap-2.5"
+                className="key-primary mt-6 inline-flex h-9 items-center gap-1.5 rounded-full px-4 text-[13px] hover:gap-2.5"
               >
                 {link.label} <span aria-hidden>→</span>
               </a>

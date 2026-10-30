@@ -28,29 +28,28 @@ One-page portfolio site (CDI job application for Rémi BECCAT — Growth Enginee
 
 - No `tailwind.config.js` — custom tokens are defined in `src/app/globals.css` inside an `@theme {}` block
 - Import syntax: `@import "tailwindcss"` (not the old `@tailwind base/components/utilities`)
-- Custom colors (`bg-bg-base`, `text-fg-muted`, `bg-accent`, etc.) map directly to `--color-*` CSS variables in `@theme`; shadows (`shadow-card`, `shadow-floating`, `shadow-key`, `shadow-pressed(-sm)`, `shadow-recessed(-sm)`) to `--shadow-*`; `text-shadow-emboss` to `--text-shadow-emboss`
-- Composite utilities are declared with `@utility` in `globals.css`: `key-primary` / `key-chassis` (button skins), `led` + `led-red|green|amber|off`, `screws`, `bg-noise`, `bg-carbon`, `scanlines`, `bg-blueprint`
+- Custom colors (`bg-bg-base`, `bg-panel`, `bg-surface`, `text-fg-muted`, `bg-accent`, etc.) map directly to `--color-*` CSS variables in `@theme`; shadows (`shadow-card`, `shadow-floating`) to `--shadow-*`; easings `ease-quart` / `ease-expo` to `--ease-*`. `font-medium` is overridden to 510 and `font-semibold` to 590 (Inter Variable)
+- Composite utilities are declared with `@utility` in `globals.css`: `key-primary` / `key-chassis` (button skins — shape set in markup: `rounded-full` + padding), `dot` + `dot-accent|green|amber|off` (status dots)
 
-### Design system: Industrial Skeuomorphism
+### Design system: Linear-like dark UI
 
-Light matte-plastic chassis (`#e0e5ec`), single light source top-left (highlights top/left, shadows bottom/right), neumorphic dual shadows, one safety-red accent (`#ff4757`) reserved for interactive elements and LEDs. Red **text** uses `accent-ink` (`#c0262d`, 4.6:1 on the chassis) — never `accent`. Spring easing (`ease-spring`) for hover/press, `ease-expo` for scroll reveals. Key primitives:
+Near-black flat surfaces (`bg-base #08090a` → `panel #0f1011` → `surface #1c1c1f`), 1px borders (`border #23252a`, `border-strong #34343a`), hierarchy carried by text greys (`fg #f7f8f8`, `fg-secondary #d0d6e0`, `fg-muted #8a8f98`, `fg-subtle #62666d` decorative only). One indigo accent used sparingly: `accent #5e6ad2` for button fills (white text 4.7:1), `accent-ink #7170ff` for indigo **text** and dots — never `accent` for text. No bounce: `ease-quart` for hovers, `ease-expo` for reveals. Key primitives:
 
-- `AmbientBackground` — fixed chassis background: top-left light hotspot + desaturated noise in overlay
-- `Panel` — module bolted on the chassis (neumorphic shadow, corner screws); props `lift`, `elevated`, `vents`, `led`. Use it for any card surface
-- Buttons are physical keys: `key-primary` (red) / `key-chassis` (grey) — uppercase, press down 2px with inverted shadow on `:active`
+- `AmbientBackground` — fixed near-black background with a diffuse indigo glow at the top
+- `Panel` — flat card (`bg-panel`, 1px border, top inner highlight); props `lift` (border brightens on hover), `elevated`, `dot`. Use it for any card surface
+- Buttons are pills: `key-primary` (indigo) / `key-chassis` (smoked glass + hairline), weight 510, normal case
 - `Reveal` — one-shot fade-up on scroll (IntersectionObserver, 15 % threshold), `delay` prop for stagger
 - `HeroParallax` — hero fades/scales/translates over the first 50 vh of scroll
-- `HeroTV` — hero TV set (chassis body, recessed CRT screen) that broadcasts `hero.lead` + the `WordCycle` keywords; screen text sizes use container units (`cqw`)
-- The only dark surfaces are the TV screen frame and the footer (`bg-console`)
+- `HeroWindow` — dark app window (title bar, skeleton sidebar) that broadcasts `hero.lead` + the `WordCycle` keywords; text sizes use container units (`cqw`)
 
 ### Fonts
 
-Loaded via `next/font/google` in `src/app/layout.tsx` as CSS variables (`--font-inter`, `--font-jetbrains-mono`), applied on `<html>`. Use `font-sans` (Inter) for everything, `font-mono` (JetBrains Mono) for labels, tags, step numbers and metadata (bold, uppercase, `tracking-[0.08em]`).
+Loaded via `next/font/google` in `src/app/layout.tsx` as CSS variables (`--font-inter`, `--font-jetbrains-mono`), applied on `<html>`. Use `font-sans` (Inter) for everything, `font-mono` (JetBrains Mono) for labels, tags, step numbers and metadata (regular weight, normal case, `text-xs`/`text-[11px]`, `text-fg-muted`). Headings: `font-medium` with tight tracking (`tracking-[-0.022em]`). Inter stylistic sets `cv01`/`ss03` are enabled on `body`.
 
 ### Component rules
 
 - All components are **Server Components** by default except `Header`, `BulletDetail`, `RealisationCard`, `WordCycle`, `Reveal` and `HeroParallax` which are `'use client'`
-- Accent variants (`terracotta` / `sage` / `purple`) are typed as string literals — always use `as const` when defining them in `content.ts`. The keys are historical: they now map to LED colors red / green / amber, and text ink `accent-ink` / `slate`.
+- Accent variants (`terracotta` / `sage` / `purple`) are typed as string literals — always use `as const` when defining them in `content.ts`. The keys are historical: they now map to dot colors indigo / green / amber, and text ink `accent-ink` / `fg-secondary`.
 
 ### Responsive breakpoints in use
 

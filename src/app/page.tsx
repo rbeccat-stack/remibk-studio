@@ -10,13 +10,9 @@ import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
 import { realisations, features } from '@/lib/content'
 
-// Séparateur de section : rainure usinée (trait d'ombre + liseré de lumière).
+// Séparateur de section : filet de 1 px.
 function Divider() {
-  return (
-    <div aria-hidden className="relative border-t border-border">
-      <span className="absolute inset-x-0 top-0 h-px bg-white" />
-    </div>
-  )
+  return <div aria-hidden className="border-t border-border" />
 }
 
 export default function Home() {

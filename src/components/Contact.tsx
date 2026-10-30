@@ -25,7 +25,7 @@ export default function Contact() {
         {/* Disponibilité + actions */}
         <Reveal>
           <Panel lift={false} className="h-full p-6 sm:p-8">
-            <h3 className="text-fg text-shadow-emboss font-bold text-2xl md:text-3xl tracking-tight leading-tight">
+            <h3 className="text-fg font-medium text-2xl md:text-3xl tracking-[-0.022em] leading-[1.15]">
               {contact.availability.lead}{' '}
               <span className="text-accent-ink">
                 {contact.availability.highlight}
@@ -37,10 +37,10 @@ export default function Contact() {
             <dl className="mt-6 grid gap-x-4 gap-y-3 sm:grid-cols-[auto_1fr]">
               {contact.terms.map((t) => (
                 <div key={t.label} className="contents">
-                  <dt className="font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-fg-muted sm:pt-[3px]">
+                  <dt className="font-mono text-xs text-fg-muted sm:pt-[3px]">
                     {t.label}
                   </dt>
-                  <dd className="-mt-2 text-sm font-medium text-fg leading-relaxed sm:mt-0">{t.value}</dd>
+                  <dd className="-mt-2 text-sm text-fg-secondary leading-relaxed sm:mt-0">{t.value}</dd>
                 </div>
               ))}
             </dl>
@@ -49,14 +49,14 @@ export default function Contact() {
                 href={contact.ctaPrimary.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="key-primary inline-flex min-h-12 justify-center items-center px-5 py-3 rounded-xl text-xs"
+                className="key-primary inline-flex min-h-11 justify-center items-center px-5 rounded-full text-[15px]"
               >
                 <span aria-hidden="true" className="mr-2">{contact.ctaPrimary.emoji}</span>
                 {contact.ctaPrimary.label}
               </a>
               <a
                 href={contact.ctaSecondary.href}
-                className="key-chassis inline-flex min-h-12 justify-center items-center px-5 py-3 rounded-xl text-xs"
+                className="key-chassis inline-flex min-h-11 justify-center items-center px-5 rounded-full text-[15px]"
               >
                 <span aria-hidden="true" className="mr-2">{contact.ctaSecondary.emoji}</span>
                 {contact.ctaSecondary.label}
@@ -73,12 +73,12 @@ export default function Contact() {
                 <div className="flex items-center gap-4">
                   <span
                     aria-hidden="true"
-                    className="shrink-0 w-10 h-10 rounded-full bg-bg-base shadow-key flex items-center justify-center font-mono text-sm font-bold text-fg"
+                    className="shrink-0 w-10 h-10 rounded-lg border border-border bg-surface flex items-center justify-center font-mono text-sm font-semibold text-fg"
                   >
                     <span className="grayscale transition duration-500 group-hover:grayscale-0">{c.icon}</span>
                   </span>
                   <div className="min-w-0 flex flex-col gap-0.5">
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-fg-muted">{c.label}</span>
+                    <span className="font-mono text-xs text-fg-muted">{c.label}</span>
                     <a
                       href={c.href}
                       target={c.external ? '_blank' : undefined}

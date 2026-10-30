@@ -1,5 +1,5 @@
 import { hero } from '@/lib/content'
-import HeroTV from '@/components/HeroTV'
+import HeroWindow from '@/components/HeroWindow'
 import PillBadge from '@/components/PillBadge'
 import HeroParallax from '@/components/HeroParallax'
 
@@ -10,15 +10,15 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-14 lg:gap-16 items-start md:items-center">
           {/* Left column */}
           <div className="flex flex-col items-start">
-            <h1 className="animate-fade-up text-fg text-shadow-emboss font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.03em] text-balance">
+            <h1 className="animate-fade-up text-fg font-medium text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] tracking-[-0.022em] text-balance">
               {hero.title}
             </h1>
 
-            <p className="animate-fade-up [animation-delay:120ms] mt-6 max-w-[46ch] text-base md:text-lg text-fg-muted leading-relaxed">
+            <p className="animate-fade-up [animation-delay:120ms] mt-6 max-w-[46ch] text-base md:text-[17px] text-fg-muted leading-relaxed">
               {hero.proof}{' '}
               <a
                 href={hero.proofLink.href}
-                className="font-medium text-accent-ink underline underline-offset-4 decoration-accent-ink/40 transition-colors hover:decoration-accent-ink"
+                className="text-fg-secondary underline underline-offset-4 decoration-fg-subtle transition-colors hover:text-fg hover:decoration-accent-ink"
               >
                 {hero.proofLink.label}&nbsp;↓
               </a>
@@ -33,22 +33,22 @@ export default function Hero() {
                 href={hero.ctaPrimary.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="key-primary inline-flex min-h-12 items-center px-4 py-3 rounded-xl text-xs"
+                className="key-primary inline-flex min-h-11 items-center px-5 rounded-full text-[15px]"
               >
                 {hero.ctaPrimary.label}
               </a>
               <a
                 href={hero.ctaSecondary.href}
-                className="key-chassis inline-flex min-h-12 items-center px-4 py-3 rounded-xl text-xs"
+                className="key-chassis inline-flex min-h-11 items-center px-5 rounded-full text-[15px]"
               >
                 {hero.ctaSecondary.label}
               </a>
             </div>
           </div>
 
-          {/* Right column — téléviseur qui diffuse les mots-clés */}
+          {/* Right column — fenêtre d'app qui diffuse les mots-clés */}
           <div className="animate-fade-up [animation-delay:200ms]">
-            <HeroTV lead={hero.lead} keywords={hero.keywords} />
+            <HeroWindow lead={hero.lead} keywords={hero.keywords} />
           </div>
         </div>
       </HeroParallax>
