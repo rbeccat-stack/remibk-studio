@@ -64,7 +64,6 @@ export default function Contact() {
                     {t.label}
                   </dt>
                   <dd className="-mt-2 text-sm text-fg-secondary leading-relaxed sm:mt-0">
-                    {t.strong && <strong className="font-semibold text-fg">{t.strong}</strong>}
                     {t.value}
                   </dd>
                 </div>

@@ -17,8 +17,6 @@ interface RealisationCardProps {
   link?: { label: string; href: string }
   /** Ancre de la carte (#…) : un lien vers elle déplie aussi le détail. */
   anchor?: string
-  /** Carte « cadeau » : légère surbrillance, jusqu'à ce qu'on l'ouvre. */
-  gift?: boolean
 }
 
 // Sous md, le détail s'ouvre en plein écran au lieu de rallonger la page.
@@ -43,7 +41,6 @@ export default function RealisationCard({
   accent,
   link,
   anchor,
-  gift = false,
 }: RealisationCardProps) {
   const [open, setOpen] = useState(false)
   const isMobile = useIsMobile()
@@ -155,7 +152,7 @@ export default function RealisationCard({
 
   return (
     <div>
-      <Panel as="article" lift={false} elevated={inlineOpen} className={gift && !open ? 'animate-gift-glow' : ''}>
+      <Panel as="article" lift={false} elevated={inlineOpen}>
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}

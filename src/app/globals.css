@@ -47,8 +47,6 @@
 
   --animate-fade-up: fade-up 600ms var(--ease-expo) both;
   --animate-menu-in: menu-in 200ms var(--ease-expo) both;
-  /* Carte « cadeau » : lueur qui respire. */
-  --animate-gift-glow: gift-glow 4s ease-in-out infinite;
   /* Flèche du contact : tracé qui se dessine (chemins en pathLength="1"). */
   --animate-arrow-draw: arrow-draw 700ms var(--ease-expo) both;
 
@@ -60,10 +58,6 @@
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes gift-glow {
-    0%, 100% { box-shadow: 0 0 0 1px rgb(113 112 255 / 0.28), 0 0 22px rgb(94 106 210 / 0.14); }
-    50% { box-shadow: 0 0 0 1px rgb(113 112 255 / 0.45), 0 0 34px rgb(94 106 210 / 0.26); }
   }
   @keyframes menu-in {
     from { opacity: 0; transform: translateY(-8px); }

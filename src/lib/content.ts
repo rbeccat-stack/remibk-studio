@@ -342,8 +342,6 @@ export const realisations = [
     link: { label: "Lire le prompt", href: "/prompt-hermes.md" },
   },
   {
-    // Mise en avant « cadeau » (surbrillance) tant que la carte est fermée.
-    gift: true,
     title: "Guitar Flow — d'une idée à un produit vendu",
     type: "Projet complet",
     context: "Projet personnel",
@@ -441,12 +439,11 @@ export const contact = {
     // Surligné en violet, texte blanc.
     textHighlight: "appelez-moi directement",
   },
-  // strong : partie mise en gras en tête de valeur (choix prioritaire).
   terms: [
-    { label: "Contrat", strong: "CDI", value: " ou CDD" },
+    { label: "Contrat", value: "CDI ou CDD" },
     { label: "Lieu", value: "Lyon ou hybride" },
     { label: "Démarrage", value: "Immédiatement" },
-  ] as { label: string; strong?: string; value: string }[],
+  ] as { label: string; value: string }[],
   ctaPrimary: { emoji: "📞", label: "Réserver un call · 30 min", href: "https://cal.com/remi-beccat-32m3gf/30min" },
   ctaSecondary: { emoji: "↓", label: "Télécharger CV · 1 page", href: "/cv-remi-beccat.pdf" },
   email: "remibekka@gmail.com",
