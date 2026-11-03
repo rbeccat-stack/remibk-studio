@@ -9,14 +9,17 @@ type WordCycleProps = {
   interval?: number
   /** Suffixe collé à chaque mot (ex. un point final). */
   suffix?: string
+  /** Index imposé par le parent (mode contrôlé) : le minuteur interne est alors coupé. */
+  index?: number
 }
 
 // Tous les mots sont empilés dans une même cellule de grille : le bloc garde
 // la largeur du mot le plus long, rien ne bouge autour, et le mot courant
 // reste affiché jusqu'à ce que le suivant le remplace.
-export default function WordCycle({ words, className, interval = 2400, suffix = '' }: WordCycleProps) {
+export default function WordCycle({ words, className, interval = 2400, suffix = '', index: controlled }: WordCycleProps) {
   const [reduced, setReduced] = useState(false)
-  const [index, setIndex] = useState(0)
+  const [internal, setIndex] = useState(0)
+  const index = controlled ?? internal
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -27,10 +30,10 @@ export default function WordCycle({ words, className, interval = 2400, suffix = 
   }, [])
 
   useEffect(() => {
-    if (reduced || words.length < 2) return
+    if (controlled !== undefined || reduced || words.length < 2) return
     const timer = setInterval(() => setIndex((i) => (i + 1) % words.length), interval)
     return () => clearInterval(timer)
-  }, [reduced, words.length, interval])
+  }, [controlled, reduced, words.length, interval])
 
   if (reduced) {
     return (

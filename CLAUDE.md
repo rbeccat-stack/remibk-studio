@@ -40,7 +40,7 @@ Near-black flat surfaces (`bg-base #08090a` → `panel #0f1011` → `surface #1c
 - Buttons are pills: `key-primary` (indigo) / `key-chassis` (smoked glass + hairline), weight 510, normal case
 - `Reveal` — one-shot fade-up on scroll (IntersectionObserver, 15 % threshold), `delay` prop for stagger
 - `HeroParallax` — hero fades/scales/translates over the first 50 vh of scroll
-- `HeroWindow` — dark app window (title bar, skeleton sidebar) that broadcasts `hero.lead` + the `WordCycle` keywords; text sizes use container units (`cqw`)
+- `HeroWindow` — dark app window (`leads_qualifies.csv` title bar, sidebar of the 4 keywords with icons, active one synced with the `WordCycle` keyword, mini lead table with status pills); text sizes use container units (`cqw`)
 
 ### Fonts
 
@@ -48,7 +48,7 @@ Loaded via `next/font/google` in `src/app/layout.tsx` as CSS variables (`--font-
 
 ### Component rules
 
-- All components are **Server Components** by default except `Header`, `BulletDetail`, `RealisationCard`, `OfferAxes`, `WordCycle`, `Reveal` and `HeroParallax` which are `'use client'`
+- All components are **Server Components** by default except `Header`, `BulletDetail`, `RealisationCard`, `OfferAxes`, `HeroWindow`, `WordCycle`, `Reveal` and `HeroParallax` which are `'use client'`
 - Accent variants (`terracotta` / `sage` / `purple`) are typed as string literals — always use `as const` when defining them in `content.ts`. The keys are historical: they now map to dot colors indigo / green / amber, and text ink `accent-ink` / `fg-secondary`.
 
 ### Responsive breakpoints in use

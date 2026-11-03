@@ -25,16 +25,16 @@ export default function OfferAxes() {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpen(isOpen ? -1 : i)}
-                className="grid w-full cursor-pointer items-center gap-x-8 gap-y-1 p-6 text-left transition-colors duration-200 ease-quart hover:bg-surface/30 md:grid-cols-[180px_1fr_auto] md:px-8"
+                className="grid w-full cursor-pointer grid-cols-[1fr_auto] items-center gap-x-4 gap-y-1 p-6 text-left transition-colors duration-200 ease-quart hover:bg-surface/30 md:grid-cols-[180px_1fr_auto] md:gap-x-8 md:px-8"
               >
                 <span className="flex items-baseline gap-3 md:flex-col md:gap-1">
                   <span className="font-mono text-xs text-accent-ink">0{i + 1}</span>
                   <span className="text-fg font-medium text-xl tracking-[-0.018em]">{axis.label}</span>
                 </span>
-                <span className="text-fg-secondary text-[15px] md:text-base leading-relaxed">{axis.promise}</span>
+                <span className="col-span-2 row-start-2 text-fg-secondary text-[15px] leading-relaxed md:col-span-1 md:col-start-2 md:row-start-1 md:text-base">{axis.promise}</span>
                 <span
                   aria-hidden
-                  className={`hidden h-8 w-8 place-items-center rounded-full border border-border text-fg-muted transition-transform duration-300 ease-quart md:grid ${
+                  className={`col-start-2 row-start-1 grid h-8 w-8 place-items-center rounded-full border border-border text-fg-muted transition-transform duration-300 ease-quart md:col-start-3 ${
                     isOpen ? 'rotate-45' : ''
                   }`}
                 >
