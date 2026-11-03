@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import SectionTitle from '@/components/SectionTitle'
 import PillBadge from '@/components/PillBadge'
 import Panel from '@/components/Panel'
@@ -44,7 +45,18 @@ export default function Toolbox() {
               <ul className="mt-4 divide-y divide-border">
                 {group.tools.map((tool) => (
                   <li key={tool.name} className="flex items-center justify-between gap-4 py-2.5">
-                    <span className="text-sm text-fg-secondary">{tool.name}</span>
+                    <span className="flex items-center gap-2.5 text-sm text-fg-secondary">
+                      <Image
+                        src={tool.logo}
+                        alt=""
+                        width={16}
+                        height={16}
+                        loading="eager"
+                        unoptimized
+                        className="h-4 w-4 shrink-0 object-contain"
+                      />
+                      {tool.name}
+                    </span>
                     <LevelDots level={tool.level} />
                   </li>
                 ))}

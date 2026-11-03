@@ -369,50 +369,50 @@ export type ToolLevel = keyof typeof toolLevels
 export const toolGroups: {
   title: string
   tag: string
-  tools: { name: string; level: ToolLevel }[]
+  tools: { name: string; logo: string; level: ToolLevel }[]
 }[] = [
   {
     title: "Prospection & données B2B",
     tag: "Cœur de métier",
     tools: [
-      { name: "Sales Navigator", level: 3 },
-      { name: "Pharow", level: 3 },
-      { name: "Evaboot", level: 3 },
-      { name: "Societeinfo", level: 3 },
-      { name: "API et Open Data", level: 3 },
-      { name: "Pappers", level: 3 },
+      { name: "Sales Navigator", logo: "/logos/linkedin.svg", level: 3 },
+      { name: "Pharow", logo: "/logos/pharow.png", level: 3 },
+      { name: "Evaboot", logo: "/logos/evaboot.png", level: 3 },
+      { name: "Societeinfo", logo: "/logos/societeinfo.png", level: 3 },
+      { name: "API et Open Data", logo: "/logos/api.svg", level: 3 },
+      { name: "Pappers", logo: "/logos/pappers.ico", level: 3 },
     ],
   },
   {
     title: "Automatisation & CRM",
     tag: "En production",
     tools: [
-      { name: "Make", level: 3 },
-      { name: "HubSpot", level: 2 },
-      { name: "n8n", level: 2 },
-      { name: "Airtable", level: 2 },
-      { name: "Brevo", level: 2 },
-      { name: "Google Colab", level: 2 },
+      { name: "Make", logo: "/logos/make.svg", level: 3 },
+      { name: "HubSpot", logo: "/logos/hubspot.svg", level: 2 },
+      { name: "n8n", logo: "/logos/n8n.svg", level: 2 },
+      { name: "Airtable", logo: "/logos/airtable.svg", level: 2 },
+      { name: "Brevo", logo: "/logos/brevo.svg", level: 2 },
+      { name: "Google Colab", logo: "/logos/google-colab.svg", level: 2 },
     ],
   },
   {
     title: "Agents & IA",
     tag: "Focus actuel",
     tools: [
-      { name: "Claude", level: 3 },
-      { name: "Claude Code", level: 3 },
-      { name: "Apollo (API)", level: 3 },
-      { name: "Cursor", level: 2 },
-      { name: "Python via LLM", level: 2 },
+      { name: "Claude", logo: "/logos/claude.svg", level: 3 },
+      { name: "Claude Code", logo: "/logos/claude.svg", level: 3 },
+      { name: "Apollo (API)", logo: "/logos/apollo.svg", level: 3 },
+      { name: "Cursor", logo: "/logos/cursor.svg", level: 2 },
+      { name: "Python via LLM", logo: "/logos/python.svg", level: 2 },
     ],
   },
   {
     title: "Pilotage & design",
     tag: "Support",
     tools: [
-      { name: "Excel", level: 3 },
-      { name: "Notion", level: 3 },
-      { name: "Figma", level: 2 },
+      { name: "Excel", logo: "/logos/excel.svg", level: 3 },
+      { name: "Notion", logo: "/logos/notion.svg", level: 3 },
+      { name: "Figma", logo: "/logos/figma.svg", level: 2 },
     ],
   },
 ]
@@ -447,9 +447,11 @@ export const contact = {
   phone: "06 01 72 83 47",
   phoneHref: "tel:+33601728347",
   linkedinLabel: "linkedin.com/in/remibeccat",
+  githubLabel: "github.com/rbeccat-stack",
 }
 
 export const footer = {
   copy: "© 2026 Rémi BECCAT — Growth Marketer basé à Lyon.",
   linkedin: "https://www.linkedin.com/in/remibeccat/",
+  github: "https://github.com/rbeccat-stack",
 }
