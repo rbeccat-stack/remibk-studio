@@ -17,7 +17,7 @@ interface RealisationCardProps {
   link?: { label: string; href: string }
   /** Ancre de la carte (#…) : un lien vers elle déplie aussi le détail. */
   anchor?: string
-  /** Carte « cadeau » : légère surbrillance et tremblement, jusqu'à ce qu'on l'ouvre. */
+  /** Carte « cadeau » : légère surbrillance, jusqu'à ce qu'on l'ouvre. */
   gift?: boolean
 }
 
@@ -154,7 +154,7 @@ export default function RealisationCard({
   )
 
   return (
-    <div className={gift && !open ? 'animate-gift-wiggle origin-center rounded-2xl' : ''}>
+    <div>
       <Panel as="article" lift={false} elevated={inlineOpen} className={gift && !open ? 'animate-gift-glow' : ''}>
         <button
           type="button"

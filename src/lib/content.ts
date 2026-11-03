@@ -342,7 +342,7 @@ export const realisations = [
     link: { label: "Lire le prompt", href: "/prompt-hermes.md" },
   },
   {
-    // Mise en avant « cadeau » (surbrillance + tremblement) tant que la carte est fermée.
+    // Mise en avant « cadeau » (surbrillance) tant que la carte est fermée.
     gift: true,
     title: "Guitar Flow — d'une idée à un produit vendu",
     type: "Projet complet",
