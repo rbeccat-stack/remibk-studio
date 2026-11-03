@@ -454,6 +454,7 @@ export const contact = {
   email: "remibekka@gmail.com",
   phone: "06 01 72 83 47",
   phoneHref: "tel:+33601728347",
+  whatsappHref: "https://wa.me/33601728347",
   linkedinLabel: "linkedin.com/in/remibeccat",
   githubLabel: "github.com/rbeccat-stack",
 }
