@@ -39,6 +39,11 @@ export const offer = {
         "Construire des dashboards lisibles par tout le monde",
         "Produire des analyses qui améliorent la prise de décision",
       ],
+      tools: [
+        { name: "Excel", logo: "/logos/excel.svg" },
+        { name: "HubSpot", logo: "/logos/hubspot.svg" },
+        { name: "Google Sheets", logo: "/logos/google-sheets.svg" },
+      ],
       proof: { label: "625 entreprises analysées, 534 façadiers confirmés", href: "/cibler-les-facadiers" },
     },
     {
@@ -49,6 +54,11 @@ export const offer = {
         "Exemple : vérifier la conformité RGPD d'une liste de contacts avant de l'exploiter",
         "Exemple : contrôler la cohérence des emails avant une campagne",
       ],
+      tools: [
+        { name: "Make", logo: "/logos/make.svg" },
+        { name: "n8n", logo: "/logos/n8n.svg" },
+        { name: "Zapier", logo: "/logos/zapier.svg" },
+      ],
       proof: { label: "Vérifier des emails avant une campagne · chez Locabri", href: "#realisations" },
     },
     {
@@ -58,6 +68,14 @@ export const offer = {
         "Mettre en place une IA adaptée au besoin et la paramétrer correctement",
         "Former les équipes à s'en servir, si nécessaire",
       ],
+      tools: [
+        { name: "Claude", logo: "/logos/claude.svg" },
+        { name: "Claude Code", logo: "/logos/claude.svg" },
+        { name: "ChatGPT", logo: "/logos/openai.svg" },
+        { name: "Codex", logo: "/logos/codex.svg" },
+        { name: "Gemini", logo: "/logos/gemini.svg" },
+        { name: "Cursor", logo: "/logos/cursor.svg" },
+      ],
       proof: { label: "Hermes, l'agent de recherche d'entreprises", href: "/prompt-hermes.md" },
     },
     {
@@ -66,6 +84,11 @@ export const offer = {
       deliverables: [
         "Scraping en tout genre selon les besoins : Sales Navigator, Pharow, Evaboot, API publiques",
         "Du développement de quelques comptes clés à une campagne d'acquisition d'envergure",
+      ],
+      tools: [
+        { name: "Pharow", logo: "/logos/pharow.png" },
+        { name: "Evaboot", logo: "/logos/evaboot.png" },
+        { name: "Sales Navigator", logo: "/logos/linkedin.svg" },
       ],
       proof: { label: "10 000 contacts ciblés à partir de la base clients" },
     },
@@ -84,7 +107,13 @@ export const offer = {
   title: string
   underlineWord: string
   subtitle: string
-  axes: { label: string; promise: string; deliverables: string[]; proof: { label: string; href?: string } }[]
+  axes: {
+    label: string
+    promise: string
+    deliverables: string[]
+    tools?: { name: string; logo: string }[]
+    proof: { label: string; href?: string }
+  }[]
 }
 
 export const features = [
