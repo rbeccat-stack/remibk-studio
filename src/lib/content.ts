@@ -376,12 +376,10 @@ export type ToolLevel = keyof typeof toolLevels
 
 export const toolGroups: {
   title: string
-  tag: string
   tools: { name: string; logo: string; level: ToolLevel }[]
 }[] = [
   {
     title: "Prospection & données B2B",
-    tag: "Cœur de métier",
     tools: [
       { name: "Sales Navigator", logo: "/logos/linkedin.svg", level: 3 },
       { name: "Pharow", logo: "/logos/pharow.png", level: 3 },
@@ -393,7 +391,6 @@ export const toolGroups: {
   },
   {
     title: "Automatisation & CRM",
-    tag: "En production",
     tools: [
       { name: "Make", logo: "/logos/make.svg", level: 3 },
       { name: "HubSpot", logo: "/logos/hubspot.svg", level: 2 },
@@ -405,7 +402,6 @@ export const toolGroups: {
   },
   {
     title: "Agents & IA",
-    tag: "Focus actuel",
     tools: [
       { name: "Claude", logo: "/logos/claude.svg", level: 3 },
       { name: "Claude Code", logo: "/logos/claude.svg", level: 3 },
@@ -416,7 +412,6 @@ export const toolGroups: {
   },
   {
     title: "Pilotage & design",
-    tag: "Support",
     tools: [
       { name: "Excel", logo: "/logos/excel.svg", level: 3 },
       { name: "Notion", logo: "/logos/notion.svg", level: 3 },

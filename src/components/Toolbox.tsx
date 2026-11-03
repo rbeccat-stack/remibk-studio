@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import SectionTitle from '@/components/SectionTitle'
-import PillBadge from '@/components/PillBadge'
 import Panel from '@/components/Panel'
 import Reveal from '@/components/Reveal'
 import { toolGroups, toolLevels, type ToolLevel } from '@/lib/content'
@@ -37,10 +36,7 @@ export default function Toolbox() {
         {toolGroups.map((group, i) => (
           <Reveal key={group.title} delay={i * 80}>
             <Panel className="h-full p-6">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <h3 className="font-medium text-lg tracking-[-0.012em] text-fg leading-tight">{group.title}</h3>
-                <PillBadge accent="sage">{group.tag}</PillBadge>
-              </div>
+              <h3 className="font-medium text-lg tracking-[-0.012em] text-fg leading-tight">{group.title}</h3>
 
               <ul className="mt-4 divide-y divide-border">
                 {group.tools.map((tool) => (
