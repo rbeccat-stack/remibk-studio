@@ -46,10 +46,20 @@ export default function Contact() {
             </h3>
             <p className="mt-5 text-sm md:text-base text-fg-muted leading-relaxed max-w-[52ch]">
               {contact.availability.text}
-              <span aria-hidden className="ml-2 inline-block text-accent-ink">
-                <span className="md:hidden">↓</span>
-                <span className="hidden md:inline">→</span>
-              </span>
+              {/* Flèche « dessinée à la main » : vers la droite sur desktop, tournée vers le bas sur mobile. */}
+              <svg
+                aria-hidden
+                viewBox="0 0 52 26"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="ml-2 inline-block h-[22px] w-11 rotate-[100deg] align-middle text-accent-ink md:rotate-[4deg]"
+              >
+                <path d="M2.5 15.5c4.2-6.8 9.6-9.1 14.3-5.4 3.1 2.5 2.4 7.3-.8 7.1-3-.2-2.2-5.3 1.7-7.6 6.4-3.8 16.6-2.6 30.4 1.9" />
+                <path d="M41.2 5.1c2.5 1.6 5 3.4 7.1 6.3-2.9 1.4-5.8 2.7-8.4 4.7" />
+              </svg>
             </p>
             <dl className="mt-6 grid gap-x-4 gap-y-3 sm:grid-cols-[auto_1fr]">
               {contact.terms.map((t) => (
