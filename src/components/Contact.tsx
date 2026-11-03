@@ -47,7 +47,10 @@ export default function Contact() {
                   <dt className="font-mono text-xs text-fg-muted sm:pt-[3px]">
                     {t.label}
                   </dt>
-                  <dd className="-mt-2 text-sm text-fg-secondary leading-relaxed sm:mt-0">{t.value}</dd>
+                  <dd className="-mt-2 text-sm text-fg-secondary leading-relaxed sm:mt-0">
+                    {t.strong && <strong className="font-semibold text-fg">{t.strong}</strong>}
+                    {t.value}
+                  </dd>
                 </div>
               ))}
             </dl>
