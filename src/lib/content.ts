@@ -1,5 +1,5 @@
 export const nav = {
-  name: "rémi beccat",
+  name: "Rémi Beccat",
   tagline: "Growth Marketer",
   links: [
     { label: "Réalisations", href: "#realisations" },
