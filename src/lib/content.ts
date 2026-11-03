@@ -436,8 +436,7 @@ export const about = {
 
 export const contact = {
   title: "On en parle ?",
-  subtitle:
-    "Pas de pitch commercial. Trente minutes pour se jauger mutuellement : toi, moi, le poste. Si ça matche, on enchaîne. Sinon, au moins on aura été clairs.",
+  subtitle: "30 minutes pour échanger concrètement et ne pas perdre de temps.",
   availability: {
     lead: "Je suis disponible",
     highlight: "immédiatement.",
