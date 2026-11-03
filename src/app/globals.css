@@ -49,6 +49,13 @@
   --animate-menu-in: menu-in 200ms var(--ease-expo) both;
   /* Carte « cadeau » : lueur qui respire. */
   --animate-gift-glow: gift-glow 4s ease-in-out infinite;
+  /* Flèche du contact : tracé qui se dessine (chemins en pathLength="1"). */
+  --animate-arrow-draw: arrow-draw 700ms var(--ease-expo) both;
+
+  @keyframes arrow-draw {
+    from { stroke-dashoffset: 1; }
+    to { stroke-dashoffset: 0; }
+  }
 
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(16px); }

@@ -1,6 +1,7 @@
 import SectionTitle from '@/components/SectionTitle'
 import Panel from '@/components/Panel'
 import Reveal from '@/components/Reveal'
+import ContactArrow from '@/components/ContactArrow'
 import { contact, footer } from '@/lib/content'
 
 const githubIcon = (
@@ -17,8 +18,8 @@ const whatsappIcon = (
 
 const channels = [
   { icon: '✉', label: 'Email', value: contact.email, href: `mailto:${contact.email}` },
-  { icon: '📞', label: 'Téléphone', value: contact.phone, href: contact.phoneHref },
-  { icon: whatsappIcon, label: 'WhatsApp', value: contact.phone, href: contact.whatsappHref, external: true },
+  { icon: '📞', label: 'Téléphone', value: contact.phone, href: contact.phoneHref, arrowTarget: true },
+  { icon: whatsappIcon, label: 'WhatsApp', value: contact.phone, href: contact.whatsappHref, external: true, arrowTarget: true },
   { icon: 'in', label: 'LinkedIn', value: contact.linkedinLabel, href: footer.linkedin, external: true },
   { icon: githubIcon, label: 'GitHub', value: contact.githubLabel, href: footer.github, external: true },
 ]
@@ -34,7 +35,9 @@ export default function Contact() {
         />
       </Reveal>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-[1.25fr_1fr] md:gap-6">
+      <div className="relative mt-10 grid gap-5 md:grid-cols-[1.25fr_1fr] md:gap-6">
+        {/* Flèche vers téléphone / WhatsApp, tracée au survol */}
+        <ContactArrow />
         {/* Disponibilité + actions */}
         <Reveal>
           <Panel lift={false} className="h-full p-6 sm:p-8">
@@ -46,39 +49,13 @@ export default function Contact() {
             </h3>
             <p className="relative mt-5 text-sm md:text-base text-fg-muted leading-relaxed max-w-[52ch] lg:max-w-none">
               {contact.availability.text}
-              <mark className="rounded-[4px] bg-accent px-1.5 py-0.5 text-white [box-decoration-break:clone]">
+              {/* Point de départ de la flèche (ContactArrow) */}
+              <mark
+                data-arrow-from
+                className="rounded-[4px] bg-accent px-1.5 py-0.5 text-white [box-decoration-break:clone]"
+              >
                 {contact.availability.textHighlight}
               </mark>
-              {/* Flèche « dessinée à la main » vers téléphone et WhatsApp.
-                  < 1120 px : petite flèche en ligne (vers le bas sur mobile, à droite au-delà).
-                  ≥ 1120 px (largeur max du conteneur) : grande flèche avec boucle, qui sort du bloc vers la colonne de droite.
-                  En dessous, la phrase va trop loin et chevaucherait la grande flèche. */}
-              <svg
-                aria-hidden
-                viewBox="0 0 52 26"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="ml-2 inline-block h-[22px] w-11 rotate-[100deg] align-middle text-accent-ink md:rotate-[4deg] min-[1120px]:hidden"
-              >
-                <path d="M2.5 15.5c4.2-6.8 9.6-9.1 14.3-5.4 3.1 2.5 2.4 7.3-.8 7.1-3-.2-2.2-5.3 1.7-7.6 6.4-3.8 16.6-2.6 30.4 1.9" />
-                <path d="M41.2 5.1c2.5 1.6 5 3.4 7.1 6.3-2.9 1.4-5.8 2.7-8.4 4.7" />
-              </svg>
-              <svg
-                aria-hidden
-                viewBox="34 0 206 120"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="pointer-events-none absolute -right-[52px] -top-5 hidden h-[120px] w-[206px] text-accent-ink min-[1120px]:block"
-              >
-                <path d="M38 26C60 11 94 8 117 20c24 13 17 74-12 80-23 5-32-18-19-36 19-25 75-41 117-38 13 1 22 4 29 8" />
-                <path d="M219 22.5c4.6 3 9 6.4 12.6 10-4.4 2.3-9.2 4.4-14 6.9" />
-              </svg>
             </p>
             <dl className="mt-6 grid gap-x-4 gap-y-3 sm:grid-cols-[auto_1fr]">
               {contact.terms.map((t) => (
@@ -120,6 +97,7 @@ export default function Contact() {
         <div className="flex flex-col gap-3">
           {channels.map((c, i) => (
             <Reveal key={c.label} delay={80 + i * 80}>
+              <div data-arrow-to={c.arrowTarget || undefined}>
               <Panel className="px-5 py-4">
                 <div className="flex items-center gap-4">
                   <span
@@ -141,6 +119,7 @@ export default function Contact() {
                   </div>
                 </div>
               </Panel>
+              </div>
             </Reveal>
           ))}
         </div>

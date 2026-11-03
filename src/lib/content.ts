@@ -432,11 +432,11 @@ export const about = {
 
 export const contact = {
   title: "On en parle ?",
-  subtitle: "30 minutes pour échanger concrètement et ne pas perdre de temps.",
+  subtitle: "30 minutes pour échanger de façon concrète et directe.",
   availability: {
     lead: "Je suis disponible",
     highlight: "immédiatement.",
-    // Suivi d'une flèche vers le téléphone et WhatsApp (à droite sur desktop, en dessous sur mobile).
+    // Une flèche part de textHighlight vers le téléphone / WhatsApp au survol (ContactArrow).
     text: "Réservez un call ou ",
     // Surligné en violet, texte blanc.
     textHighlight: "appelez-moi directement",
