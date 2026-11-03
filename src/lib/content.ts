@@ -18,7 +18,7 @@ export const hero = {
   keywords: ["Scraping", "Data", "Automatisation", "IA"],
   // Preuve chiffrée sous le titre : tirée de l'étude façadiers (26 vrais façadiers sur 100 dans le NAF).
   proof: "534 façadiers confirmés en croisant 4 sources publiques, là où le code NAF se trompait 3 fois sur 4.",
-  proofLink: { label: "Voir les réalisations", href: "#realisations" },
+  proofLink: { label: "Voir la réalisation", href: "#realisations" },
   meta: "Disponible immédiatement · Lyon",
   ctaPrimary: { label: "Réserver un call · 30 min", href: "https://cal.com/remi-beccat-32m3gf/30min" },
   ctaSecondary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
