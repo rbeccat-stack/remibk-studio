@@ -24,19 +24,8 @@ export default function Hero() {
               </a>
             </p>
 
-            <div className="animate-fade-up [animation-delay:240ms] mt-6">
+            <div className="animate-fade-up [animation-delay:240ms] mt-6 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4">
               <PillBadge accent="sage" live>{hero.meta}</PillBadge>
-            </div>
-
-            <div className="animate-fade-up [animation-delay:320ms] mt-6 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4">
-              <a
-                href={hero.ctaPrimary.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="key-primary inline-flex min-h-11 items-center px-5 rounded-full text-[15px]"
-              >
-                {hero.ctaPrimary.label}
-              </a>
               <a
                 href={hero.ctaSecondary.href}
                 target="_blank"

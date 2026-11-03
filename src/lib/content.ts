@@ -20,7 +20,6 @@ export const hero = {
   proof: "534 façadiers confirmés en croisant 4 sources publiques, là où le code NAF se trompait 3 fois sur 4.",
   proofLink: { label: "Voir la réalisation", href: "#realisation-facadiers" },
   meta: "Disponible immédiatement · Lyon",
-  ctaPrimary: { label: "Réserver un call · 30 min", href: "https://cal.com/remi-beccat-32m3gf/30min" },
   ctaSecondary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
 }
 
