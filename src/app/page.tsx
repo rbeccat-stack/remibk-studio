@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import NafLimits from '@/components/NafLimits'
+import Offer from '@/components/Offer'
 import SectionTitle from '@/components/SectionTitle'
 import FeatureCard from '@/components/FeatureCard'
 import RealisationCard from '@/components/RealisationCard'
@@ -27,8 +27,8 @@ export default function Home() {
 
         <Divider />
 
-        {/* Limites du code NAF */}
-        <NafLimits />
+        {/* Ce que je fais pour l'entreprise */}
+        <Offer />
 
         <Divider />
 

@@ -24,57 +24,67 @@ export const hero = {
   ctaSecondary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
 }
 
-// Section « limites du code NAF » : chiffres tirés de l'étude façadiers (public/cibler-les-facadiers).
-export const naf = {
-  title: "Le code NAF ne dit pas le métier",
-  underlineWord: "métier",
-  subtitle:
-    "Filtrer par code NAF, c'est le réflexe pour constituer un fichier. Sur un métier de niche, ce filtre rate une partie de la cible et ramène surtout d'autres métiers.",
-  limits: [
+// Section « ce que je fais pour l'entreprise » : un volet = une promesse, des livrables, une preuve déjà livrée.
+// Preuve = réalisation publiée (avec lien) ou chiffre défendable en entretien (sans lien).
+export const offer = {
+  title: "Concrètement, ce que je fais pour vous",
+  underlineWord: "Concrètement",
+  subtitle: "Cinq volets. Pour chacun, ce que l'entreprise y gagne et un exemple déjà livré.",
+  axes: [
     {
-      value: "3 sur 4",
-      label: "ne font pas le métier visé",
-      detail: "100 entreprises tirées au hasard dans le code le plus fréquent des façadiers (43.99C, maçonnerie générale) : 74 ne font pas de façade.",
+      label: "Data",
+      promise: "Des chiffres que toute l'équipe comprend, pour mieux décider.",
+      deliverables: [
+        "Récolter la donnée là où elle se trouve : CRM, exports, sources publiques",
+        "Construire des dashboards lisibles par tout le monde",
+        "Produire des analyses qui améliorent la prise de décision",
+      ],
+      proof: { label: "625 entreprises analysées, 534 façadiers confirmés", href: "/cibler-les-facadiers" },
     },
     {
-      value: "22 codes",
-      label: "pour un seul métier",
-      detail: "Le premier code ne regroupe qu'un tiers des façadiers. Il en faut 8 pour couvrir 89 % de la cible, et ces codes contiennent surtout des maçons et des peintres.",
+      label: "Automatisation",
+      promise: "Les tâches répétitives tournent sans mobiliser l'équipe.",
+      deliverables: [
+        "Des automatisations sur mesure avec Make ou n8n, selon le besoin",
+        "Exemple : vérifier la conformité RGPD d'une liste de contacts avant de l'exploiter",
+        "Exemple : contrôler la cohérence des emails avant une campagne",
+      ],
+      proof: { label: "Vérifier des emails avant une campagne · chez Locabri", href: "#realisations" },
     },
     {
-      value: "5 sur 100",
-      label: "en font leur cœur de métier",
-      detail: "Même parmi ceux qui font de la façade, la plupart la pratiquent à côté d'une autre activité. Le code ne fait pas la différence.",
+      label: "IA",
+      promise: "Une IA utile au quotidien, bien réglée et maîtrisée par l'équipe.",
+      deliverables: [
+        "Mettre en place une IA adaptée au besoin et la paramétrer correctement",
+        "Former les équipes à s'en servir, si nécessaire",
+      ],
+      proof: { label: "Hermes, l'agent de recherche d'entreprises", href: "/prompt-hermes.md" },
+    },
+    {
+      label: "Scraping",
+      promise: "La bonne donnée, collectée à la bonne échelle.",
+      deliverables: [
+        "Scraping en tout genre selon les besoins : Sales Navigator, Pharow, Evaboot, API publiques",
+        "Du développement de quelques comptes clés à une campagne d'acquisition d'envergure",
+      ],
+      proof: { label: "10 000 contacts ciblés à partir de la base clients" },
+    },
+    {
+      label: "Acquisition",
+      promise: "Savoir qui démarcher, dans quel ordre, et à qui parler.",
+      deliverables: [
+        "Cible définie à partir des meilleurs clients existants",
+        "Comptes priorisés par effectif et type d'interlocuteur",
+        "Décideurs identifiés par rôle à partir d'un simple SIREN",
+      ],
+      proof: { label: "99 comptes qualifiés sur 466 autour d'une adresse", href: "https://cartographie-comptes-cibles.remibk-studio.fr/" },
     },
   ],
-  methodTitle: "Partir de la preuve, pas du code",
-  methodIntro:
-    "Plutôt que de faire confiance au code attribué par l'INSEE, je cherche pour chaque entreprise une preuve de son métier, de la plus solide à la plus faible.",
-  steps: [
-    {
-      title: "Un label audité",
-      text: "Le label RGE « isolation des murs par l'extérieur » est délivré après audit : ce n'est pas du déclaratif.",
-      source: "ADEME, liste RGE",
-    },
-    {
-      title: "L'activité déclarée",
-      text: "La phrase que le dirigeant a déposée au greffe, bien plus précise que le code NAF.",
-      source: "BODACC",
-    },
-    {
-      title: "Un contrôle web",
-      text: "Site, annuaires, objet social : un verdict motivé, avec son lien, pour les cas restants.",
-      source: "Web",
-    },
-    {
-      title: "Un tri juridique",
-      text: "Les entreprises « actives » mais en liquidation ou en redressement sortent de la liste.",
-      source: "BODACC, procédures",
-    },
-  ],
-  takeaway:
-    "Résultat : 534 façadiers confirmés, répartis sur 22 codes NAF qu'aucun filtre n'aurait réunis. La méthode vaut pour n'importe quel métier mal décrit par son code NAF.",
-  link: { label: "Voir l'étude complète", href: "/cibler-les-facadiers" },
+} as {
+  title: string
+  underlineWord: string
+  subtitle: string
+  axes: { label: string; promise: string; deliverables: string[]; proof: { label: string; href?: string } }[]
 }
 
 export const features = [
