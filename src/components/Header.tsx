@@ -34,8 +34,6 @@ export default function Header() {
         {/* CTA */}
         <a
           href={nav.ctaHref}
-          target="_blank"
-          rel="noopener noreferrer"
           className="key-primary hidden md:inline-flex h-8 items-center px-3.5 rounded-full text-[13px]"
         >
           {nav.cta}
@@ -88,8 +86,6 @@ export default function Header() {
           ))}
           <a
             href={nav.ctaHref}
-            target="_blank"
-            rel="noopener noreferrer"
             className="key-primary mt-3 inline-flex min-h-12 justify-center items-center px-5 rounded-full text-[15px]"
             onClick={() => setMenuOpen(false)}
           >

@@ -46,9 +46,11 @@ export default function Home() {
             <div className="mt-10 flex flex-col gap-5">
               {realisations
                 .filter((r) => !r.draft)
-                .map((r, i) => (
+                .map(({ id, ...r }, i) => (
                   <Reveal key={r.title} delay={Math.min(i, 3) * 80}>
-                    <RealisationCard {...r} />
+                    <div id={id} className="scroll-mt-24">
+                      <RealisationCard {...r} />
+                    </div>
                   </Reveal>
                 ))}
             </div>

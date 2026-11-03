@@ -16,7 +16,6 @@ export default function OfferAxes() {
         const isOpen = open === i
         const panelId = `${baseId}-${i}`
         const { href, label } = axis.proof
-        const external = href?.startsWith('http')
 
         return (
           <li key={axis.label}>
@@ -93,7 +92,6 @@ export default function OfferAxes() {
                     {href ? (
                       <a
                         href={href}
-                        {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                         className="mt-1 inline-block text-sm text-fg-secondary underline decoration-border-strong underline-offset-4 transition-colors duration-200 ease-quart hover:text-fg hover:decoration-fg-muted"
                       >
                         {label} →

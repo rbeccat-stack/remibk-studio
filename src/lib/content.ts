@@ -9,7 +9,7 @@ export const nav = {
     { label: "Contact", href: "#contact" },
   ],
   cta: "Réserver un call",
-  ctaHref: "https://cal.com/remi-beccat-32m3gf/30min",
+  ctaHref: "#contact",
 }
 
 export const hero = {
@@ -18,14 +18,14 @@ export const hero = {
   keywords: ["Scraping", "Data", "Automatisation", "IA"],
   // Preuve chiffrée sous le titre : tirée de l'étude façadiers (26 vrais façadiers sur 100 dans le NAF).
   proof: "534 façadiers confirmés en croisant 4 sources publiques, là où le code NAF se trompait 3 fois sur 4.",
-  proofLink: { label: "Voir la réalisation", href: "#realisations" },
+  proofLink: { label: "Voir la réalisation", href: "#realisation-facadiers" },
   meta: "Disponible immédiatement · Lyon",
   ctaPrimary: { label: "Réserver un call · 30 min", href: "https://cal.com/remi-beccat-32m3gf/30min" },
   ctaSecondary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
 }
 
 // Section « ce que je fais pour l'entreprise » : un volet = une promesse, des livrables, une preuve déjà livrée.
-// Preuve = réalisation publiée (avec lien) ou chiffre défendable en entretien (sans lien).
+// Preuve = ancre vers une carte de réalisation (#realisation-…), jamais de lien externe ; sans lien si aucune carte ne la porte.
 export const offer = {
   title: "Concrètement, ce que je fais pour vous",
   underlineWord: "Concrètement",
@@ -44,7 +44,7 @@ export const offer = {
         { name: "HubSpot", logo: "/logos/hubspot.svg" },
         { name: "Google Sheets", logo: "/logos/google-sheets.svg" },
       ],
-      proof: { label: "625 entreprises analysées, 534 façadiers confirmés", href: "/cibler-les-facadiers" },
+      proof: { label: "625 entreprises analysées, 534 façadiers confirmés", href: "#realisation-facadiers" },
     },
     {
       label: "Automatisation",
@@ -58,7 +58,7 @@ export const offer = {
         { name: "n8n", logo: "/logos/n8n.svg" },
         { name: "Zapier", logo: "/logos/zapier.svg" },
       ],
-      proof: { label: "Vérifier des emails avant une campagne · chez Locabri", href: "#realisations" },
+      proof: { label: "Vérifier des emails avant une campagne · chez Locabri", href: "#realisation-emails" },
     },
     {
       label: "IA",
@@ -75,7 +75,7 @@ export const offer = {
         { name: "Gemini", logo: "/logos/gemini.svg" },
         { name: "Cursor", logo: "/logos/cursor.svg" },
       ],
-      proof: { label: "Hermes, l'agent de recherche d'entreprises", href: "/prompt-hermes.md" },
+      proof: { label: "Hermes, l'agent de recherche d'entreprises", href: "#realisation-hermes" },
     },
     {
       label: "Scraping",
@@ -99,7 +99,7 @@ export const offer = {
         "Comptes priorisés par effectif et type d'interlocuteur",
         "Décideurs identifiés par rôle à partir d'un simple SIREN",
       ],
-      proof: { label: "99 comptes qualifiés sur 466 autour d'une adresse", href: "https://cartographie-comptes-cibles.remibk-studio.fr/" },
+      proof: { label: "99 comptes qualifiés sur 466 autour d'une adresse", href: "#realisation-carte" },
     },
   ],
 } as {
@@ -215,6 +215,8 @@ export const realisations = [
     accent: "sage" as const,
   },
   {
+    // Ancre visée par les preuves de la section offre (#realisation-emails).
+    id: "realisation-emails",
     title: "Vérifier des emails avant une campagne",
     type: "Workflow + interface",
     context: "Réalisé chez Locabri",
@@ -255,6 +257,8 @@ export const realisations = [
     accent: "sage" as const,
   },
   {
+    // Ancre visée par les preuves de la section offre (#realisation-carte).
+    id: "realisation-carte",
     title: "Cartographier les prospects B2B à 15 minutes à pied",
     type: "Carte interactive",
     context: "Projet personnel",
@@ -275,6 +279,8 @@ export const realisations = [
     link: { label: "Voir la carte", href: "https://cartographie-comptes-cibles.remibk-studio.fr/" },
   },
   {
+    // Ancre visée par les preuves de la section offre (#realisation-facadiers).
+    id: "realisation-facadiers",
     title: "Cibler un métier invisible aux codes NAF",
     type: "Étude de prospection",
     context: "Projet personnel",
@@ -315,6 +321,8 @@ export const realisations = [
     link: { label: "Voir l'application", href: "https://swipe-and-prospect.remibk-studio.fr" },
   },
   {
+    // Ancre visée par les preuves de la section offre (#realisation-hermes).
+    id: "realisation-hermes",
     title: "Hermes, l'agent qui prépare mes candidatures spontanées",
     type: "Agent IA",
     context: "Projet personnel",
