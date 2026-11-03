@@ -441,7 +441,8 @@ export const contact = {
   availability: {
     lead: "Je suis disponible",
     highlight: "immédiatement.",
-    text: "Le créneau le plus rapide pour un call : 24h. Si tu préfères l'écrit, écris-moi, je réponds dans la journée. Le CV est en téléchargement direct.",
+    // Suivi d'une flèche vers le téléphone et WhatsApp (à droite sur desktop, en dessous sur mobile).
+    text: "Réservez un call ou appelez-moi directement",
   },
   // strong : partie mise en gras en tête de valeur (choix prioritaire).
   terms: [

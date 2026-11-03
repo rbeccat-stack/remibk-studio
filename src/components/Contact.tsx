@@ -46,6 +46,10 @@ export default function Contact() {
             </h3>
             <p className="mt-5 text-sm md:text-base text-fg-muted leading-relaxed max-w-[52ch]">
               {contact.availability.text}
+              <span aria-hidden className="ml-2 inline-block text-accent-ink">
+                <span className="md:hidden">↓</span>
+                <span className="hidden md:inline">→</span>
+              </span>
             </p>
             <dl className="mt-6 grid gap-x-4 gap-y-3 sm:grid-cols-[auto_1fr]">
               {contact.terms.map((t) => (
