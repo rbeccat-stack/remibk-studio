@@ -39,6 +39,8 @@ export default function Hero() {
               </a>
               <a
                 href={hero.ctaSecondary.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="key-chassis inline-flex min-h-11 items-center px-5 rounded-full text-[15px]"
               >
                 {hero.ctaSecondary.label}

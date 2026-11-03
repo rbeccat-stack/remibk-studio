@@ -65,6 +65,8 @@ export default function Contact() {
               </a>
               <a
                 href={contact.ctaSecondary.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="key-chassis inline-flex min-h-11 justify-center items-center px-5 rounded-full text-[15px]"
               >
                 <span aria-hidden="true" className="mr-2">{contact.ctaSecondary.emoji}</span>
