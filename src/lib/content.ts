@@ -24,6 +24,59 @@ export const hero = {
   ctaSecondary: { label: "Télécharger mon CV", href: "/cv-remi-beccat.pdf" },
 }
 
+// Section « limites du code NAF » : chiffres tirés de l'étude façadiers (public/cibler-les-facadiers).
+export const naf = {
+  title: "Le code NAF ne dit pas le métier",
+  underlineWord: "métier",
+  subtitle:
+    "Filtrer par code NAF, c'est le réflexe pour constituer un fichier. Sur un métier de niche, ce filtre rate une partie de la cible et ramène surtout d'autres métiers.",
+  limits: [
+    {
+      value: "3 sur 4",
+      label: "ne font pas le métier visé",
+      detail: "100 entreprises tirées au hasard dans le code le plus fréquent des façadiers (43.99C, maçonnerie générale) : 74 ne font pas de façade.",
+    },
+    {
+      value: "22 codes",
+      label: "pour un seul métier",
+      detail: "Le premier code ne regroupe qu'un tiers des façadiers. Il en faut 8 pour couvrir 89 % de la cible, et ces codes contiennent surtout des maçons et des peintres.",
+    },
+    {
+      value: "5 sur 100",
+      label: "en font leur cœur de métier",
+      detail: "Même parmi ceux qui font de la façade, la plupart la pratiquent à côté d'une autre activité. Le code ne fait pas la différence.",
+    },
+  ],
+  methodTitle: "Partir de la preuve, pas du code",
+  methodIntro:
+    "Plutôt que de faire confiance au code attribué par l'INSEE, je cherche pour chaque entreprise une preuve de son métier, de la plus solide à la plus faible.",
+  steps: [
+    {
+      title: "Un label audité",
+      text: "Le label RGE « isolation des murs par l'extérieur » est délivré après audit : ce n'est pas du déclaratif.",
+      source: "ADEME, liste RGE",
+    },
+    {
+      title: "L'activité déclarée",
+      text: "La phrase que le dirigeant a déposée au greffe, bien plus précise que le code NAF.",
+      source: "BODACC",
+    },
+    {
+      title: "Un contrôle web",
+      text: "Site, annuaires, objet social : un verdict motivé, avec son lien, pour les cas restants.",
+      source: "Web",
+    },
+    {
+      title: "Un tri juridique",
+      text: "Les entreprises « actives » mais en liquidation ou en redressement sortent de la liste.",
+      source: "BODACC, procédures",
+    },
+  ],
+  takeaway:
+    "Résultat : 534 façadiers confirmés, répartis sur 22 codes NAF qu'aucun filtre n'aurait réunis. La méthode vaut pour n'importe quel métier mal décrit par son code NAF.",
+  link: { label: "Voir l'étude complète", href: "/cibler-les-facadiers" },
+}
+
 export const features = [
   {
     icon: "🔍",

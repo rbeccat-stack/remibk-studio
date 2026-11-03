@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import NafLimits from '@/components/NafLimits'
 import SectionTitle from '@/components/SectionTitle'
 import FeatureCard from '@/components/FeatureCard'
 import RealisationCard from '@/components/RealisationCard'
@@ -23,6 +24,11 @@ export default function Home() {
       <main>
         {/* Hero */}
         <Hero />
+
+        <Divider />
+
+        {/* Limites du code NAF */}
+        <NafLimits />
 
         <Divider />
 
