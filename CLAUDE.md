@@ -48,7 +48,7 @@ Loaded via `next/font/google` in `src/app/layout.tsx` as CSS variables (`--font-
 
 ### Component rules
 
-- All components are **Server Components** by default except `Header`, `BulletDetail`, `RealisationCard`, `WordCycle`, `Reveal` and `HeroParallax` which are `'use client'`
+- All components are **Server Components** by default except `Header`, `BulletDetail`, `RealisationCard`, `OfferAxes`, `WordCycle`, `Reveal` and `HeroParallax` which are `'use client'`
 - Accent variants (`terracotta` / `sage` / `purple`) are typed as string literals — always use `as const` when defining them in `content.ts`. The keys are historical: they now map to dot colors indigo / green / amber, and text ink `accent-ink` / `fg-secondary`.
 
 ### Responsive breakpoints in use

@@ -52,7 +52,6 @@ export const offer = {
       deliverables: [
         "Des automatisations sur mesure avec Make ou n8n, selon le besoin",
         "Exemple : vérifier la conformité RGPD d'une liste de contacts avant de l'exploiter",
-        "Exemple : contrôler la cohérence des emails avant une campagne",
       ],
       tools: [
         { name: "Make", logo: "/logos/make.svg" },
