@@ -46,6 +46,9 @@ export default function Contact() {
             </h3>
             <p className="relative mt-5 text-sm md:text-base text-fg-muted leading-relaxed max-w-[52ch] lg:max-w-none">
               {contact.availability.text}
+              <mark className="rounded-[4px] bg-accent px-1.5 py-0.5 text-white [box-decoration-break:clone]">
+                {contact.availability.textHighlight}
+              </mark>
               {/* Flèche « dessinée à la main » vers téléphone et WhatsApp.
                   < 1120 px : petite flèche en ligne (vers le bas sur mobile, à droite au-delà).
                   ≥ 1120 px (largeur max du conteneur) : grande flèche avec boucle, qui sort du bloc vers la colonne de droite.

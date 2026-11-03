@@ -437,7 +437,9 @@ export const contact = {
     lead: "Je suis disponible",
     highlight: "immédiatement.",
     // Suivi d'une flèche vers le téléphone et WhatsApp (à droite sur desktop, en dessous sur mobile).
-    text: "Réservez un call ou appelez-moi directement",
+    text: "Réservez un call ou ",
+    // Surligné en violet, texte blanc.
+    textHighlight: "appelez-moi directement",
   },
   // strong : partie mise en gras en tête de valeur (choix prioritaire).
   terms: [
