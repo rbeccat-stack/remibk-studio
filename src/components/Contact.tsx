@@ -22,7 +22,6 @@ export default function Contact() {
       <Reveal>
         <SectionTitle
           title={contact.title}
-          underlineWord="30 minutes"
           subtitle={contact.subtitle}
           accent="terracotta"
         />
@@ -54,7 +53,7 @@ export default function Contact() {
                 </div>
               ))}
             </dl>
-            <div className="mt-6 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
+            <div className="mt-6 border-t border-border pt-6 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
               <a
                 href={contact.ctaPrimary.href}
                 target="_blank"

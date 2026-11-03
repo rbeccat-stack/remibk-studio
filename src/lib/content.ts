@@ -435,12 +435,12 @@ export const about = {
 }
 
 export const contact = {
-  title: "On en parle 30 minutes ?",
+  title: "On en parle ?",
   subtitle:
     "Pas de pitch commercial. Trente minutes pour se jauger mutuellement : toi, moi, le poste. Si ça matche, on enchaîne. Sinon, au moins on aura été clairs.",
   availability: {
-    lead: "Je suis",
-    highlight: "disponible immédiatement.",
+    lead: "Je suis disponible",
+    highlight: "immédiatement.",
     text: "Le créneau le plus rapide pour un call : 24h. Si tu préfères l'écrit, écris-moi, je réponds dans la journée. Le CV est en téléchargement direct.",
   },
   // strong : partie mise en gras en tête de valeur (choix prioritaire).
