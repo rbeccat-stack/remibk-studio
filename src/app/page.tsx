@@ -49,7 +49,7 @@ export default function Home() {
                 .map(({ id, ...r }, i) => (
                   <Reveal key={r.title} delay={Math.min(i, 3) * 80}>
                     <div id={id} className="scroll-mt-24">
-                      <RealisationCard {...r} />
+                      <RealisationCard {...r} anchor={id} />
                     </div>
                   </Reveal>
                 ))}

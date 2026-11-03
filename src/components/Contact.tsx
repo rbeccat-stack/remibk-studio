@@ -44,9 +44,10 @@ export default function Contact() {
                 {contact.availability.highlight}
               </span>
             </h3>
-            <p className="mt-5 text-sm md:text-base text-fg-muted leading-relaxed max-w-[52ch]">
+            <p className="mt-5 text-sm md:text-base text-fg-muted leading-relaxed max-w-[52ch] md:flex md:max-w-none md:items-center">
               {contact.availability.text}
-              {/* Flèche « dessinée à la main » : vers la droite sur desktop, tournée vers le bas sur mobile. */}
+              {/* Flèche « dessinée à la main » vers téléphone et WhatsApp.
+                  Mobile : petite flèche tournée vers le bas. Desktop : boucle + trait étiré jusqu'au bord du bloc + pointe. */}
               <svg
                 aria-hidden
                 viewBox="0 0 52 26"
@@ -55,11 +56,23 @@ export default function Contact() {
                 strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="ml-2 inline-block h-[22px] w-11 rotate-[100deg] align-middle text-accent-ink md:rotate-[4deg]"
+                className="ml-2 inline-block h-[22px] w-11 rotate-[100deg] align-middle text-accent-ink md:hidden"
               >
                 <path d="M2.5 15.5c4.2-6.8 9.6-9.1 14.3-5.4 3.1 2.5 2.4 7.3-.8 7.1-3-.2-2.2-5.3 1.7-7.6 6.4-3.8 16.6-2.6 30.4 1.9" />
                 <path d="M41.2 5.1c2.5 1.6 5 3.4 7.1 6.3-2.9 1.4-5.8 2.7-8.4 4.7" />
               </svg>
+              <span aria-hidden className="ml-3 hidden min-w-16 flex-1 items-center text-accent-ink md:flex">
+                <svg viewBox="0 0 28 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className="h-5 w-7 shrink-0">
+                  <path d="M1 14c3.5-6 8-8 12-4.8 2.6 2.2 2 6.2-.7 6-2.6-.2-1.9-4.6 1.5-6.6 3.4-2 8.4-1.4 14.2.4" />
+                </svg>
+                <svg viewBox="0 0 200 20" preserveAspectRatio="none" fill="none" stroke="currentColor" className="h-5 flex-1">
+                  <path d="M0 9C30 7.5 60 10.5 100 9S160 7.8 200 9" strokeWidth="1.8" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+                </svg>
+                <svg viewBox="0 0 14 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-3.5 shrink-0">
+                  <path d="M0 9h12.6" />
+                  <path d="M6 3c2.4 1.8 4.6 3.6 6.6 6-2.6 1.7-5 3.4-7.2 5.8" />
+                </svg>
+              </span>
             </p>
             <dl className="mt-6 grid gap-x-4 gap-y-3 sm:grid-cols-[auto_1fr]">
               {contact.terms.map((t) => (

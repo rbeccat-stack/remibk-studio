@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { about } from '@/lib/content'
 import Panel from '@/components/Panel'
 import Reveal from '@/components/Reveal'
@@ -8,16 +9,15 @@ export default function About() {
       <Reveal>
         <Panel lift={false} className="p-6 sm:p-9 md:p-12">
           <div className="grid gap-8 md:grid-cols-[280px_1fr] md:items-center md:gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
-            {/* Portrait — remplacer le monogramme par une photo :
-                <img src="/photo-remi.jpg" alt="Rémi BECCAT" className="absolute inset-0 h-full w-full object-cover grayscale transition duration-500 hover:grayscale-0" />
-                (déposer le fichier dans public/) */}
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[220px] overflow-hidden sm:max-w-[260px] md:max-w-[280px] rounded-2xl border border-border bg-surface bg-[radial-gradient(ellipse_at_50%_0%,rgba(94,106,210,0.28),transparent_70%)] md:mx-0 lg:max-w-[320px]">
-              <span
-                aria-hidden
-                className="absolute inset-0 grid place-items-center text-fg font-medium text-7xl tracking-[-0.04em] lg:text-8xl"
-              >
-                {about.initials}
-              </span>
+            {/* Portrait : photo recadrée tête et buste (public/photo-remi.jpg, 640×800). */}
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[220px] overflow-hidden sm:max-w-[260px] md:max-w-[280px] rounded-2xl border border-border bg-surface md:mx-0 lg:max-w-[320px]">
+              <Image
+                src="/photo-remi.jpg"
+                alt="Rémi BECCAT"
+                fill
+                sizes="(min-width: 1024px) 320px, (min-width: 768px) 280px, 260px"
+                className="object-cover"
+              />
             </div>
 
             {/* Texte */}

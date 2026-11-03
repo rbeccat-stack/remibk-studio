@@ -1,6 +1,6 @@
 'use client'
 
-import { useId, useState } from 'react'
+import { useEffect, useId, useState } from 'react'
 import Panel from '@/components/Panel'
 
 interface RealisationCardProps {
@@ -14,6 +14,8 @@ interface RealisationCardProps {
   how: string[]
   accent: 'terracotta' | 'sage'
   link?: { label: string; href: string }
+  /** Ancre de la carte (#…) : un lien vers elle déplie aussi le détail. */
+  anchor?: string
 }
 
 export default function RealisationCard({
@@ -27,12 +29,33 @@ export default function RealisationCard({
   how,
   accent,
   link,
+  anchor,
 }: RealisationCardProps) {
   const [open, setOpen] = useState(false)
   const detailId = useId()
   const isTerracotta = accent === 'terracotta'
   const ink = isTerracotta ? 'text-accent-ink' : 'text-fg-secondary'
   const dot = isTerracotta ? 'dot-accent' : 'dot-green'
+
+  // Arrivée par l'ancre (URL au chargement, changement de hash, ou clic sur un lien vers elle,
+  // y compris quand le hash est déjà le bon) : on déplie la carte.
+  useEffect(() => {
+    if (!anchor) return
+    const hash = `#${anchor}`
+    const openIfTargeted = () => {
+      if (window.location.hash === hash) setOpen(true)
+    }
+    const onClick = (e: MouseEvent) => {
+      if ((e.target as Element | null)?.closest?.(`a[href="${hash}"]`)) setOpen(true)
+    }
+    openIfTargeted()
+    window.addEventListener('hashchange', openIfTargeted)
+    document.addEventListener('click', onClick)
+    return () => {
+      window.removeEventListener('hashchange', openIfTargeted)
+      document.removeEventListener('click', onClick)
+    }
+  }, [anchor])
 
   return (
     <Panel as="article" lift={false} elevated={open}>
