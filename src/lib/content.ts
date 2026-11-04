@@ -458,4 +458,133 @@ export const footer = {
   copy: "© 2026 Rémi BECCAT — Growth Marketer basé à Lyon.",
   linkedin: "https://www.linkedin.com/in/remibeccat/",
   github: "https://github.com/rbeccat-stack",
+  legalLinks: [
+    { label: "Mentions légales", href: "/mentions-legales" },
+    { label: "Confidentialité", href: "/confidentialite" },
+  ],
+}
+
+// Pages légales. Les liens s'écrivent [libellé](url) dans le texte (rendus par LegalPage).
+export type LegalSection = {
+  heading: string
+  paragraphs?: string[]
+  list?: string[]
+  // Paragraphes affichés après la liste.
+  after?: string[]
+}
+
+export type LegalDocument = {
+  metaTitle: string
+  metaDescription: string
+  title: string
+  intro: string
+  updated: string
+  sections: LegalSection[]
+}
+
+export const confidentialite: LegalDocument = {
+  metaTitle: "Politique de confidentialité — Rémi BECCAT",
+  metaDescription:
+    "Quelles données sont traitées sur remibk-studio.fr et par mes automatisations connectées à Google Sheets et Google Drive, pourquoi, où, et comment me contacter.",
+  title: "Politique de confidentialité",
+  intro:
+    "Cette page explique quelles données sont traitées par ce site et par les automatisations que j'ai connectées à mon compte Google, pourquoi, où elles sont traitées et comment exercer vos droits.",
+  updated: "Dernière mise à jour : 4 novembre 2026",
+  sections: [
+    {
+      heading: "Responsable du traitement",
+      paragraphs: [
+        `Rémi BECCAT, Lyon, France. Contact : [${contact.email}](mailto:${contact.email}).`,
+      ],
+    },
+    {
+      heading: "Ce site",
+      paragraphs: [
+        "Ce site ne contient ni formulaire, ni outil de mesure d'audience, ni publicité, et ne dépose aucun cookie.",
+        "Comme tout hébergeur, Vercel traite des données techniques de connexion (adresse IP, localisation déduite de cette adresse, configuration du navigateur) pour servir les pages et assurer la sécurité du site. Voir la [politique de confidentialité de Vercel](https://vercel.com/legal/privacy-policy).",
+        "Si vous réservez un call via Cal.com ou si vous suivez un lien vers LinkedIn, GitHub ou WhatsApp, vous quittez ce site : la politique de confidentialité du service concerné s'applique.",
+      ],
+    },
+    {
+      heading: "Automatisations connectées à Google",
+      paragraphs: [
+        "J'utilise une application Google OAuth pour connecter mon instance n8n à mon propre compte Google. Elle n'est pas proposée au public et ne sert pas à accéder aux comptes d'autres personnes.",
+        "Les autorisations accordées permettent à n8n d'accéder aux fichiers Google Sheets et Google Drive du compte connecté. Elles servent uniquement à :",
+      ],
+      list: [
+        "créer un fichier Google Sheets de résultats ;",
+        "écrire dans ce fichier le résultat des traitements, par exemple la vérification de la cohérence entre l'adresse email, le site et le nom d'une entreprise ;",
+        "ranger ce fichier dans le dossier Google Drive prévu à cet effet.",
+      ],
+      after: [
+        "Les fichiers traités peuvent contenir des données professionnelles sur des contacts : nom de l'entreprise, site internet, adresse email.",
+      ],
+    },
+    {
+      heading: "Utilisation limitée des données Google",
+      paragraphs: [
+        "L'utilisation et le transfert des informations reçues des API Google respectent le [règlement sur les données utilisateur des services d'API Google](https://developers.google.com/terms/api-services-user-data-policy), y compris ses exigences d'utilisation limitée.",
+        "Ces données ne sont ni vendues, ni transmises à des tiers à des fins publicitaires, ni utilisées pour entraîner des modèles d'intelligence artificielle.",
+      ],
+    },
+    {
+      heading: "Où les données sont traitées",
+      list: [
+        "n8n est auto-hébergé sur un serveur privé loué chez Hostinger et situé en France.",
+        "Les fichiers de résultats sont stockés dans mon compte Google.",
+        "Le site est hébergé par Vercel.",
+      ],
+      after: [
+        "Google et Vercel peuvent traiter des données hors de l'Union européenne, selon les garanties prévues par leurs propres conditions.",
+      ],
+    },
+    {
+      heading: "Durée de conservation",
+      paragraphs: [
+        "Les fichiers de résultats restent dans mon compte Google tant qu'ils sont utiles, puis je les supprime. L'historique technique des exécutions conservé par n8n peut contenir les données traitées et est purgé périodiquement.",
+        "Les jetons de connexion Google sont conservés dans n8n tant que la connexion est active. Ils peuvent être révoqués à tout moment depuis la page [Applications tierces de votre compte Google](https://myaccount.google.com/connections).",
+      ],
+    },
+    {
+      heading: "Vos droits",
+      paragraphs: [
+        `Conformément au RGPD, vous pouvez demander l'accès à vos données, leur rectification ou leur effacement, ou vous opposer à leur traitement, en m'écrivant à [${contact.email}](mailto:${contact.email}). Vous pouvez aussi introduire une réclamation auprès de la [CNIL](https://www.cnil.fr/fr/plaintes).`,
+      ],
+    },
+  ],
+}
+
+export const mentionsLegales: LegalDocument = {
+  metaTitle: "Mentions légales — Rémi BECCAT",
+  metaDescription: "Éditeur et hébergeur du site remibk-studio.fr.",
+  title: "Mentions légales",
+  intro: "Informations sur l'éditeur et l'hébergeur du site remibk-studio.fr.",
+  updated: "Dernière mise à jour : 4 novembre 2026",
+  sections: [
+    {
+      heading: "Éditeur et directeur de la publication",
+      paragraphs: [
+        "Rémi BECCAT, Lyon, France.",
+        `Email : [${contact.email}](mailto:${contact.email}). Téléphone : [${contact.phone}](${contact.phoneHref}).`,
+      ],
+    },
+    {
+      heading: "Hébergeur",
+      paragraphs: [
+        "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis. Site : [vercel.com](https://vercel.com).",
+      ],
+    },
+    {
+      heading: "Propriété intellectuelle",
+      paragraphs: [
+        "Les textes et réalisations présentés sur ce site appartiennent à Rémi BECCAT, sauf mention contraire. Les logos et marques cités restent la propriété de leurs détenteurs respectifs.",
+      ],
+    },
+    {
+      heading: "Données personnelles",
+      paragraphs: [
+        "Le traitement des données est décrit dans la [politique de confidentialité](/confidentialite).",
+      ],
+    },
+  ],
 }
