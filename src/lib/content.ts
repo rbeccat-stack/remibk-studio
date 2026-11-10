@@ -454,11 +454,50 @@ export const contact = {
   githubLabel: "github.com/rbeccat-stack",
 }
 
+// Imèr (anagramme de Rémi) : agent vocal ElevenLabs qui répond aux recruteurs.
+// Le widget est affiché sur toutes les pages ; la page /agent est la destination du QR code des lettres.
+// Le paramètre d'URL ?src=… est transmis à l'agent (variable dynamique « source ») pour mesurer la provenance.
+export const agent = {
+  name: "Imèr",
+  agentId: "agent_1901m72mhnkzebn99x6bmdcbmyax",
+  scriptSrc: "https://unpkg.com/@elevenlabs/convai-widget-embed",
+  defaultSource: "site",
+  page: {
+    metaTitle: "Imèr, l'assistant vocal de Rémi BECCAT",
+    metaDescription:
+      "Posez vos questions à Imèr, l'assistant IA de Rémi BECCAT : parcours, réalisations, disponibilité. À la voix ou à l'écrit, 24 h/24.",
+    eyebrow: "Agent vocal IA · ElevenLabs",
+    title: "Bonjour, je suis Imèr.",
+    lead:
+      "L'assistant vocal de Rémi. Posez-moi vos questions sur son parcours, ses réalisations ou sa disponibilité, à la voix ou à l'écrit, et je peux organiser un échange de 30 minutes avec lui.",
+    hint: "Cliquez sur « Parlez à Imèr ! » en bas à droite de l'écran.",
+    nameNote: "Imèr ? C'est l'anagramme de Rémi.",
+    canDoTitle: "Ce que je peux faire pour vous",
+    canDo: [
+      "Vous présenter le parcours et les réalisations de Rémi, chiffres à l'appui.",
+      "Vous dire s'il est disponible et dans quelles conditions : CDI ou CDD, Lyon ou hybride.",
+      "Noter votre besoin et vos coordonnées pour que Rémi vous recontacte.",
+      "Organiser un échange de 30 minutes avec lui.",
+    ],
+    builtTitle: "Comment Rémi m'a construit",
+    built: [
+      { label: "Voix et conversation", value: "ElevenLabs Agents, en français, interruptible" },
+      { label: "Connaissances", value: "Une base limitée au contenu de ce portfolio : je ne réponds que sur ce que je sais" },
+      { label: "Garde-fous", value: "Pas d'invention, pas de chiffre de salaire, pas d'engagement au nom de Rémi" },
+      { label: "Suivi", value: "10 informations extraites après chaque échange et 3 critères de qualité évalués automatiquement" },
+    ] as { label: string; value: string }[],
+    privacy:
+      "La conversation est enregistrée et analysée pour que Rémi puisse vous recontacter. Elle est conservée 30 jours. [Politique de confidentialité](/confidentialite).",
+    fallback: { label: "Préférez un échange direct ? Réserver un call", href: "https://cal.com/remi-beccat-32m3gf/30min" },
+  },
+}
+
 export const footer = {
   copy: "© 2026 Rémi BECCAT — Growth Marketer basé à Lyon.",
   linkedin: "https://www.linkedin.com/in/remibeccat/",
   github: "https://github.com/rbeccat-stack",
   legalLinks: [
+    { label: "Parler à Imèr", href: "/agent" },
     { label: "Mentions légales", href: "/mentions-legales" },
     { label: "Confidentialité", href: "/confidentialite" },
   ],
@@ -488,8 +527,8 @@ export const confidentialite: LegalDocument = {
     "Quelles données sont traitées sur remibk-studio.fr et par mes automatisations connectées à Google Sheets et Google Drive, pourquoi, où, et comment me contacter.",
   title: "Politique de confidentialité",
   intro:
-    "Cette page explique quelles données sont traitées par ce site et par les automatisations que j'ai connectées à mon compte Google, pourquoi, où elles sont traitées et comment exercer vos droits.",
-  updated: "Dernière mise à jour : 4 novembre 2026",
+    "Cette page explique quelles données sont traitées par ce site, par son assistant vocal et par les automatisations que j'ai connectées à mon compte Google, pourquoi, où elles sont traitées et comment exercer vos droits.",
+  updated: "Dernière mise à jour : 10 novembre 2026",
   sections: [
     {
       heading: "Responsable du traitement",
@@ -500,9 +539,17 @@ export const confidentialite: LegalDocument = {
     {
       heading: "Ce site",
       paragraphs: [
-        "Ce site ne contient ni formulaire, ni outil de mesure d'audience, ni publicité, et ne dépose aucun cookie.",
+        "Ce site ne contient ni formulaire, ni outil de mesure d'audience, ni publicité.",
         "Comme tout hébergeur, Vercel traite des données techniques de connexion (adresse IP, localisation déduite de cette adresse, configuration du navigateur) pour servir les pages et assurer la sécurité du site. Voir la [politique de confidentialité de Vercel](https://vercel.com/legal/privacy-policy).",
         "Si vous réservez un call via Cal.com ou si vous suivez un lien vers LinkedIn, GitHub ou WhatsApp, vous quittez ce site : la politique de confidentialité du service concerné s'applique.",
+      ],
+    },
+    {
+      heading: "Imèr, l'assistant vocal",
+      paragraphs: [
+        "Le bouton « Parlez à Imèr ! » ouvre une conversation, à la voix ou à l'écrit, avec un assistant d'intelligence artificielle fourni par ElevenLabs. Le module est chargé depuis les serveurs d'ElevenLabs et ne s'active que si vous lancez une conversation, après avoir accepté ses conditions.",
+        "La conversation (audio et transcription) est enregistrée, puis analysée automatiquement pour en extraire un résumé et les informations utiles à une prise de contact : nom, entreprise, fonction, email ou téléphone si vous les donnez, besoin exprimé, et la page ou le support depuis lequel vous êtes arrivé. Ces données servent uniquement à vous recontacter au sujet d'une opportunité professionnelle.",
+        "Les conversations sont conservées 30 jours chez ElevenLabs, puis supprimées. Voir la [politique de confidentialité d'ElevenLabs](https://elevenlabs.io/privacy-policy).",
       ],
     },
     {
@@ -533,6 +580,7 @@ export const confidentialite: LegalDocument = {
         "n8n est auto-hébergé sur un serveur privé loué chez Hostinger et situé en France.",
         "Les fichiers de résultats sont stockés dans mon compte Google.",
         "Le site est hébergé par Vercel.",
+        "Les conversations avec Imèr sont traitées et stockées par ElevenLabs.",
       ],
       after: [
         "Google et Vercel peuvent traiter des données hors de l'Union européenne, selon les garanties prévues par leurs propres conditions.",

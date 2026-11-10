@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
+import Script from 'next/script'
 import AmbientBackground from '@/components/AmbientBackground'
+import AgentWidget from '@/components/AgentWidget'
+import { agent } from '@/lib/content'
 import './globals.css'
 
 const inter = Inter({
@@ -35,6 +38,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="relative min-h-full font-sans bg-bg-base text-fg">
         <AmbientBackground />
         <div className="relative z-10">{children}</div>
+        <AgentWidget />
+        <Script src={agent.scriptSrc} strategy="lazyOnload" />
       </body>
     </html>
   )
