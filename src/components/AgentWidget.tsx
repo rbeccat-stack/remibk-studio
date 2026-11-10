@@ -11,7 +11,7 @@ function cleanSource(value: string | null): string | null {
   return cleaned || null
 }
 
-// Widget ElevenLabs d'Imèr, affiché sur toutes les pages.
+// Widget ElevenLabs de l'assistant John Doe, affiché sur toutes les pages.
 // La provenance (?src=… dans l'URL, ex. « manuscry » pour le QR code des lettres) est transmise
 // à l'agent comme variable dynamique « source », puis conservée pour la navigation suivante.
 export default function AgentWidget() {
@@ -22,8 +22,8 @@ export default function AgentWidget() {
     const fromUrl = cleanSource(new URLSearchParams(window.location.search).get('src'))
     let stored: string | null = null
     try {
-      if (fromUrl) sessionStorage.setItem('imer_source', fromUrl)
-      stored = cleanSource(sessionStorage.getItem('imer_source'))
+      if (fromUrl) sessionStorage.setItem('agent_source', fromUrl)
+      stored = cleanSource(sessionStorage.getItem('agent_source'))
     } catch {
       // Stockage indisponible (navigation privée stricte) : on garde la valeur de l'URL.
     }

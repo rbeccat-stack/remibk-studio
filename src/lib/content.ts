@@ -454,24 +454,23 @@ export const contact = {
   githubLabel: "github.com/rbeccat-stack",
 }
 
-// Imèr (anagramme de Rémi) : agent vocal ElevenLabs qui répond aux recruteurs.
+// John Doe : agent vocal ElevenLabs qui répond aux recruteurs.
 // Le widget est affiché sur toutes les pages ; la page /agent est la destination du QR code des lettres.
 // Le paramètre d'URL ?src=… est transmis à l'agent (variable dynamique « source ») pour mesurer la provenance.
 export const agent = {
-  name: "Imèr",
+  name: "John Doe",
   agentId: "agent_1901m72mhnkzebn99x6bmdcbmyax",
   scriptSrc: "https://unpkg.com/@elevenlabs/convai-widget-embed",
   defaultSource: "site",
   page: {
-    metaTitle: "Imèr, l'assistant vocal de Rémi BECCAT",
+    metaTitle: "John Doe, l'assistant vocal de Rémi BECCAT",
     metaDescription:
-      "Posez vos questions à Imèr, l'assistant IA de Rémi BECCAT : parcours, réalisations, disponibilité. À la voix ou à l'écrit, 24 h/24.",
+      "Posez vos questions à John Doe, l'assistant IA de Rémi BECCAT : parcours, réalisations, disponibilité. À la voix ou à l'écrit, 24 h/24.",
     eyebrow: "Agent vocal IA · ElevenLabs",
-    title: "Bonjour, je suis Imèr.",
+    title: "Bonjour, je suis John Doe.",
     lead:
       "L'assistant vocal de Rémi. Posez-moi vos questions sur son parcours, ses réalisations ou sa disponibilité, à la voix ou à l'écrit, et je peux organiser un échange de 30 minutes avec lui.",
-    hint: "Cliquez sur « Parlez à Imèr ! » en bas à droite de l'écran.",
-    nameNote: "Imèr ? C'est l'anagramme de Rémi.",
+    hint: "Écrivez votre question ou appuyez sur le téléphone pour parler à John Doe.",
     canDoTitle: "Ce que je peux faire pour vous",
     canDo: [
       "Vous présenter le parcours et les réalisations de Rémi, chiffres à l'appui.",
@@ -497,7 +496,7 @@ export const footer = {
   linkedin: "https://www.linkedin.com/in/remibeccat/",
   github: "https://github.com/rbeccat-stack",
   legalLinks: [
-    { label: "Parler à Imèr", href: "/agent" },
+    { label: "Parler à John Doe", href: "/agent" },
     { label: "Mentions légales", href: "/mentions-legales" },
     { label: "Confidentialité", href: "/confidentialite" },
   ],
@@ -545,9 +544,9 @@ export const confidentialite: LegalDocument = {
       ],
     },
     {
-      heading: "Imèr, l'assistant vocal",
+      heading: "John Doe, l'assistant vocal",
       paragraphs: [
-        "Le bouton « Parlez à Imèr ! » ouvre une conversation, à la voix ou à l'écrit, avec un assistant d'intelligence artificielle fourni par ElevenLabs. Le module est chargé depuis les serveurs d'ElevenLabs et ne s'active que si vous lancez une conversation, après avoir accepté ses conditions.",
+        "Le bouton « Parlez à John Doe ! » ouvre une conversation, à la voix ou à l'écrit, avec un assistant d'intelligence artificielle fourni par ElevenLabs. Le module est chargé depuis les serveurs d'ElevenLabs et ne s'active que si vous lancez une conversation, après avoir accepté ses conditions.",
         "La conversation (audio et transcription) est enregistrée, puis analysée automatiquement pour en extraire un résumé et les informations utiles à une prise de contact : nom, entreprise, fonction, email ou téléphone si vous les donnez, besoin exprimé, et la page ou le support depuis lequel vous êtes arrivé. Ces données servent uniquement à vous recontacter au sujet d'une opportunité professionnelle.",
         "Les conversations sont conservées 30 jours chez ElevenLabs, puis supprimées. Voir la [politique de confidentialité d'ElevenLabs](https://elevenlabs.io/privacy-policy).",
       ],
@@ -580,7 +579,7 @@ export const confidentialite: LegalDocument = {
         "n8n est auto-hébergé sur un serveur privé loué chez Hostinger et situé en France.",
         "Les fichiers de résultats sont stockés dans mon compte Google.",
         "Le site est hébergé par Vercel.",
-        "Les conversations avec Imèr sont traitées et stockées par ElevenLabs.",
+        "Les conversations avec John Doe sont traitées et stockées par ElevenLabs.",
       ],
       after: [
         "Google et Vercel peuvent traiter des données hors de l'Union européenne, selon les garanties prévues par leurs propres conditions.",

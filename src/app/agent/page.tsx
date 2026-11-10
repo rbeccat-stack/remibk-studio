@@ -26,7 +26,7 @@ function renderText(text: string) {
   })
 }
 
-// Page d'atterrissage du QR code des lettres : présente Imèr, le widget s'ouvre automatiquement.
+// Page d'atterrissage du QR code des lettres : présente l'assistant, le widget s'ouvre automatiquement.
 export default function Page() {
   const p = agent.page
 
@@ -59,7 +59,6 @@ export default function Page() {
           <span aria-hidden className="dot dot-accent h-1.5 w-1.5" />
           {p.hint}
         </p>
-        <p className="mt-4 font-mono text-xs text-fg-muted">{p.nameNote}</p>
 
         <section className="mt-12">
           <h2 className="text-fg font-medium text-lg md:text-xl tracking-[-0.022em]">{p.canDoTitle}</h2>
