@@ -10,7 +10,7 @@ export default function Footer() {
           {footer.copy}
         </p>
         <div className="flex flex-wrap items-center justify-between gap-x-4 md:justify-end">
-          <nav aria-label="Informations légales" className="flex items-center gap-4">
+          <nav aria-label="Informations légales" className="flex flex-wrap items-center gap-x-4">
             {footer.legalLinks.map((l) => (
               <Link
                 key={l.href}
