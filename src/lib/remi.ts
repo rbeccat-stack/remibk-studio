@@ -2,9 +2,9 @@
 // Source unique des réponses de /api/remi/* : la V2 (/hello/[slug]) et la V3 (serveur MCP) liront ce même fichier.
 // Tout ce qui est ici est PUBLIC : uniquement des infos déjà visibles sur le portfolio.
 import { agent, contact, footer, hero, realisations, toolGroups, toolLevels } from "./content"
+import { API_URL, endpoints, snippet } from "./remi-endpoints"
 
-export const SITE = "https://www.remibk-studio.fr"
-const BASE = "remibk-studio.fr/api/remi"
+export const SITE = API_URL
 
 const absolute = (href: string) => (href.startsWith("/") ? `${SITE}${href}` : href)
 const term = (label: string) => contact.terms.find((t) => t.label === label)?.value ?? null
@@ -22,10 +22,10 @@ export const links = {
 
 // Commandes suggérées à la fin de chaque réponse : on guide le visiteur comme dans un jeu.
 export const commands = {
-  profile: `curl ${BASE}`,
-  hire: `curl -X POST ${BASE}/hire`,
-  coffee: `curl ${BASE}/coffee`,
-  headers: `curl -i ${BASE}`,
+  profile: snippet("curl", "profile"),
+  hire: snippet("curl", "hire"),
+  coffee: snippet("curl", "coffee"),
+  headers: snippet("curl", "profile").replace("curl -L", "curl -iL"),
 }
 
 // Défauts assumés, en auto-dérision. À ajuster librement.
@@ -101,7 +101,7 @@ export const notFoundResponse = {
 const easterEggHeaders = {
   "X-Hire-Me": "yes, please",
   "X-Built-With": "Next.js + Claude + too much coffee",
-  "X-Easter-Egg": "try POST /api/remi/hire",
+  "X-Easter-Egg": `try POST ${endpoints.hire.path}`,
   "X-Agent": `talk to ${agent.name} at ${SITE}/agent`,
 }
 

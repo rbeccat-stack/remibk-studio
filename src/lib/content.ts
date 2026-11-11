@@ -491,12 +491,39 @@ export const agent = {
   },
 }
 
+// Page /curl : interface façon « connecter un outil » pour l'API clin d'œil /api/remi (logique dans src/lib/remi.ts).
+export const curlPage = {
+  metaTitle: "API · Rémi BECCAT",
+  metaDescription:
+    "Mon profil est aussi une API. Interrogez-la depuis votre terminal, votre code ou directement ici.",
+  eyebrow: "API publique · sans clé",
+  title: "Mon profil est aussi une API.",
+  lead:
+    "Pour les fondateurs et les équipes tech qui préfèrent vérifier avant de lire. Choisissez votre outil, copiez la commande, ou essayez directement ici.",
+  windowTitle: "Interroger le profil de Rémi",
+  installTitle: "Lancer",
+  installText: "Une commande, aucune clé API, aucune inscription.",
+  installBadges: ["Aucune clé API requise", "macOS, Windows et Linux"],
+  tryTitle: "Ce que vous pouvez faire",
+  tryText: "Posez votre question en clair : la démo appelle la vraie API et affiche sa réponse.",
+  tryWindowLabel: "Démo en direct",
+  placeholders: ["Montre-moi son profil", "Je voudrais recruter Rémi", "Tu me fais un café ?", "Il a des défauts ?"],
+  suggestions: ["Son profil", "Le recruter", "Un café ?", "Ses défauts"],
+  working: "J'y travaille…",
+  inputLabel: "Posez une question sur Rémi",
+  copy: "Copier",
+  copied: "Copié",
+  footerNote: "Préférez une vraie conversation ?",
+  footerCta: { label: "Parler à John Doe", href: "/agent?src=curl" },
+}
+
 export const footer = {
   copy: "© 2026 Rémi BECCAT — Growth Marketer basé à Lyon.",
   linkedin: "https://www.linkedin.com/in/remibeccat/",
   github: "https://github.com/rbeccat-stack",
   legalLinks: [
     { label: "Parler à John Doe", href: "/agent" },
+    { label: "API", href: "/curl" },
     { label: "Mentions légales", href: "/mentions-legales" },
     { label: "Confidentialité", href: "/confidentialite" },
   ],
