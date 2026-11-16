@@ -11,7 +11,7 @@ function cleanSource(value: string | null): string | null {
   return cleaned || null
 }
 
-// Widget ElevenLabs de l'assistant John Doe, affiché sur toutes les pages.
+// Widget ElevenLabs de l'agent vocal, affiché sur toutes les pages.
 // La provenance (?src=… dans l'URL, ex. « manuscry » pour le QR code des lettres) est transmise
 // à l'agent comme variable dynamique « source », puis conservée pour la navigation suivante.
 export default function AgentWidget() {
